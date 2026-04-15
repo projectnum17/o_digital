@@ -1,0 +1,35 @@
+@use 'mixins' as *;
+@use 'media' as *;
+@use 'var' as *;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font: 400 #{rem(16px)}/ 130% $ff;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    color: $c_light;
+    background: $c_dark;
+
+    &.is-locked {
+        overflow: hidden;
+    }
+}
+
+main {
+    flex: 1;
+}
+
+button {
+    @include reset_button;
+    display: flex;
+    color: inherit;
+}
+
+a {
+    @include reset_link;
+}
