@@ -9,10 +9,13 @@
     background: var(--bg_header);
     border-bottom: 1px solid var(--border_default);
     backdrop-filter: blur(24px);
-    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    transition:
+        transform 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+        background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+        border-color 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
 
     &.is-transform {
-        transform: translateY(-100%)
+        transform: translateY(-100%);
     }
 
     &__top {

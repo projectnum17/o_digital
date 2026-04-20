@@ -3,7 +3,6 @@
 @use '../../../base/media' as *;
 
 .hero {
-    position: relative;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
@@ -20,6 +19,10 @@
         bottom: rem(20px);
         border-radius: 999px;
         z-index: 2;
+    }
+
+    .btns-panel {
+        margin-bottom: rem(30px);
     }
 
     .container {
@@ -65,28 +68,6 @@
         font: 400 #{rem(16px)} / 110% $ff;
         color: var(--txt_special);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
-    &__panel {
-        display: flex;
-        align-items: center;
-        gap: rem(12px);
-        margin-bottom: rem(30px);
-    }
-
-    &__btn {
-        font: 500 #{rem(16px)} / 100% $ff;
-        display: flex;
-        align-items: center;
-        gap: rem(12px);
-        padding: rem(16px) rem(24px);
-        color: var(--txt_primary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        img {
-            width: rem(23px);
-            height: rem(23px);
-        }
     }
 
     .btn-primary {

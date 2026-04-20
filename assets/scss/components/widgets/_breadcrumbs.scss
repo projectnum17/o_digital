@@ -1,0 +1,33 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: rem(34px);
+    margin-bottom: rem(44px);
+
+    li {
+        &:not(:last-child) {
+            display: flex;
+            align-items: center;
+            gap: rem(34px);
+            &::after {
+                content: '/';
+            }
+        }
+
+        &:last-child {
+            a {
+                color: var(--c_half);
+            }
+        }
+    }
+
+    a {
+        font: 400 #{rem(16px)} / 120% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

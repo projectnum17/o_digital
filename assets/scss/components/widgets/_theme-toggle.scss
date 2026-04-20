@@ -45,6 +45,7 @@ $c_black: #000;
         background: $c_black;
 
         &::before {
+            transform: translateY(-50%) rotate(100deg);
             content: '';
             right: calc(#{$widthSwitch} - #{$widthSwitcher} - 2px);
             background: url('../imgs/ico/ico-sun.svg') no-repeat center center /

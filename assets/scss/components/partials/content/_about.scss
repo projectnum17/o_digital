@@ -17,9 +17,9 @@
     }
 
     &__head {
-        @include flexCenter(#{rem(24px)});
         justify-content: space-between;
         margin-bottom: rem(147px);
+        @include flexCenter(#{rem(24px)});
     }
 
     &__cards {

@@ -31,8 +31,8 @@
                     </button>
                     <button class="btn-primary js-consultation">
                         <span class="btn-primary__text">консультація</span>
-                        <span class="btn-primary__mask">
-                            <span class="btn-primary__glow"></span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
                         </span>
                     </button>
                     <ul class="header__lang">
@@ -104,14 +104,14 @@
             </div>
             <div class="container">
                 <div class="hero__info">
-                    <div class="hero__panel">
+                    <div class="btns-panel">
                         <button class="btn-primary js-consultation">
                             <span class="btn-primary__text">Отримати консультацію</span>
-                            <span class="btn-primary__mask">
-                                <span class="btn-primary__glow"></span>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
                             </span>
                         </button>
-                        <button class="hero__btn js-consultation">
+                        <button class="btn-meeting js-consultation">
                             Запланувати зустріч
                             <img src="./assets/imgs/ico/ico-call-orange.svg" alt="Icon">
                         </button>
@@ -208,14 +208,6 @@
                 </ul>
             </div>
             <div class="about__bg js-brick-bg">
-                <!-- 
-                <svg class="about__brick about__brick-base" width="2346" height="706" viewBox="0 0 2346 706" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M2107.5 471.5V705.5H1638.5V471.5H2107.5ZM1636.5 471.5V705.5H1167.5V471.5H1636.5ZM1165.5 471.5V705.5H700.5V471.5H1165.5ZM698.5 471.5V705.5H232.5V471.5H698.5ZM2345.5 235.5V470.5H2108.5V469.5H1876.5V236.5H2109.5V235.5H2345.5ZM234.5 235.5V236.5H466.5V469.5H231.5V470.5H0.5V235.5H234.5ZM1874.5 236.5V469.5H1406.5V236.5H1874.5ZM1404.5 236.5V469.5H935.5V236.5H1404.5ZM933.5 236.5V469.5H468.5V236.5H933.5ZM2108.5 0.5V234.5H1641.5V0.5H2108.5ZM1640.5 0.5V234.5H1638.5V0.5H1640.5ZM1637.5 0.5V234.5H1170.5V0.5H1637.5ZM1168.5 0.5V234.5H703.5V0.5H1168.5ZM701.5 0.5V234.5H235.5V0.5H701.5Z"
-                        stroke="currentColor" stroke-opacity="0.8" />
-                </svg>
-                 -->
                 <svg class="about__brick about__brick-active" width="2346" height="706" viewBox="0 0 2346 706"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -273,8 +265,8 @@
                     <li class="vendors__item vendors__item-more js-vendor-more">
                         <button class="btn-primary">
                             <span class="btn-primary__text">усі вендори</span>
-                            <span class="btn-primary__mask">
-                                <span class="btn-primary__glow"></span>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
                             </span>
                         </button>
                     </li>
@@ -361,8 +353,8 @@
                 </ul>
                 <button class="btn-primary js-areas-more">
                     <span class="btn-primary__text">Всі експертизи</span>
-                    <span class="btn-primary__mask">
-                        <span class="btn-primary__glow"></span>
+                    <span class="glow-mask">
+                        <span class="glow-mask__circles"></span>
                     </span>
                 </button>
             </div>
@@ -526,8 +518,8 @@
                     <h2 class="section-title">Бізнеси довіряють нам розвиток своїх IT-рішень</h2>
                     <a href="javascript: void(0)" class="btn-primary">
                         <span class="btn-primary__text">детальніше про клієнтів</span>
-                        <span class="btn-primary__mask">
-                            <span class="btn-primary__glow"></span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
                         </span>
                     </a>
                 </div>
@@ -1171,11 +1163,11 @@
             </div>
             <div class="faq__helper"></div>
         </section>
-        <section class="seo">
+        <section class="promo">
             <div class="container">
-                <div class="seo__box">
-                    <h3 class="seo__title">Стратегічні рішення для розвитку бізнесу</h3>
-                    <div class="seo__text js-text-box">
+                <div class="promo__box">
+                    <h3 class="promo__title">Стратегічні рішення для розвитку бізнесу</h3>
+                    <div class="promo__text js-text-box">
                         <p>
                             O-Digital — сервісна компанія, що допомагає бізнесу впроваджувати сучасні рішення та
                             розвивати
@@ -1210,7 +1202,7 @@
                         </p>
                     </div>
                 </div>
-                <button type="button" class="seo__more js-text-more">
+                <button type="button" class="promo__more js-text-more">
                     Детальніше
                     <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -1381,8 +1373,8 @@
                             </div>
                             <button class="btn-primary" type="submit">
                                 <span class="btn-primary__text">Надіслати</span>
-                                <span class="btn-primary__mask">
-                                    <span class="btn-primary__glow"></span>
+                                <span class="glow-mask">
+                                    <span class="glow-mask__circles"></span>
                                 </span>
                             </button>
                         </div>
@@ -1555,7 +1547,8 @@
                 <form>
                     <div class="search-panel__handler">
                         <div class="search-panel__field">
-                            <input placeholder="Пошук" type="search" name="webSiteSearch" id="webSiteSearch" class="js-search-field">
+                            <input placeholder="Пошук" type="search" name="webSiteSearch" id="webSiteSearch"
+                                class="js-search-field">
                             <button type="submit" class="search-panel__submit">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

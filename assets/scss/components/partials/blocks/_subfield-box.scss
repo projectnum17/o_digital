@@ -1,0 +1,120 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+html {
+    &.light {
+        .subfield-box {
+            &__label {
+                &::after {
+                    opacity: 1;
+                }
+
+                &::before {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.dark {
+        .subfield-box {
+            &__label {
+                &::after {
+                    opacity: 0;
+                }
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.subfield-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: rem(14px);
+    min-height: rem(569px);
+    gap: rem(20px);
+    padding: rem(30px);
+    backdrop-filter: blur(13px);
+    background: var(--bg_subfield);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include hover {
+        .link-more {
+            svg {
+                transform: translateX(5px);
+            }
+        }
+
+        .glow-mask {
+            opacity: 1;
+        }
+    }
+
+    &__label {
+        font: 600 #{rem(16px)} / 100% $ff;
+        text-transform: uppercase;
+        z-index: 2;
+        position: relative;
+        display: inline-flex;
+        width: max-content;
+        border-radius: rem(12px);
+        padding: rem(19px) rem(23px);
+        color: var(--txt_secondary);
+        background: var(--bg_accent);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        &::after {
+            background: linear-gradient(
+                90deg,
+                rgba(17, 17, 17, 0) 0%,
+                rgba(17, 17, 17, 0.2) 57.21%,
+                rgba(17, 17, 17, 0) 100%
+            );
+        }
+
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+
+                rgba(255, 255, 255, 0.2) 57.21%,
+
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+    }
+
+    &__descr {
+        font: 400 #{rem(24px)} / 120% $ff;
+        margin-bottom: rem(29px);
+        color: var(--c_half);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__info {
+        position: relative;
+        z-index: 2;
+    }
+}

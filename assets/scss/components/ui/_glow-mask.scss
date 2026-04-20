@@ -1,0 +1,84 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.glow-mask {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: rem(12px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &__circles {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(150px);
+        height: rem(150px);
+        transform: translate(-50%, -50%);
+        filter: blur(50px);
+        animation: spin-orbit 6s linear infinite;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: rem(220px);
+            height: rem(220px);
+            border-radius: 50%;
+            background: #fe6a2080;
+            opacity: 0.7;
+        }
+
+        &::before {
+            animation: collide-before 2s ease-in-out infinite;
+        }
+
+        &::after {
+            animation: collide-after 2s ease-in-out infinite;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            --rotate: 0deg;
+        }
+        100% {
+            --rotate: 360deg;
+        }
+    }
+
+    @keyframes spin-orbit {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    @keyframes collide-before {
+        0%,
+        100% {
+            transform: translate(-120%, -50%);
+        }
+        50% {
+            transform: translate(-10%, -50%);
+        }
+    }
+
+    @keyframes collide-after {
+        0%,
+        100% {
+            transform: translate(20%, -50%);
+        }
+        50% {
+            transform: translate(-90%, -50%);
+        }
+    }
+}

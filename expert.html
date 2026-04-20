@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./assets/fonts/ff_400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/ff_500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/ff_600.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="./assets/libs/datepicker/datepicker.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/main.min.css" />
+
+    <link rel="shortcut icon" href="./assets/imgs/favicon/favicon.png" type="image/png" />
+    <title>O-Digital | Expert</title>
+</head>
+
+<body>
+    <header class="header js-header">
+        <div class="container">
+            <div class="header__top">
+                <input id="themeSwitcher" class="theme-toggle" type="checkbox">
+                <div class="header__panel">
+                    <button type="button" class="header__search js-search-trigger">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.88316 1.60502e-08C7.54679 -8.97127e-05 6.23738 0.376043 5.1048 1.08535C3.97222 1.79466 3.06223 2.80849 2.47895 4.01081C1.89568 5.21314 1.6627 6.55538 1.80667 7.88392C1.95064 9.21247 2.46574 10.4736 3.29304 11.5231L0.235052 14.581C0.0825233 14.7389 -0.00187683 14.9504 3.14713e-05 15.17C0.00193882 15.3895 0.0900011 15.5995 0.245252 15.7548C0.400502 15.91 0.610518 15.9981 0.830069 16C1.04962 16.0019 1.26113 15.9175 1.41906 15.765L4.47705 12.7071C5.36845 13.4096 6.41492 13.8887 7.52916 14.1045C8.6434 14.3203 9.79309 14.2665 10.8823 13.9476C11.9715 13.6288 12.9687 13.0541 13.7907 12.2715C14.6126 11.4888 15.2354 10.521 15.6072 9.44875C15.979 8.37647 16.089 7.23083 15.928 6.10741C15.767 4.98399 15.3396 3.91536 14.6816 2.99068C14.0236 2.066 13.1539 1.31209 12.1452 0.791843C11.1366 0.271595 10.0181 9.67028e-05 8.88316 1.60502e-08ZM8.88316 1.67463C10.3267 1.67463 11.7111 2.24804 12.7318 3.26871C13.7525 4.28939 14.3259 5.67372 14.3259 7.11717C14.3259 8.56063 13.7525 9.94496 12.7318 10.9656C11.7111 11.9863 10.3267 12.5597 8.88316 12.5597C7.43966 12.5597 6.05527 11.9863 5.03456 10.9656C4.01384 9.94496 3.44041 8.56063 3.44041 7.11717C3.44041 5.67372 4.01384 4.28939 5.03456 3.26871C6.05527 2.24804 7.43966 1.67463 8.88316 1.67463Z"
+                                fill="white" fill-opacity="0.5" />
+                        </svg>
+                    </button>
+                    <button class="btn-primary js-consultation">
+                        <span class="btn-primary__text">консультація</span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
+                        </span>
+                    </button>
+                    <ul class="header__lang">
+                        <li class="header__lang-current">
+                            <span class="header__lang-label">UA</span>
+                            <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 4L-3.49691e-07 -1.66869e-07L9 -9.53674e-07L4.5 4Z" fill="white" />
+                            </svg>
+                        </li>
+                        <div class="header__lang-inner">
+                            <ul class="header__lang-list">
+                                <li class="header__lang-item header__lang-item--active">
+                                    <span class="header__lang-link">
+                                        UA
+                                    </span>
+                                </li>
+                                <li class="header__lang-item">
+                                    <a class="header__lang-link" href="#!">
+                                        EN
+                                    </a>
+                                </li>
+                                <li class="header__lang-item">
+                                    <a class="header__lang-link" href="#!">
+                                        RU
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__bot">
+                <a href="/" class="header__logo">
+                    <img src="./assets/imgs/ico/logo_wth.svg" alt="Logo">
+                    <img src="./assets/imgs/ico/logo_drk.svg" alt="Logo">
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li>
+                            <a href="javascript: void(0)">Експертиза</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Ліцензії та обладнання</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Про компанію</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Кейси</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Медіа та події</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="intro">
+            <div class="video-bg">
+                <video muted autoplay loop playsinline class="js-video-autoplay" poster="./assets/img/poster-waves.png">
+                    <source data-src="./assets/video/blob.mp4" type="video/mp4">
+                    <p>Your browser does not support the video tag.</p>
+                </video>
+            </div>
+            <div class="container">
+                <div class="intro__info">
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="/">Головна</a>
+                        </li>
+                        <li>
+                            <a href="expert.html">Експертиза</a>
+                        </li>
+                    </ul>
+                    <h1 class="section-title">IT Governance и Бизнес консалтинг</h1>
+                    <p class="section-description">
+                        ИТ аудит и оценка зрелости ИТ. Разработка ИТ-стратегии и Цифровая трансформация. Формирование
+                        ИТ-команд. CIO Advisory Service.
+                    </p>
+                    <button class="btn-primary js-consultation">
+                        <span class="btn-primary__text">Отримати консультацію</span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="intro__pic">
+                    <img src="./assets/imgs/areas_1.png" alt="Thumbnail">
+                </div>
+            </div>
+        </section>
+        <section class="transform">
+            <div class="container">
+                <h2 class="section-title">Ефективне управління та трансформація</h2>
+                <ul class="transform__list js-circles-anim">
+                    <li>
+                        <span>ОЦІНКА</span>
+                        Поточний стан
+                        <svg width="366" height="366" viewBox="0 0 366 366">
+                            <defs>
+                                <mask id="reveal_1">
+                                    <circle class="reveal-circle" cx="183" cy="183" r="182.5" fill="none" stroke="white"
+                                        stroke-width="10" />
+                                </mask>
+                            </defs>
+
+                            <circle cx="183" cy="183" r="182.5" stroke="var(--c_circles)" stroke-dasharray="5 5"
+                                fill="none" mask="url(#reveal_1)" />
+                        </svg>
+                    </li>
+                    <li>
+                        <span>СТРАТЕГІЯ</span>
+                        План розвитку
+                        <svg width="366" height="366" viewBox="0 0 366 366">
+                            <defs>
+                                <mask id="reveal_2">
+                                    <circle class="reveal-circle" cx="183" cy="183" r="182.5" fill="none" stroke="white"
+                                        stroke-width="10" />
+                                </mask>
+                            </defs>
+
+                            <circle cx="183" cy="183" r="182.5" stroke="var(--c_circles)" stroke-dasharray="5 5"
+                                fill="none" mask="url(#reveal_2)" />
+                        </svg>
+                    </li>
+                    <li>
+                        <span>РЕАЛІЗАЦІЯ</span>
+                        Впровадження рішень
+                        <svg width="366" height="366" viewBox="0 0 366 366">
+                            <defs>
+                                <mask id="reveal_3">
+                                    <circle class="reveal-circle" cx="183" cy="183" r="182.5" fill="none" stroke="white"
+                                        stroke-width="10" />
+                                </mask>
+                            </defs>
+
+                            <circle cx="183" cy="183" r="182.5" stroke="var(--c_circles)" stroke-dasharray="5 5"
+                                fill="none" mask="url(#reveal_3)" />
+                        </svg>
+                    </li>
+                </ul>
+                <p class="section-description section-description--lg">
+                    Ефективне управління та стратегічний підхід дозволяють бізнесу адаптуватися до змін, оптимізувати
+                    процеси та приймати обґрунтовані рішення. Ми допомагаємо оцінити поточний стан, визначити пріоритети
+                    та сформувати чіткий план розвитку.
+                </p>
+            </div>
+        </section>
+        <section class="help">
+            <div class="container">
+                <h2 class="section-title">
+                    Допомагаємо бізнесу вибудовувати <span class="gradient-text">ефективне управління,</span> формувати
+                    стратегію розвитку та
+                    впроваджувати зміни
+                </h2>
+                <div class="btns-panel">
+                    <button class="btn-primary js-consultation">
+                        <span class="btn-primary__text">Отримати консультацію</span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
+                        </span>
+                    </button>
+                    <button class="btn-meeting js-consultation">
+                        Запланувати зустріч
+                        <img src="./assets/imgs/ico/ico-call-orange.svg" alt="Icon">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="subfields">
+            <div class="container">
+                <div class="subfields__head">
+                    <h2 class="section-title">Піднапрямки</h2>
+                    <p class="section-description">
+                        Підтримуємо бізнес у формуванні ефективного управління, оптимізації процесів та розвитку систем
+                        відповідно до стратегічних цілей.
+                    </p>
+                </div>
+                <ul class="subfields__cards">
+                    <li>
+                        <a href="javascript: void(0)" class="subfield-box">
+                            <span class="subfield-box__label">IT аудит та стратегія</span>
+                            <div class="subfield-box__info">
+                                <p class="subfield-box__descr">
+                                    Аналізуємо поточний стан систем та формуємо стратегію розвитку відповідно до
+                                    бізнес-цілей.
+                                </p>
+                                <div class="link-more">
+                                    Детальніше
+                                    <svg width="27" height="15" viewBox="0 0 27 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M26.2071 8.07136C26.5976 7.68084 26.5976 7.04768 26.2071 6.65715L19.8431 0.29319C19.4526 -0.0973344 18.8195 -0.0973344 18.4289 0.29319C18.0384 0.683714 18.0384 1.31688 18.4289 1.7074L24.0858 7.36426L18.4289 13.0211C18.0384 13.4116 18.0384 14.0448 18.4289 14.4353C18.8195 14.8259 19.4526 14.8259 19.8431 14.4353L26.2071 8.07136ZM0 7.36426V8.36426H25.5V7.36426V6.36426H0V7.36426Z"
+                                            fill="#F6F6F6"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" class="subfield-box">
+                            <span class="subfield-box__label">CIO Advisory</span>
+                            <div class="subfield-box__info">
+                                <p class="subfield-box__descr">
+                                    Консультуємо керівництво щодо управління, розвитку та ефективного використання
+                                    ресурсів.
+                                </p>
+                                <div class="link-more">
+                                    Детальніше
+                                    <svg width="27" height="15" viewBox="0 0 27 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M26.2071 8.07136C26.5976 7.68084 26.5976 7.04768 26.2071 6.65715L19.8431 0.29319C19.4526 -0.0973344 18.8195 -0.0973344 18.4289 0.29319C18.0384 0.683714 18.0384 1.31688 18.4289 1.7074L24.0858 7.36426L18.4289 13.0211C18.0384 13.4116 18.0384 14.0448 18.4289 14.4353C18.8195 14.8259 19.4526 14.8259 19.8431 14.4353L26.2071 8.07136ZM0 7.36426V8.36426H25.5V7.36426V6.36426H0V7.36426Z"
+                                            fill="#F6F6F6"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" class="subfield-box">
+                            <span class="subfield-box__label">Процеси ITIL / ITSM</span>
+                            <div class="subfield-box__info">
+                                <p class="subfield-box__descr">
+                                    Налаштовуємо процеси управління сервісами для підвищення ефективності та контролю.
+                                </p>
+                                <div class="link-more">
+                                    Детальніше
+                                    <svg width="27" height="15" viewBox="0 0 27 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M26.2071 8.07136C26.5976 7.68084 26.5976 7.04768 26.2071 6.65715L19.8431 0.29319C19.4526 -0.0973344 18.8195 -0.0973344 18.4289 0.29319C18.0384 0.683714 18.0384 1.31688 18.4289 1.7074L24.0858 7.36426L18.4289 13.0211C18.0384 13.4116 18.0384 14.0448 18.4289 14.4353C18.8195 14.8259 19.4526 14.8259 19.8431 14.4353L26.2071 8.07136ZM0 7.36426V8.36426H25.5V7.36426V6.36426H0V7.36426Z"
+                                            fill="#F6F6F6"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Відповіді на часті запитання</h2>
+                <ul class="faq__list">
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ceil-bg js-ceil-bg">
+                <svg width="726" height="608" viewBox="0 0 726 608" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.341486" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="242.115" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="363.002" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="483.884" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="604.771" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="0.341486" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="365.049" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="486.619" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                </svg>
+                <svg width="726" height="608" viewBox="0 0 726 608" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.341486" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="242.115" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="363.002" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="483.884" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="604.771" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="0.341486" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="365.049" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="486.619" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                </svg>
+            </div>
+            <div class="faq__helper"></div>
+        </section>
+        <section class="promo">
+            <div class="container">
+                <div class="promo__box">
+                    <h3 class="promo__title">Стратегічні рішення для розвитку бізнесу</h3>
+                    <div class="promo__text js-text-box">
+                        <p>
+                            O-Digital — сервісна компанія, що допомагає бізнесу впроваджувати сучасні рішення та
+                            розвивати
+                            інфраструктуру. Ми працюємо з компаніями, які прагнуть підвищити ефективність процесів,
+                            покращити управління даними та впроваджувати нові підходи до розвитку.
+                        </p>
+                        <p>
+                            Наші спеціалісти мають глибоку експертизу у стратегічному консалтингу, автоматизації
+                            процесів та
+                            роботі з даними. Ми допомагаємо компаніям аналізувати поточний стан систем, визначати
+                            ключові
+                            виклики та знаходити можливості для покращення.
+                        </p>
+                        <p>
+
+                            Ми підтримуємо бізнес на різних етапах розвитку — від аналізу та планування до впровадження
+                            рішень і подальшої підтримки. Такий підхід дозволяє створювати системи, які відповідають
+                            реальним потребам компанії та сприяють її стабільному зростанню.
+                        </p>
+                        <p>
+                            Наші спеціалісти мають глибоку експертизу у стратегічному консалтингу, автоматизації
+                            процесів та
+                            роботі з даними. Ми допомагаємо компаніям аналізувати поточний стан систем, визначати
+                            ключові
+                            виклики та знаходити можливості для покращення.
+                        </p>
+                        <p>
+
+                            Ми підтримуємо бізнес на різних етапах розвитку — від аналізу та планування до впровадження
+                            рішень і подальшої підтримки. Такий підхід дозволяє створювати системи, які відповідають
+                            реальним потребам компанії та сприяють її стабільному зростанню.
+                        </p>
+                    </div>
+                </div>
+                <button type="button" class="promo__more js-text-more">
+                    Детальніше
+                    <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.65618 16.7071C7.0467 17.0976 7.67986 17.0976 8.07039 16.7071L14.4343 10.3431C14.8249 9.95262 14.8249 9.31946 14.4343 8.92893C14.0438 8.53841 13.4107 8.53841 13.0201 8.92893L7.36328 14.5858L1.70643 8.92893C1.3159 8.53841 0.682738 8.53841 0.292214 8.92893C-0.0983105 9.31946 -0.0983105 9.95262 0.292214 10.3431L6.65618 16.7071ZM7.36328 0L6.36328 4.37113e-08L6.36328 16L7.36328 16L8.36328 16L8.36328 -4.37113e-08L7.36328 0Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__details">
+                    <div class="footer__logo">
+                        <img width="149" height="62" loading="lazy" decoding="async"
+                            src="./assets/imgs/ico/logo_wth.svg" alt="Logo" />
+                        <img width="149" height="62" loading="lazy" decoding="async"
+                            src="./assets/imgs/ico/logo_drk.svg" alt="Logo" />
+                    </div>
+                    <p class="footer__info">
+                        O-Digital — ваш партнер у цифровій трансформації бізнесу.
+                    </p>
+                </div>
+                <div class="footer__menu">
+                    <div class="footer__nav">
+                        <p class="footer__title">Навігація</p>
+                        <ul class="footer__list">
+                            <li>
+                                <a href="javascript: void(0)">Експертиза</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Обладнання та ліцензії</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Про компанію</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Медіа</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Кейси</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav">
+                        <p class="footer__title">Послуги</p>
+                        <ul class="footer__list">
+                            <li>
+                                <a href="javascript: void(0)">IT Governance</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Automation</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Data & Analytics</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">AI</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Інфраструктура</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">IT Безпека</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contacts">
+                    <ul class="footer__support">
+                        <li>
+                            <a href="tel:+380676161011">
+                                <span>
+                                    <img width="41" height="41" loading="lazy" decoding="async"
+                                        src="./assets/imgs/ico/ico-phone.svg" alt="Icon">
+                                </span>
+                                +38 (067) 616-10 -11
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@o-digital.ua">
+                                <span>
+                                    <img width="41" height="41" loading="lazy" decoding="async"
+                                        src="./assets/imgs/ico/ico-mail.svg" alt="Icon">
+                                </span>
+                                info@o-digital.ua
+                            </a>
+                        </li>
+                        <li>
+                            <span>
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-pin.svg" alt="Icon">
+                            </span>
+                            г. Киев, ул. Верхний Вал, 72
+                        </li>
+                    </ul>
+                    <ul class="footer__media">
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-inst.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-face.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-in.svg" alt="LinkedIn">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bot">
+                <div class="footer__copy">
+                    <p>
+                        © 2026 O-Digital. Усі права захищені.
+                    </p>
+                    <div class="footer__legals">
+                        <a class="gradient-hover" data-text="Політика конфіденційності" target="_blank"
+                            href="javascript: void(0)">
+                            Політика конфіденційності
+                        </a>
+                        <a class="gradient-hover" data-text="Умови користування" target="_blank"
+                            href="javascript: void(0)">
+                            Умови користування
+                        </a>
+                        <a class="gradient-hover" data-text="Cookies Policy" target="_blank" href="javascript: void(0)">
+                            Cookies Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__subscribe">
+                    <form>
+                        <div class="footer__subscribe-field">
+                            <label data-text="підписатись на e-mail розсилки" for="footerSubscribe"
+                                class="footer__subscribe-title gradient-hover">
+                                підписатись на e-mail розсилки
+                            </label>
+                            <input placeholder="Email" type="email" name="footerSubscribe" id="footerSubscribe">
+                        </div>
+                        <button type="submit" class="footer__subscribe-submit">
+                            Підписатись
+                            <svg width="18" height="8" viewBox="0 0 18 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.3536 4.03519C17.5488 3.83993 17.5488 3.52335 17.3536 3.32809L14.1716 0.146105C13.9763 -0.0491567 13.6597 -0.0491567 13.4645 0.146106C13.2692 0.341368 13.2692 0.65795 13.4645 0.853212L16.2929 3.68164L13.4645 6.51007C13.2692 6.70533 13.2692 7.02191 13.4645 7.21717C13.6597 7.41244 13.9763 7.41244 14.1716 7.21717L17.3536 4.03519ZM0 3.68164L4.37114e-08 4.18164L17 4.18164L17 3.68164L17 3.18164L-4.37114e-08 3.18164L0 3.68164Z"
+                                    fill="#F6F6F6" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <p class="footer__by">
+                    Design by <a class="gradient-hover" data-text="Esfirum" href="javascript: void(0)"
+                        target="_blank">Esfirum</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div class="search-panel js-search-panel">
+        <div class="container">
+            <div class="search-panel__box js-search-wrapper">
+                <form>
+                    <div class="search-panel__handler">
+                        <div class="search-panel__field">
+                            <input placeholder="Пошук" type="search" name="webSiteSearch" id="webSiteSearch"
+                                class="js-search-field">
+                            <button type="submit" class="search-panel__submit">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.88316 1.60502e-08C7.54679 -8.97127e-05 6.23738 0.376043 5.1048 1.08535C3.97222 1.79466 3.06223 2.80849 2.47895 4.01081C1.89568 5.21314 1.6627 6.55538 1.80667 7.88392C1.95064 9.21247 2.46574 10.4736 3.29304 11.5231L0.235052 14.581C0.0825233 14.7389 -0.00187683 14.9504 3.14713e-05 15.17C0.00193882 15.3895 0.0900011 15.5995 0.245252 15.7548C0.400502 15.91 0.610518 15.9981 0.830069 16C1.04962 16.0019 1.26113 15.9175 1.41906 15.765L4.47705 12.7071C5.36845 13.4096 6.41492 13.8887 7.52916 14.1045C8.6434 14.3203 9.79309 14.2665 10.8823 13.9476C11.9715 13.6288 12.9687 13.0541 13.7907 12.2715C14.6126 11.4888 15.2354 10.521 15.6072 9.44875C15.979 8.37647 16.089 7.23083 15.928 6.10741C15.767 4.98399 15.3396 3.91536 14.6816 2.99068C14.0236 2.066 13.1539 1.31209 12.1452 0.791843C11.1366 0.271595 10.0181 9.67028e-05 8.88316 1.60502e-08ZM8.88316 1.67463C10.3267 1.67463 11.7111 2.24804 12.7318 3.26871C13.7525 4.28939 14.3259 5.67372 14.3259 7.11717C14.3259 8.56063 13.7525 9.94496 12.7318 10.9656C11.7111 11.9863 10.3267 12.5597 8.88316 12.5597C7.43966 12.5597 6.05527 11.9863 5.03456 10.9656C4.01384 9.94496 3.44041 8.56063 3.44041 7.11717C3.44041 5.67372 4.01384 4.28939 5.03456 3.26871C6.05527 2.24804 7.43966 1.67463 8.88316 1.67463Z"
+                                        fill="white" fill-opacity="0.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button type="button" class="search-panel__close js-search-close">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.3555 0.353516L0.355468 14.3535" stroke="white" />
+                                <path d="M0.355469 0.353516L14.3555 14.3535" stroke="white" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="search-panel__results">
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/libs/datepicker/datepicker.min.js"></script>
+    <script src="./assets/libs/swiper/swiper.min.js"></script>
+    <script defer type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>

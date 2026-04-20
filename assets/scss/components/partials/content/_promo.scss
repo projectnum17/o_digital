@@ -4,7 +4,7 @@
 
 html {
     &.light {
-        .seo {
+        .promo {
             &__text {
                 &::after {
                     opacity: 0;
@@ -18,7 +18,7 @@ html {
     }
 
     &.dark {
-        .seo {
+        .promo {
             &__text {
                 &::before {
                     opacity: 0;
@@ -31,7 +31,7 @@ html {
     }
 }
 
-.seo {
+.promo {
     padding-block: rem(65px);
 
     &__box {

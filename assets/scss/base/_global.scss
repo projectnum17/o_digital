@@ -7,7 +7,10 @@ html {
 }
 
 body {
-    font: 400 #{rem(16px)}/ 130% $ff;
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: 130%;
+    font-family: $ff, $system-ff;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -23,7 +26,7 @@ main {
     flex: 1;
 
     &:has(section.faq) {
-        overflow: hidden
+        overflow: hidden;
     }
 }
 
@@ -37,7 +40,7 @@ a {
     @include reset_link;
 }
 
-section:has( + section.faq) {
+section:has(+ section.faq) {
     position: relative;
     z-index: 5;
 }

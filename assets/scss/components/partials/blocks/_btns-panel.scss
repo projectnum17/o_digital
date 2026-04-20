@@ -1,0 +1,9 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.btns-panel {
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+}

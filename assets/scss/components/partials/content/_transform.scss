@@ -1,0 +1,123 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.transform {
+    padding-block: rem(65px);
+    overflow: hidden;
+
+    .section-title {
+        max-width: rem(623px);
+    }
+
+    .section-description {
+        max-width: rem(467px);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(215px);
+    }
+
+    &__list {
+        margin-left: auto;
+        width: 100%;
+        margin-right: rem(70px);
+        display: flex;
+        align-items: flex-start;
+        gap: rem(213px);
+        justify-content: flex-end;
+        position: relative;
+
+        &.is-visible {
+            &::after {
+                width: 150%;
+            }
+
+            .reveal-circle {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        &::after {
+            content: '';
+            width: 0%;
+            position: absolute;
+            height: 1px;
+            top: 50%;
+            left: 0;
+            transform: translate(0%, -50%);
+            background: var(--border_default);
+            transition:
+                background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+                width 5s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+        }
+
+        li {
+            font: 400 #{rem(18px)} / 100% $ff;
+            display: flex;
+            gap: rem(20px);
+            flex-direction: column;
+            position: relative;
+            color: var(--txt_primary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            span {
+                text-transform: uppercase;
+            }
+
+            &:nth-child(1) {
+                svg {
+                    width: rem(366px);
+                    height: rem(366px);
+                    left: 100%;
+                }
+                circle {
+                    transition-delay: 1s;
+                }
+            }
+            &:nth-child(2) {
+                svg {
+                    width: rem(494px);
+                    height: rem(494px);
+                }
+                circle {
+                    transition-delay: 0.5s;
+                }
+            }
+            &:nth-child(3) {
+                svg {
+                    left: 100%;
+                    width: rem(760px);
+                    height: rem(760px);
+                }
+                circle {
+                    transition-delay: 1.5s;
+                }
+            }
+
+            svg {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: var(--c_circles);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+
+            .reveal-circle {
+                stroke: white !important;
+                fill: none;
+                stroke-dasharray: 1146;
+                stroke-dashoffset: 1146;
+                transition: stroke-dashoffset 4s ease;
+            }
+        }
+    }
+}
