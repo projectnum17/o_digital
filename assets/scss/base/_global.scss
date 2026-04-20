@@ -12,8 +12,7 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    color: $c_light;
-    background: $c_dark;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
     &.is-locked {
         overflow: hidden;
@@ -22,6 +21,10 @@ body {
 
 main {
     flex: 1;
+
+    &:has(section.faq) {
+        overflow: hidden
+    }
 }
 
 button {
@@ -32,4 +35,9 @@ button {
 
 a {
     @include reset_link;
+}
+
+section:has( + section.faq) {
+    position: relative;
+    z-index: 5;
 }

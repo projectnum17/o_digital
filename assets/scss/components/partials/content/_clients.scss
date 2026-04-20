@@ -1,0 +1,102 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.clients {
+    padding-block: rem(70px) rem(92px);
+
+    .section-title {
+        margin-bottom: rem(67px);
+    }
+
+    .btn-primary {
+        padding: rem(20px) rem(27px);
+    }
+
+    .container {
+        @include flexCenter(#{rem(20px)});
+        justify-content: space-between;
+    }
+
+    &__info {
+        max-width: rem(519px);
+    }
+
+    &__logos {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: rem(40px);
+        overflow: hidden;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0) 100%
+        );
+
+        mask-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0) 100%
+        );
+
+        mask-size: cover;
+        -webkit-mask-size: cover;
+    }
+
+    &__marquee {
+        display: flex;
+        user-select: none;
+        gap: rem(95px);
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            .clients__track {
+                animation: scroll-left 60s linear infinite;
+            }
+        }
+
+        &:nth-child(2) {
+            .clients__track {
+                animation: scroll-right 60s linear infinite;
+            }
+        }
+
+        @include hover {
+            animation-play-state: paused;
+        }
+    }
+
+    &__track {
+        flex-shrink: 0;
+        min-width: 100%;
+        @include flexCenter(#{rem(95px)});
+        justify-content: space-around;
+        img {
+            max-width: rem(100px);
+        }
+    }
+
+    @keyframes scroll-left {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - #{rem(95px)}));
+        }
+    }
+
+    @keyframes scroll-right {
+        from {
+            transform: translateX(calc(-100% - #{rem(95px)}));
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+}

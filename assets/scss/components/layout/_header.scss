@@ -3,4 +3,177 @@
 @use '../../base/media' as *;
 
 .header {
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+    background: var(--bg_header);
+    border-bottom: 1px solid var(--border_default);
+    backdrop-filter: blur(24px);
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &.is-transform {
+        transform: translateY(-100%)
+    }
+
+    &__top {
+        @include flexCenter(#{rem(24px)});
+        justify-content: space-between;
+        padding-block: rem(16px);
+        border-bottom: 1px solid var(--border_default);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__bot {
+        @include flexCenter(#{rem(12px)});
+        justify-content: space-between;
+        padding-block: rem(14px);
+    }
+
+    &__logo {
+        position: relative;
+        max-width: rem(110px);
+        width: rem(110px);
+        height: rem(45px);
+        img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__nav {
+        max-width: rem(897px);
+        width: 100%;
+    }
+
+    &__list {
+        @include flexCenter(#{rem(8px)});
+        justify-content: space-between;
+
+        li {
+            font: 500 #{rem(16px)} / 100% $ff;
+        }
+
+        a {
+            font: inherit;
+            color: var(--txt_secondary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__panel {
+        @include flexCenter(#{rem(16px)});
+    }
+
+    &__search {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(39px);
+        height: rem(39px);
+        border-radius: rem(12px);
+        border: 1px solid var(--border_default);
+        background: var(--bg_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        img {
+            width: rem(16px);
+            height: rem(16px);
+        }
+    }
+
+    &__lang {
+        font: 500 #{rem(18px)} / 100% $ff;
+        cursor: pointer;
+        position: relative;
+        color: var(--txt_secondary);
+
+        @include hover {
+            .header__lang-inner {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .header__lang-current svg {
+                transform: rotate(180deg);
+                color: $c_accent;
+            }
+
+            .header__lang-label {
+                color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        &-current {
+            @include flexCenter(#{rem(4px)});
+
+            svg {
+                flex-shrink: 0;
+                color: var(--txt_secondary);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+        }
+
+        &-label {
+            background: $text_gradient;
+            background-size: 100% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        &-inner {
+            padding: rem(5px);
+            position: absolute;
+            left: rem(-20px);
+            min-width: rem(70px);
+            z-index: 3;
+            transform: translateY(-5px);
+            opacity: 0;
+            visibility: hidden;
+            @include transitions(0.2s, ease-in);
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: rem(2px);
+            padding: rem(4px);
+            border-radius: rem(8px);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--border_default);
+            background: var(--bg_primary);
+            box-shadow: 0px 4px 12px 0px #00000014;
+        }
+
+        &-item {
+            padding: rem(5px) rem(12px);
+            border-radius: rem(6px);
+            text-align: center;
+            font: 500 #{rem(16px)} / 100% $ff;
+
+            &--active {
+                background: $c_accent;
+            }
+        }
+    }
+
+    .btn-primary {
+        padding: rem(9px) rem(22px);
+        font-size: rem(14px);
+    }
 }

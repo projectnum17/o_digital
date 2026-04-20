@@ -1,0 +1,26 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.link-more {
+    justify-content: space-between;
+    font: 500 #{rem(20px)} / 122% $ff;
+    max-width: rem(471px);
+    width: 100%;
+    padding-block: rem(15px);
+    border-bottom: 1px solid var(--border_mute);
+    color: var(--txt_primary);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include flexCenter();
+
+    svg {
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    @include hover {
+        svg {
+            transform: translateX(5px);
+        }
+    }
+}

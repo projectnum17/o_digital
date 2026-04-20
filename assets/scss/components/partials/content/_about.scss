@@ -1,0 +1,116 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.about {
+    padding-block: rem(95px);
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .section-description {
+        max-width: rem(467px);
+    }
+
+    &__head {
+        @include flexCenter(#{rem(24px)});
+        justify-content: space-between;
+        margin-bottom: rem(147px);
+    }
+
+    &__cards {
+        max-width: rem(860px);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: rem(80px);
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: rem(17px);
+        max-width: rem(260px);
+        padding: rem(20px);
+        border-radius: rem(12px);
+        backdrop-filter: blur(20px);
+
+        &:nth-child(1) {
+            grid-column: 1 / 12;
+            grid-row: 1 / 2;
+        }
+
+        &:nth-child(2) {
+            grid-column: 7 / 12;
+            grid-row: 2 / 3;
+        }
+
+        &:nth-child(3) {
+            grid-column: 1 / 12;
+            grid-row: 3 / 4;
+        }
+
+        &:nth-child(4) {
+            grid-column: -5 / -1;
+            grid-row: 3 / 4;
+        }
+
+        img {
+            width: rem(78px);
+            height: rem(78px);
+        }
+
+        p {
+            font: 600 #{rem(24px)} / 120% $ff;
+            text-transform: uppercase;
+            color: var(--c_half);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        height: rem(700px);
+        width: rem(2400px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__brick {
+        &-active {
+            z-index: 2;
+            pointer-events: none;
+            color: $c_accent;
+            filter: drop-shadow(0 0 5px rgba(242, 106, 38, 0.5));
+
+            -webkit-mask-image: radial-gradient(
+                300px circle at var(--x) var(--y),
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                transparent 100%
+            );
+            mask-image: radial-gradient(
+                300px circle at var(--x) var(--y),
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                transparent 100%
+            );
+        }
+    }
+}

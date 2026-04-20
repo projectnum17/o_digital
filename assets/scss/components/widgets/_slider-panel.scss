@@ -1,0 +1,29 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.slider-panel {
+    @include flexCenter(#{rem(24px)});
+    justify-content: space-between;
+
+    &__progress {
+        height: rem(1px) !important;
+        position: relative !important;
+        background: var(--txt_secondary) !important;
+        max-width: rem(237px);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        .swiper-pagination-progressbar-fill {
+            top: rem(-2px) !important;
+            height: rem(3px) !important;
+            background: var(--txt_secondary) !important;
+            transition: all .3s cubic-bezier(0.768, 0.304, 0.496, 0.884) !important;
+        }
+    }
+
+    &__fraction {
+        font: 400 #{rem(20px)} / 120% $ff;
+        color: var(--c_half);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

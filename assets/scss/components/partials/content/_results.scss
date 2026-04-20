@@ -1,0 +1,23 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.results {
+    overflow: hidden;
+    padding-block: rem(75px);
+    &__head {
+        justify-content: space-between;
+        @include flexCenter(#{rem(24px)});
+        margin-bottom: rem(60px);
+    }
+
+    &__slider {
+        margin-bottom: rem(50px);
+        overflow: visible !important;
+
+        &-slide {
+            max-width: rem(941px);
+            width: 100% !important;
+        }
+    }
+}

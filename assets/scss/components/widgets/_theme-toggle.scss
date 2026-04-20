@@ -1,0 +1,54 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+$widthSwitch: rem(36px);
+$heightSwitch: rem(19px);
+$widthSwitcher: rem(15px);
+$heightSwitcher: rem(15px);
+
+$c_white: #fff;
+$c_black: #000;
+
+.theme-toggle {
+    appearance: none;
+    margin: 0;
+    width: $widthSwitch;
+    height: $heightSwitch;
+    display: inline-block;
+    position: relative;
+    border-radius: 999px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: $c_white;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &::before {
+        content: '';
+        background: $c_white url('../imgs/ico/ico-moon.svg') no-repeat center
+            center / cover;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2px;
+        width: $widthSwitcher;
+        height: $heightSwitcher;
+        border-radius: 50%;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &:checked {
+        background: $c_black;
+
+        &::before {
+            content: '';
+            right: calc(#{$widthSwitch} - #{$widthSwitcher} - 2px);
+            background: url('../imgs/ico/ico-sun.svg') no-repeat center center /
+                cover;
+        }
+    }
+}

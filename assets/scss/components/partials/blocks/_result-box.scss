@@ -1,0 +1,100 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.result-box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    border-radius: rem(22px);
+    min-height: rem(587px);
+    max-width: rem(941px);
+
+    @include hover {
+        .result-box__bg {
+            transform: scale(1.05);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: rem(50px);
+        padding: rem(30px);
+        width: 50%;
+        background: var(--bg_blur);
+        backdrop-filter: blur(27.8px);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+        max-width: rem(345px);
+    }
+
+    &__title {
+        font: 500 #{rem(30px)} / 110% $ff;
+        color: var(--c_light_permanent);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__text {
+        font: 400 #{rem(16px)} / 120% $ff;
+        max-width: rem(294px);
+        color: var(--c_light_permanent_half);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__final {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+        max-width: rem(325px);
+    }
+
+    &__subtitle {
+        font: 600 #{rem(16px)} / 120% $ff;
+        color: var(--c_light_permanent);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__point {
+        font: 500 #{rem(16px)} / 168% $ff;
+        color: var(--c_light_permanent);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__review {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: rem(12px);
+        padding: rem(30px);
+    }
+
+    &__logo {
+        border-radius: rem(12px);
+        max-width: rem(126px);
+        padding: rem(8px) rem(12px);
+        background: var(--txt_secondary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

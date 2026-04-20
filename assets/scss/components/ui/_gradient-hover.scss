@@ -1,0 +1,29 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.gradient-hover {
+    position: relative;@include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        pointer-events: none;
+        inset: 0;
+        opacity: 0;
+        background: $text_gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    @include hover {
+        color: transparent;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.vendors {
+    padding-block: rem(70px);
+    &__head {
+        @include flexCenter(#{rem(24px)});
+        justify-content: space-between;
+        margin-bottom: rem(50px);
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem(50px);
+        max-width: rem(467px);
+    }
+
+    &__list {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-radius: rem(45px);
+        border: 1px solid #494949;
+    }
+
+    &__item {
+        height: rem(198px);
+        @include flexCenter();
+        justify-content: center;
+        padding: rem(41px) rem(10px);
+        border: 0.5px solid #494949;
+
+        img {
+            max-width: 50%;
+        }
+    }
+
+    .btn-primary {
+        padding: rem(20px) rem(45px);
+    }
+}
