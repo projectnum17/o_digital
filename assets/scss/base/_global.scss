@@ -43,3 +43,11 @@ section:has(+ section.faq) {
     position: relative;
     z-index: 5;
 }
+
+body {
+    &:has(section.results + section.faq) {
+        section.faq {
+            overflow: hidden;
+        }
+    }
+}

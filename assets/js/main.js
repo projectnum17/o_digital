@@ -10,8 +10,11 @@ import { seoExpandHandler as seo } from './modules/seoExpandHandler.js';
 import { contactsFormsHandler as forms } from './modules/contactsFormsHandler.js';
 import initShowMore from './modules/initShowMore.js';
 import faqBoxHandler from './modules/faqBoxHandler.js';
-import { circlesBGHandler as circles } from './modules/circlesBGHandler.js';
+import valuesCardsHandler from './modules/valuesCardsHandler.js';
 import { progressScrollHandler as progress } from './modules/progressScrollHandler.js';
+import { integrationSectionState as integration } from './modules/integrationSectionState.js';
+import { cycleCardsHandler as cycle } from './modules/cycleCardsHandler.js';
+import { observerHelper as observer } from './modules/observerHelper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -25,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);
     faqBoxHandler();
-    circles();
     progress();
+    valuesCardsHandler();
+    integration();
+    cycle();
+    observer('.js-circles-anim', 'is-visible');
+    observer('.js-steps-block', 'is-animated', 0.6);
 });

@@ -1,0 +1,26 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.receive-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(60px);
+    border-radius: rem(25px);
+    padding: rem(40px) rem(25px);
+    background: var(--bg_suitable);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &__title {
+        font: 500 #{rem(24px)} / 120% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__descr {
+        font: 400 #{rem(18px)} / 120% $ff;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        color: var(--c_half);
+    }
+}

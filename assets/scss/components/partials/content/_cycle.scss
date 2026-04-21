@@ -1,0 +1,30 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.cycle {
+    padding-block: rem(70px);
+
+    .section-title {
+        max-width: 50%;
+    }
+
+    .section-description {
+        max-width: rem(387px);
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(24px);
+        margin-bottom: rem(85px);
+    }
+
+    &__item {
+        border-bottom: 1px solid var(--border_grey);
+        &:first-child {
+            border-top: 1px solid var(--border_grey);
+        }
+    }
+}
