@@ -3,7 +3,9 @@
 @use '../../../base/media' as *;
 
 .subfields {
-    padding-block: rem(70px);
+    padding-block: rem(70px) rem(173px);
+    position: relative;
+    z-index: 5;
 
     .section-description {
         max-width: rem(467px);

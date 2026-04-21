@@ -3,7 +3,8 @@
 @use '../../base/media' as *;
 
 .gradient-hover {
-    position: relative;@include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    position: relative;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
     &::after {
         content: attr(data-text);

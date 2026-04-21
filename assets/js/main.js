@@ -11,6 +11,7 @@ import { contactsFormsHandler as forms } from './modules/contactsFormsHandler.js
 import initShowMore from './modules/initShowMore.js';
 import faqBoxHandler from './modules/faqBoxHandler.js';
 import { circlesBGHandler as circles } from './modules/circlesBGHandler.js';
+import { progressScrollHandler as progress } from './modules/progressScrollHandler.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -25,4 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);
     faqBoxHandler();
     circles();
+    progress();
 });

@@ -20,6 +20,10 @@ html {
 
     &.dark {
         .faq {
+            &::after,
+            &::before {
+                opacity: 1;
+            }
             &__helper {
                 &::after,
                 &::before {
@@ -38,7 +42,9 @@ html {
     &::before {
         content: '';
         left: 50%;
-        bottom: 0;
+        // bottom: 0;
+        opacity: 1;
+        bottom: rem(350px);
         transform: translateX(-50%);
         position: absolute;
         backdrop-filter: blur(200px);
@@ -48,7 +54,8 @@ html {
 
     &::before {
         width: 100%;
-        height: rem(1300px);
+        // height: rem(1300px);
+        height: 100%;
         z-index: 3;
         background: radial-gradient(
             50% 50% at 50% 50%,
@@ -59,7 +66,8 @@ html {
 
     &::after {
         width: 100%;
-        height: rem(1400px);
+        // height: rem(1400px);
+        height: 100%;
         background: radial-gradient(
             50% 50% at 50% 50%,
             rgba(242, 106, 38, 0.4) 0%,
@@ -85,7 +93,9 @@ html {
         &::before {
             content: '';
             left: 50%;
-            bottom: 0;
+            opacity: 0;
+            // bottom: 0;
+            bottom: rem(350px);
             transform: translateX(-50%);
             position: absolute;
             backdrop-filter: blur(200px);
@@ -98,7 +108,8 @@ html {
 
         &::before {
             width: 100%;
-            height: rem(1300px);
+            // height: rem(1300px);
+            height: 100%;
             z-index: 3;
             background: radial-gradient(
                 50% 50% at 50% 50%,
@@ -109,7 +120,8 @@ html {
 
         &::after {
             width: 100%;
-            height: rem(1400px);
+            // height: rem(1400px);
+            height: 100%;
             background: radial-gradient(
                 50% 50% at 50% 50%,
                 rgba(242, 106, 38, 0.4) 0%,

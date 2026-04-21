@@ -39,7 +39,6 @@ button {
 a {
     @include reset_link;
 }
-
 section:has(+ section.faq) {
     position: relative;
     z-index: 5;
