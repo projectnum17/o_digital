@@ -1,0 +1,98 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.filter-box {
+    position: relative;
+    display: inline-flex;
+    outline: none;
+    max-width: rem(166px);
+    min-height: rem(37px);
+    width: 100%;
+
+    select {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .custom-select-container {
+        width: 100%;
+        outline: none;
+
+        &.is-open {
+            .custom-select-options {
+                opacity: 1;
+                visibility: visible;
+                top: 110%;
+            }
+
+            .custom-select-trigger::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .custom-select-trigger {
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: rem(10px);
+        font: 700 #{rem(14px)} / 100% $ff;
+        text-transform: uppercase;
+        border-radius: rem(12px);
+        min-height: rem(37px);
+        padding: rem(9px);
+        border: 1px solid var(--border_default);
+        background: var(--bg_primary);
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &::after {
+            content: '';
+            width: rem(14px);
+            height: rem(5px);
+            -webkit-mask: url('../imgs/ico/faq-arrow.svg') no-repeat center /
+                contain;
+            mask: url('../imgs/ico/faq-arrow.svg') no-repeat center / contain;
+            background-color: var(--txt_secondary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    .custom-select-options {
+        z-index: 3;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        top: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: rem(12px);
+        overflow: hidden;
+        border: 1px solid var(--border_default);
+        background: var(--bg_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    .custom-select-option {
+        font: 700 #{rem(14px)} / 100% $ff;
+        cursor: pointer;
+        padding: rem(10px) rem(15px);
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &.is-selected {
+            background: $c_accent;
+            color: #fff;
+        }
+    }
+}

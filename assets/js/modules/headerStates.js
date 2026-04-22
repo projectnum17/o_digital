@@ -3,15 +3,16 @@ export const headerStates = () => {
     if (!header) return;
 
     let lastScroll = 0;
+    let scrollWay = 200;
 
     const handleScroll = () => {
         const currentScroll = window.scrollY;
 
-        currentScroll > 450
+        currentScroll > scrollWay
             ? header.classList.add('is-transform')
             : header.classList.remove('is-transform');
 
-        currentScroll > lastScroll && currentScroll > 450
+        currentScroll > lastScroll && currentScroll > scrollWay
             ? header.classList.add('is-transform')
             : header.classList.remove('is-transform');
 
@@ -33,7 +34,7 @@ export const headerStates = () => {
 
         trigger.addEventListener('click', (e) => {
             e.stopPropagation();
-            document.body.classList.add('is-locked')
+            document.body.classList.add('is-locked');
             searchPanel.classList.add('is-show');
             setTimeout(() => {
                 searchField.focus();
@@ -43,7 +44,7 @@ export const headerStates = () => {
         closePanel.addEventListener('click', (e) => {
             e.stopPropagation();
             searchPanel.classList.remove('is-show');
-            document.body.classList.remove('is-locked')
+            document.body.classList.remove('is-locked');
 
             setTimeout(() => {
                 formSearch.reset();
@@ -56,7 +57,7 @@ export const headerStates = () => {
         searchPanel.addEventListener('click', (e) => {
             if (!box.contains(e.target)) {
                 searchPanel.classList.remove('is-show');
-                document.body.classList.remove('is-locked')
+                document.body.classList.remove('is-locked');
 
                 setTimeout(() => {
                     formSearch.reset();

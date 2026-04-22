@@ -44,6 +44,12 @@
             max-width: rem(615px);
             width: 100%;
 
+            &:not(:has(.btn-primary)) {
+                .section-title {
+                    margin-bottom: 0;
+                }
+            }
+
             &:has(.page-preview__logo) {
                 display: flex;
                 flex-direction: column;

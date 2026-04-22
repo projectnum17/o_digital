@@ -1,0 +1,40 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.cases {
+    padding-block: rem(60px);
+
+    &__filters {
+        display: flex;
+        align-items: center;
+        gap: rem(11px);
+        margin-bottom: rem(40px);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: rem(22px);
+        margin-bottom: rem(47px);
+
+        .result-box {
+            min-height: rem(285px);
+            max-width: 100%;
+            border-radius: rem(10px);
+
+            &__review {
+                padding: rem(15px);
+            }
+
+            &__info {
+                padding: rem(29px) rem(15px);
+                backdrop-filter: blur(13px);
+            }
+
+            &__title {
+                font-size: rem(20px);
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.articles-more {
+    margin: 0 auto rem(33px);
+    display: flex;
+    align-items: center;
+    gap: rem(6px);
+    font: 600 #{rem(18px)} / 120% $ff;
+    color: var(--c_half);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include hover {
+        img {
+            transform: translateY(3px) rotate(90deg);
+        }
+    }
+
+    img {
+        transform: translateY(0) rotate(90deg);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

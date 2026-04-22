@@ -17,6 +17,7 @@ import { cycleCardsHandler as cycle } from './modules/cycleCardsHandler.js';
 import { observerHelper as observer } from './modules/observerHelper.js';
 import { supplierPage as suppliers } from './modules/supplierPage.js';
 import { logosGridHelper as grids } from './modules/logosGridHelper.js';
+import { selectsInit as selects } from './modules/selectsInit.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -39,4 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
     suppliers();
     grids('.js-supplier-btn', 768, 3, 9);
     grids('.js-partner-box', 768, 2, 4);
+    selects();
 });
