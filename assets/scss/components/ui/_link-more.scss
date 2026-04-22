@@ -11,9 +11,10 @@
     border-bottom: 1px solid var(--border_mute);
     color: var(--txt_primary);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    @include flexCenter();
+    @include flexCenter(#{rem(12px)});
 
     svg {
+        flex-shrink: 0;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }

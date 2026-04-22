@@ -15,6 +15,7 @@ import { progressScrollHandler as progress } from './modules/progressScrollHandl
 import { integrationSectionState as integration } from './modules/integrationSectionState.js';
 import { cycleCardsHandler as cycle } from './modules/cycleCardsHandler.js';
 import { observerHelper as observer } from './modules/observerHelper.js';
+import { supplierPage as suppliers } from './modules/supplierPage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -34,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cycle();
     observer('.js-circles-anim', 'is-visible');
     observer('.js-steps-block', 'is-animated', 0.6);
+    suppliers();
 });

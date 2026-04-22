@@ -3,6 +3,11 @@
 @use '../../base/media' as *;
 
 html.light {
+    .ceil-bg {
+        svg {
+            color: rgba(114, 114, 114, 0.5);
+        }
+    }
     rect.active {
         fill: #72727233;
         transition: none;
@@ -15,6 +20,11 @@ html.light {
 }
 
 html.dark {
+    .ceil-bg {
+        svg {
+            color: hsla(0, 0%, 100%, 0.2);
+        }
+    }
     rect.active {
         fill: #d9d9d933;
         transition: none;
@@ -40,6 +50,7 @@ html.dark {
         inset: 0;
         width: 100%;
         height: 100%;
+        color: hsla(0, 0%, 100%, 0.2);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
