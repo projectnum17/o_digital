@@ -8,7 +8,7 @@ import { ceilBGHandler as ceils } from './modules/ceilBGHandler.js';
 import { resultSliderHandler as results } from './modules/resultSliderHandler.js';
 import { seoExpandHandler as seo } from './modules/seoExpandHandler.js';
 import { contactsFormsHandler as forms } from './modules/contactsFormsHandler.js';
-import initShowMore from './modules/initShowMore.js';
+// import initShowMore from './modules/initShowMore.js';
 import faqBoxHandler from './modules/faqBoxHandler.js';
 import valuesCardsHandler from './modules/valuesCardsHandler.js';
 import { progressScrollHandler as progress } from './modules/progressScrollHandler.js';
@@ -16,6 +16,7 @@ import { integrationSectionState as integration } from './modules/integrationSec
 import { cycleCardsHandler as cycle } from './modules/cycleCardsHandler.js';
 import { observerHelper as observer } from './modules/observerHelper.js';
 import { supplierPage as suppliers } from './modules/supplierPage.js';
+import { logosGridHelper as grids } from './modules/logosGridHelper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -36,4 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer('.js-circles-anim', 'is-visible');
     observer('.js-steps-block', 'is-animated', 0.6);
     suppliers();
+    grids('.js-supplier-btn', 768, 3, 9);
+    grids('.js-partner-box', 768, 2, 4);
 });

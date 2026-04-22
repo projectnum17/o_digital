@@ -1,0 +1,191 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+body {
+    &:has(.header.is-transform) {
+        .partner-preview {
+            transform: translateY(rem(-150px));
+        }
+    }
+}
+
+.partner-info {
+    padding-block: rem(50px);
+
+    .container {
+        display: flex;
+        align-items: flex-start;
+        gap: rem(50px);
+        justify-content: space-between;
+    }
+
+    .partner-preview {
+        position: sticky;
+        top: rem(160px);
+    }
+
+    .supplier-box {
+        padding: rem(17px) rem(9px) rem(22px) rem(9px);
+
+        &__heading {
+            font-size: rem(18px);
+            padding-left: rem(9px);
+        }
+
+        &__head {
+            margin-bottom: rem(13px);
+        }
+
+        &__descr {
+            padding-left: rem(9px);
+            font-size: rem(17px);
+            margin-bottom: rem(35px);
+        }
+
+        &__title {
+            font-size: rem(18px);
+        }
+
+        &__logo {
+            width: rem(73px);
+            height: rem(73px);
+        }
+
+        .btn-primary {
+            max-width: rem(245px);
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        max-width: rem(887px);
+    }
+
+    &__article {
+        margin-bottom: rem(32px);
+
+        & > * {
+            color: var(--txt_primary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        h2 {
+            font: 500 #{rem(30px)} / 120% $ff;
+            margin-bottom: rem(32px);
+        }
+        h3 {
+            font: 500 #{rem(25px)} / 120% $ff;
+            margin-bottom: rem(32px);
+        }
+        h4 {
+            font: 500 #{rem(22px)} / 120% $ff;
+            margin-bottom: rem(32px);
+        }
+        h5,
+        h6 {
+            font: 500 #{rem(20px)} / 120% $ff;
+            margin-bottom: rem(32px);
+        }
+
+        p {
+            font: 400 #{rem(18px)} / 120% $ff;
+            max-width: rem(816px);
+            &:first-of-type {
+                max-width: 100%;
+                color: var(--c_half);
+            }
+
+            &:where(:not([class]):not(:last-child)) {
+                margin-bottom: rem(32px);
+            }
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0 0 0 rem(14px);
+            margin-bottom: rem(32px);
+            max-width: rem(816px);
+
+            li {
+                font: 400 #{rem(18px)} / 154% $ff;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: rem(26px);
+            li {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: rem(-25px);
+                    top: rem(14px);
+                    width: rem(18px);
+                    height: rem(1px);
+                    background: var(--txt_primary);
+                    @include transitions(
+                        0.3s,
+                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                    );
+                }
+            }
+        }
+    }
+
+    &__table {
+        margin-bottom: rem(32px);
+        border-radius: rem(35px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid var(--bg_grafit);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(33px) rem(10px);
+        border-bottom: 1px solid var(--bg_grafit);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        &.no-border {
+            border-bottom: none;
+        }
+
+        &:not(:nth-child(4n)) {
+            border-right: 1px solid var(--bg_grafit);
+        }
+
+        img {
+            max-width: rem(140px);
+        }
+    }
+
+    &__subtitle {
+        font: 500 #{rem(25px)} / 120% $ff;
+        margin-bottom: rem(32px);
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(32px) rem(20px);
+    }
+}

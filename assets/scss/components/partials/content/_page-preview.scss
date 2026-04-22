@@ -30,13 +30,34 @@
         gap: rem(24px);
     }
 
+    &__logo {
+        max-width: rem(153px);
+    }
+
     &__col {
+        .btn-primary {
+            width: max-content;
+            padding: rem(20px) rem(29px);
+        }
+
         &:first-child {
             max-width: rem(615px);
             width: 100%;
+
+            &:has(.page-preview__logo) {
+                display: flex;
+                flex-direction: column;
+                gap: rem(33px);
+                .section-title {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         &:last-child {
+            display: flex;
+            flex-direction: column;
+            gap: rem(22px);
             max-width: rem(467px);
             width: 100%;
         }

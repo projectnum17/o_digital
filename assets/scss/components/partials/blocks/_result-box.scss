@@ -94,7 +94,7 @@
         border-radius: rem(12px);
         max-width: rem(126px);
         padding: rem(8px) rem(12px);
-        background: var(--txt_secondary);
+        background: #fff;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 }

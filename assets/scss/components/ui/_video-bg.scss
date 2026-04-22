@@ -29,7 +29,7 @@ section:has(.video-bg) {
     }
 
     video {
-        transform: rotate(180deg) translateZ(0);
+        transform: translateZ(0);
         will-change: transform;
         width: 100.5%;
         height: 100.5%;
