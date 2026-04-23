@@ -1,0 +1,15 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.tag {
+    display: inline-flex;
+    font: 600 #{rem(14px)} / 100% $ff;
+    text-transform: uppercase;
+    padding: rem(9px) rem(13px);
+    border-radius: rem(12px);
+    color: var(--txt_primary);
+    background: var(--bg_labels);
+    border: 1px solid var(--border_default);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+}

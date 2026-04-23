@@ -9,9 +9,10 @@
     border: 1px solid var(--bg_secondary);
     background: var(--c_darkness);
     box-shadow: 0px 4px 13.2px 0px #5d5d5d1a;
-    transition:
-        transform 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884),
-        background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+    transition: .3s linear;
+    // transition:
+    //     transform 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+    //     background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
 
     &__logo {
         max-width: rem(126px);

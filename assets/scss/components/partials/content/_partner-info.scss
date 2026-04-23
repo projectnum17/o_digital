@@ -3,9 +3,12 @@
 @use '../../../base/media' as *;
 
 body {
-    &:has(.header.is-transform) {
-        .partner-preview {
-            transform: translateY(rem(-150px));
+    &:has(.partner-info) {
+        &:has(.header.is-transform) {
+            .partner-preview {
+                top: rem(24px);
+                // transform: translateY(rem(-150px));
+            }
         }
     }
 }
@@ -142,6 +145,27 @@ body {
                         cubic-bezier(0.768, 0.304, 0.496, 0.884)
                     );
                 }
+            }
+        }
+
+        blockquote {
+            padding-block: rem(19px);
+            font: 400 #{rem(18px)} / 110% $ff;
+            margin: 0;
+            position: relative;
+            margin-bottom: rem(39px);
+            padding-left: rem(28px);
+            gap: rem(20px);
+            color: var(--txt_primary);
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: rem(8px);
+                background: linear-gradient(90deg, #fe6a20 0%, #ff9c07 100%);
             }
         }
     }

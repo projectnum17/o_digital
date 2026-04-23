@@ -1,0 +1,30 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.digital-box {
+    max-width: rem(232px);
+    width: 100%;
+    padding: rem(12px) rem(24px) rem(24px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+    align-items: center;
+    text-align: center;
+    border-radius: rem(20px);
+    box-shadow: 0px 4px 22.6px 0px #ffffff0d;
+    background: var(--bg_gloomy);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    img {
+        width: rem(120px);
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+
+    p {
+        font: 400 #{rem(11px)} / 110% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

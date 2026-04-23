@@ -18,7 +18,7 @@
         align-items: center;
         justify-content: center;
         color: var(--txt_secondary);
-        background: var(--bg_pagination);
+        background: var(--bg_gloomy);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
         &--control {
