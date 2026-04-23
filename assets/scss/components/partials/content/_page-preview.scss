@@ -4,6 +4,7 @@
 
 .page-preview {
     z-index: 5;
+    min-height: rem(473px);
     padding-block: rem(176px) rem(70px);
 
     &::before {

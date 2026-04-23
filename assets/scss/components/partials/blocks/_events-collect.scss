@@ -7,9 +7,9 @@
     width: 100%;
 
     &__head {
-        @include flexCenter(#{rem(12px)});
         justify-content: space-between;
         margin-bottom: rem(23px);
+        @include flexCenter(#{rem(12px)});
     }
 
     &__title {
@@ -36,70 +36,5 @@
         display: flex;
         flex-direction: column;
         gap: rem(25px);
-    }
-
-    &__card {
-        display: flex;
-        gap: rem(12px);
-        border-radius: rem(13px);
-        padding: rem(15px);
-        background: var(--bg_cards);
-        backdrop-filter: blur(29px);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        &:not(:has(img)) {
-            padding: rem(20px);
-
-            .events-collect__name {
-                margin-bottom: rem(7px);
-            }
-
-            .events-collect__date {
-                margin-bottom: rem(7px);
-            }
-        }
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        gap: rem(5px);
-        justify-content: space-between;
-    }
-
-    &__thumb {
-        border-radius: rem(12px);
-        overflow: hidden;
-        max-width: rem(162px);
-        aspect-ratio: 162 / 213;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &__date {
-        font: 500 #{rem(14px)} / 100% $ff;
-        color: var(--txt_secondary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
-    &__name {
-        font: 600 #{rem(22px)} / 120% $ff;
-        margin-bottom: rem(12px);
-        color: var(--c_half);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
-    &__descr {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        font: 500 #{rem(14px)} / 100% $ff;
-        color: var(--txt_secondary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 }

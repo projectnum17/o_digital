@@ -19,6 +19,7 @@ import { supplierPage as suppliers } from './modules/supplierPage.js';
 import { logosGridHelper as grids } from './modules/logosGridHelper.js';
 import { selectsInit as selects } from './modules/selectsInit.js';
 import { videoPlayerHandler as videoPlayer } from './modules/videoPlayerHandler.js';
+import { layoutWrapperState as toggleLayout } from './modules/layoutWrapperState.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     theme();
@@ -43,4 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
     grids('.js-partner-box', 768, 2, 4);
     selects();
     videoPlayer();
+    toggleLayout();
 });

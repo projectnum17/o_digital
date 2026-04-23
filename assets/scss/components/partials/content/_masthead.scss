@@ -5,6 +5,7 @@
 .masthead {
     z-index: 5;
     padding-block: rem(176px) rem(70px);
+    min-height: rem(473px);
 
     &::before {
         content: '';
