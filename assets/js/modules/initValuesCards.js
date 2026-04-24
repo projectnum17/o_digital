@@ -1,4 +1,4 @@
-const valuesCardsHandler = () => {
+export const initValuesCards = () => {
     const cards = document.querySelectorAll('.js-value-box');
     if (!cards.length) return;
 
@@ -9,5 +9,3 @@ const valuesCardsHandler = () => {
         });
     });
 };
-
-export default valuesCardsHandler;

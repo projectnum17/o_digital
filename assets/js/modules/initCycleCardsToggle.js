@@ -1,4 +1,4 @@
-export const cycleCardsHandler = () => {
+export const initCycleCardsToggle = () => {
     const cards = document.querySelectorAll('.js-cycle-box');
     if (!cards.length) return;
 

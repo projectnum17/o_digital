@@ -1,4 +1,4 @@
-export const brickBGHandler = () => {
+export const initBricksHandler = () => {
     const container = document.querySelector('.js-brick');
     const bg = document.querySelector('.js-brick-bg');
 

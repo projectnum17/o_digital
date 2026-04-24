@@ -1,4 +1,4 @@
-export const integrationSectionState = () => {
+export const updateIntegrationSectionUI = () => {
     const wrapper = document.querySelector('.js-integration-content');
     if (!wrapper) return;
 

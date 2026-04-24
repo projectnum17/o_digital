@@ -1,4 +1,4 @@
-export const logosGridHelper = (
+export const updateGridTableUIState = (
     selector,
     breakpoint,
     mobileCols,

@@ -1,4 +1,4 @@
-export const resultSliderHandler = () => {
+export const initResultsSlider = () => {
     if (typeof Swiper === 'undefined') return;
 
     const sliderHandler = document.querySelector('.js-results-slider');

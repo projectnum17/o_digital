@@ -1,4 +1,4 @@
-export const contactsFormsHandler = () => {
+export const initContactForm = () => {
     const forms = document.querySelectorAll('form');
     if (!forms.length) return;
 

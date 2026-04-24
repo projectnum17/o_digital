@@ -1,4 +1,4 @@
-export const progressScrollHandler = () => {
+export const initProgressScroll = () => {
     const infoBlock = document.querySelector('.js-advantages-info');
     const boxes = document.querySelectorAll('.js-advantages-box');
 

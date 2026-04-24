@@ -1,4 +1,4 @@
-const faqBoxHandler = () => {
+export const initFAQBoxes = () => {
     const faqBoxes = document.querySelectorAll('.js-faq-box');
     if (!faqBoxes.length) return;
 
@@ -14,5 +14,3 @@ const faqBoxHandler = () => {
         });
     });
 };
-
-export default faqBoxHandler;

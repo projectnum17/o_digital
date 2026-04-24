@@ -1,4 +1,4 @@
-export const headerStates = () => {
+export const initHeader = () => {
     const header = document.querySelector('.js-header');
     if (!header) return;
 

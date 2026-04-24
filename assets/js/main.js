@@ -1,48 +1,53 @@
 'use strict';
 
-import { themeSwitcher as theme } from './modules/theme.js';
-import { videoAsyncState as videoBG } from './modules/videoAsyncState.js';
-import { headerStates as header } from './modules/headerStates.js';
-import { brickBGHandler as bricks } from './modules/brickBGHandler.js';
-import { ceilBGHandler as ceils } from './modules/ceilBGHandler.js';
-import { resultSliderHandler as results } from './modules/resultSliderHandler.js';
-import { seoExpandHandler as seo } from './modules/seoExpandHandler.js';
-import { contactsFormsHandler as forms } from './modules/contactsFormsHandler.js';
+import { initTheme } from './modules/theme.js';
+import { initHeader } from './modules/initHeader.js';
+import { initVideoAutoPlay } from './modules/initVideoAutoPlay.js';
+import { initBricksHandler } from './modules/initBricksHandler.js';
+import { initCeilHandler } from './modules/initCeilHandler.js';
+import { initResultsSlider } from './modules/initResultsSlider.js';
+import { initAutoHeightHandler } from './modules/initAutoHeightHandler.js';
+import { initContactForm } from './modules/initContactForm.js';
+import { initFAQBoxes } from './modules/initFAQBoxes.js';
+import { initValuesCards } from './modules/initValuesCards.js';
+import { initProgressScroll } from './modules/initProgressScroll.js';
+import { updateIntegrationSectionUI } from './modules/updateIntegrationSectionUI.js';
+import { initCycleCardsToggle } from './modules/initCycleCardsToggle.js';
+import { observerHelper } from './modules/observerHelper.js';
+import { initSuppliersSliders } from './modules/initSuppliersSliders.js';
+import { updateGridTableUIState } from './modules/updateGridTableUIState.js';
+import { initSelect } from './modules/initSelect.js';
+import { initVideoPlayer } from './modules/initVideoPlayer.js';
+import { initToggleUILayout } from './modules/initToggleUILayout.js';
+
+// FOR FEATURE
 // import initShowMore from './modules/initShowMore.js';
-import faqBoxHandler from './modules/faqBoxHandler.js';
-import valuesCardsHandler from './modules/valuesCardsHandler.js';
-import { progressScrollHandler as progress } from './modules/progressScrollHandler.js';
-import { integrationSectionState as integration } from './modules/integrationSectionState.js';
-import { cycleCardsHandler as cycle } from './modules/cycleCardsHandler.js';
-import { observerHelper as observer } from './modules/observerHelper.js';
-import { supplierPage as suppliers } from './modules/supplierPage.js';
-import { logosGridHelper as grids } from './modules/logosGridHelper.js';
-import { selectsInit as selects } from './modules/selectsInit.js';
-import { videoPlayerHandler as videoPlayer } from './modules/videoPlayerHandler.js';
-import { layoutWrapperState as toggleLayout } from './modules/layoutWrapperState.js';
+// FOR FEATURE
 
 document.addEventListener('DOMContentLoaded', () => {
-    theme();
-    header();
-    videoBG();
-    bricks();
-    ceils();
-    results();
-    seo();
-    forms();
+    initTheme();
+    initHeader();
+    initVideoAutoPlay();
+    initBricksHandler();
+    initCeilHandler();
+    initResultsSlider();
+    initAutoHeightHandler();
+    initContactForm();
+    initFAQBoxes();
+    initValuesCards();
+    initProgressScroll();
+    updateIntegrationSectionUI();
+    initCycleCardsToggle();
+    observerHelper('.js-circles-anim', 'is-visible');
+    observerHelper('.js-steps-block', 'is-animated', 0.6);
+    initSuppliersSliders();
+    updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
+    updateGridTableUIState('.js-partner-box', 768, 2, 4);
+    initSelect();
+    initVideoPlayer();
+    initToggleUILayout();
+    // FOR FEATURE
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);
-    faqBoxHandler();
-    progress();
-    valuesCardsHandler();
-    integration();
-    cycle();
-    observer('.js-circles-anim', 'is-visible');
-    observer('.js-steps-block', 'is-animated', 0.6);
-    suppliers();
-    grids('.js-supplier-btn', 768, 3, 9);
-    grids('.js-partner-box', 768, 2, 4);
-    selects();
-    videoPlayer();
-    toggleLayout();
+    // FOR FEATURE
 });

@@ -1,4 +1,4 @@
-export const ceilBGHandler = () => {
+export const initCeilHandler = () => {
     const section = document.querySelector('section:has(.js-ceil-bg)');
     const bg = section?.querySelector('.js-ceil-bg');
 

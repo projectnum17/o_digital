@@ -1,4 +1,4 @@
-export const videoPlayerHandler = () => {
+export const initVideoPlayer = () => {
     const videoWrappers = document.querySelectorAll('.js-video-box');
     if (!videoWrappers.length) return;
 

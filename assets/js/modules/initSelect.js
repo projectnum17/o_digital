@@ -1,4 +1,4 @@
-export const selectsInit = () => {
+export const initSelect = () => {
     const selects = document.querySelectorAll('.js-select');
     if (!selects.length) return;
 

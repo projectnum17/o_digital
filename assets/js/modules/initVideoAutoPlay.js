@@ -1,4 +1,4 @@
-export const videoAsyncState = () => {
+export const initVideoAutoPlay = () => {
     const lazyVideos = Array.from(
         document.querySelectorAll('.js-video-autoplay'),
     );

@@ -1,4 +1,4 @@
-export const layoutWrapperState = () => {
+export const initToggleUILayout = () => {
     const wrapper = document.querySelector('.js-media-wrapper');
     const buttons = document.querySelectorAll('[data-layout]');
 

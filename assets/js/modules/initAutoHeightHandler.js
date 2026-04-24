@@ -1,4 +1,4 @@
-export const seoExpandHandler = () => {
+export const initAutoHeightHandler = () => {
     const sections = document.querySelectorAll('.promo');
 
     sections.forEach((section) => {

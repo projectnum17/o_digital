@@ -1,4 +1,4 @@
-export const themeSwitcher = () => {
+export const initTheme = () => {
     const toggle = document.querySelector('#themeSwitcher');
 
     if (!toggle) return;

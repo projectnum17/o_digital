@@ -29,6 +29,10 @@
         .event-box__date {
             margin-bottom: rem(7px);
         }
+
+        .event-box__info {
+            max-width: 100%;
+        }
     }
 
     &__info {
