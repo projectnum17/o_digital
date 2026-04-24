@@ -1,0 +1,22 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.quote-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(3px);
+    margin-bottom: rem(30px);
+    font: 400 #{rem(18px)} / 110% $ff;
+    font-style: italic;
+    color: var(--txt_primary);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    cite {
+        align-self: flex-end;
+        font: inherit;
+        font-style: inherit;
+        color: inherit;
+        transform: inherit;
+    }
+}

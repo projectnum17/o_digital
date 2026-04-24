@@ -1,0 +1,95 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.countdown-box {
+    overflow: auto;
+    display: flex;
+    padding: rem(6px) rem(16px) rem(20px) rem(16px);
+    gap: rem(18px);
+    justify-content: space-between;
+    border-radius: rem(6px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    border: 1px solid var(--border_default);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &:has(.countdown-box__helper.is-visible) {
+        justify-content: center;
+        padding: rem(16px);
+    }
+
+    & > &__item {
+        padding-right: rem(18px);
+        position: relative;
+        &::after {
+            content: '';
+            width: 1px;
+            height: 90%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--border_default);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(25px);
+        align-items: center;
+    }
+
+    &__clock {
+        gap: rem(13px);
+        display: flex;
+
+        .countdown-box__item {
+            &:not(:last-child) {
+                .countdown-box__value {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: rem(14px);
+                    transform: translateX(10px);
+                    &::after {
+                        content: ':';
+                        font: 300 #{rem(20px)} / 100% $ff;
+                        color: var(--txt_primary);
+                        @include transitions(
+                            0.3s,
+                            cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    &__label {
+        font: 400 #{rem(14px)} / 110% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__value {
+        font: 500 #{rem(24px)} / 110% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &--lg {
+            font-size: rem(30px);
+        }
+    }
+
+    &__helper {
+        font: 500 #{rem(22px)} / 110% $ff;
+        display: none;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &.is-visible {
+            display: block;
+        }
+    }
+}

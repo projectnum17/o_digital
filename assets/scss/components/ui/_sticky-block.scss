@@ -1,0 +1,17 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+body {
+    &:has(.header.is-transform) {
+        .sticky-block {
+            top: rem(35px);
+        }
+    }
+}
+
+.sticky-block {
+    position: sticky;
+    top: rem(160px);
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+}

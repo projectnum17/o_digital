@@ -11,7 +11,7 @@
     }
 
     .container {
-        max-width: rem(944px);
+        max-width: rem(960px);
         display: flex;
         align-items: flex-start;
         gap: rem(12px);
@@ -19,65 +19,6 @@
 
     &__content {
         max-width: rem(636px);
-    }
-
-    &__heading {
-        font: 500 #{rem(24px)} / 100% $ff;
-        max-width: rem(593px);
-        margin-bottom: rem(30px);
-        color: var(--txt_primary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
-    &__subheading {
-        font: 500 #{rem(20px)} / 100% $ff;
-        margin-bottom: rem(24px);
-        color: var(--txt_primary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
-    &__text {
-        font: 400 #{rem(18px)} / 110% $ff;
-        margin-bottom: rem(30px);
-        color: var(--txt_primary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        &:has(+ .article__text) {
-            margin-bottom: rem(24px);
-        }
-    }
-
-    &__excerpt {
-        font: 400 #{rem(18px)} / 110% $ff;
-        padding: rem(10px) rem(13px);
-        border-radius: rem(13px);
-        margin-bottom: rem(30px);
-        color: var(--txt_primary);
-        background: #fdcdb61a;
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        span {
-            font-weight: 500;
-        }
-    }
-
-    &__quote {
-        display: flex;
-        flex-direction: column;
-        gap: rem(3px);
-        margin-bottom: rem(30px);
-        font: 400 #{rem(18px)} / 110% $ff;
-        font-style: italic;
-        color: var(--txt_primary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        cite {
-            align-self: flex-end;
-            font: inherit;
-            font-style: inherit;
-            color: inherit;
-            transform: inherit;
-        }
     }
 
     &__details {
@@ -143,54 +84,6 @@
             li {
                 font: 500 #{rem(14px)} / 120% $ff;
                 color: var(--c_grey_darken);
-            }
-        }
-    }
-
-    &__list {
-        display: flex;
-        flex-direction: column;
-        max-width: rem(323px);
-        margin-bottom: rem(30px);
-        gap: rem(20px);
-
-        li {
-            display: inline-flex;
-            align-items: flex-start;
-            gap: rem(12px);
-            font: 500 #{rem(14px)} / 100% $ff;
-            color: var(--txt_primary);
-            @include transitions(
-                0.3s,
-                cubic-bezier(0.768, 0.304, 0.496, 0.884)
-            );
-
-            &::before {
-                margin-top: rem(4px);
-                content: '';
-                flex-shrink: 0;
-            }
-        }
-
-        &--arrows {
-            li {
-                &::before {
-                    width: rem(19px);
-                    height: rem(16px);
-                    background: url('../imgs/ico/arrow-light.svg') no-repeat
-                        center center / cover;
-                }
-            }
-        }
-
-        &--dots {
-            li {
-                &::before {
-                    width: rem(12px);
-                    height: rem(12px);
-                    border-radius: 50%;
-                    background: $c_accent;
-                }
             }
         }
     }

@@ -3,6 +3,7 @@
 @use '../../../base/media' as *;
 
 .expert-box {
+    max-width: rem(400px);
     display: flex;
     flex-direction: column;
     border-radius: rem(16px);
@@ -107,7 +108,7 @@
         justify-content: space-between;
         gap: rem(12px);
         padding: rem(25px) rem(24px) rem(28px);
-        z-index: 3;
+        z-index: 6;
         position: absolute;
         inset: 0;
         transform: translateX(-100%);

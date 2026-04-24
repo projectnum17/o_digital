@@ -1,0 +1,10 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.article-subheading {
+    font: 500 #{rem(20px)} / 100% $ff;
+    margin-bottom: rem(24px);
+    color: var(--txt_primary);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+}

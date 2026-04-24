@@ -1,0 +1,47 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.meetup-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(25px) rem(2px);
+    padding: rem(17px) rem(10px);
+    border-radius: rem(6px);
+    border: 1px solid var(--border_default);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: rem(10px);
+
+        img {
+            width: rem(24px);
+            height: rem(24px);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem(7px);
+        p {
+            margin: 0;
+            color: var(--txt_primary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            &:first-child {
+                font: 300 #{rem(12px)} / 110% $ff;
+            }
+
+            &:last-child {
+                hyphens: auto;
+                font: 400 #{rem(16px)} / 100% $ff;
+            }
+        }
+    }
+}

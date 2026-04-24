@@ -20,6 +20,7 @@ import { initSelect } from './modules/initSelect.js';
 import { initVideoPlayer } from './modules/initVideoPlayer.js';
 import { initToggleUILayout } from './modules/initToggleUILayout.js';
 import { initAnchorsHandler } from './modules/initAnchorsHandler.js';
+import { initCountDownEvent } from './modules/initCountDownEvent.js';
 
 // FOR FEATURE
 // import initShowMore from './modules/initShowMore.js';
@@ -48,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSelect();
     initVideoPlayer();
     initToggleUILayout();
-    initAnchorsHandler('.js-anchor-block');
+    initAnchorsHandler('.js-article-content');
+    initCountDownEvent();
     // FOR FEATURE
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

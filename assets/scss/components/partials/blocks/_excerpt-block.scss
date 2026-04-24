@@ -1,0 +1,16 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+.excerpt-block {
+    font: 400 #{rem(18px)} / 110% $ff;
+    padding: rem(10px) rem(13px);
+    border-radius: rem(13px);
+    margin-bottom: rem(30px);
+    color: var(--txt_primary);
+    background: #fdcdb61a;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    span {
+        font-weight: 500;
+    }
+}

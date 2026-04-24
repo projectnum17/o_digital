@@ -1,6 +1,6 @@
-@use '../../base/var' as *;
-@use '../../base/mixins' as *;
-@use '../../base/media' as *;
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
 
 .section-description {
     font: 400 #{rem(16px)} / 120% $ff;

@@ -2,14 +2,6 @@
 @use '../../../base/mixins' as *;
 @use '../../../base/media' as *;
 
-body {
-    &:has(.header.is-transform) {
-        .sticky-block {
-            top: rem(35px);
-        }
-    }
-}
-
 .partner-info {
     padding-block: rem(50px);
 
@@ -23,9 +15,6 @@ body {
     .sticky-block {
         max-width: rem(475px);
         width: 100%;
-        position: sticky;
-        top: rem(160px);
-        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
     .supplier-box {
