@@ -38,11 +38,12 @@
     &__col {
         .btn-primary {
             width: max-content;
+            min-width: rem(302px);
             padding: rem(20px) rem(29px);
         }
 
         &:first-child {
-            max-width: rem(615px);
+            max-width: rem(720px);
             width: 100%;
 
             &:not(:has(.btn-primary)) {

@@ -1,0 +1,17 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.job {
+    padding-block: rem(80px);
+
+    .section-title {
+        margin-bottom: rem(50px);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32px);
+    }
+}
