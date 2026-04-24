@@ -1,0 +1,57 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+body {
+    &:has(.header.is-transform) {
+        .article-navigation {
+            top: rem(35px);
+        }
+    }
+}
+
+.article-navigation {
+    max-width: rem(300px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(18px);
+    position: sticky;
+    top: rem(160px);
+    @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    &__anchor {
+        position: relative;
+        font: 500 #{rem(14px)} / 110% $ff;
+        text-align: left;
+        color: var(--c_mute);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        &::before {
+            position: absolute;
+            left: rem(-30px);
+            content: '';
+            flex-shrink: 0;
+            opacity: 0;
+            visibility: hidden;
+            width: rem(19px);
+            height: rem(16px);
+            transform: translateX(-5px);
+            background: url('../imgs/ico/arrow-light.svg') no-repeat center
+                center / cover;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        &.is-active {
+            color: var(--txt_primary);
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0);
+            }
+        }
+    }
+}

@@ -19,6 +19,7 @@ import { updateGridTableUIState } from './modules/updateGridTableUIState.js';
 import { initSelect } from './modules/initSelect.js';
 import { initVideoPlayer } from './modules/initVideoPlayer.js';
 import { initToggleUILayout } from './modules/initToggleUILayout.js';
+import { initAnchorsHandler } from './modules/initAnchorsHandler.js';
 
 // FOR FEATURE
 // import initShowMore from './modules/initShowMore.js';
@@ -43,9 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initSuppliersSliders();
     updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
+    updateGridTableUIState('.js-article-table', 768, 2, 3);
     initSelect();
     initVideoPlayer();
     initToggleUILayout();
+    initAnchorsHandler('.js-anchor-block');
     // FOR FEATURE
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

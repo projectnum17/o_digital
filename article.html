@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./assets/css/main.min.css" />
 
     <link rel="shortcut icon" href="./assets/imgs/favicon/favicon.png" type="image/png" />
-    <title>O-Digital | Media</title>
+    <title>O-Digital | Article</title>
 </head>
 
 <body>
@@ -95,7 +95,7 @@
         </div>
     </header>
     <main class="main">
-        <section class="page-preview">
+        <section class="article-preview">
             <div class="video-bg">
                 <video muted autoplay loop playsinline class="js-video-autoplay" poster="./assets/img/poster-waves.png">
                     <source data-src="./assets/video/blob.mp4" type="video/mp4">
@@ -103,293 +103,248 @@
                 </video>
             </div>
             <div class="container">
-                <ul class="breadcrumbs">
-                    <li>
-                        <a href="/">Головна</a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)">Медіа</a>
-                    </li>
-                </ul>
-                <div class="page-preview__info">
-                    <div class="page-preview__col">
-                        <h2 class="section-title">Медіа та інсайти</h2>
-                    </div>
-                    <div class="page-preview__col">
-                        <p class="section-description section-description--lg">
-                            Ділимося досвідом, підходами та практичними матеріалами про розвиток систем, управління та
-                            сучасні рішення для бізнесу.
-                        </p>
-                    </div>
+                <div class="article-preview__details">
+                    <ul class="breadcrumbs">
+                        <li>
+                            <a href="/">Головна</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Статті</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Стаття</a>
+                        </li>
+                    </ul>
+                    <h1 class="article-preview__title">
+                        Як оцінити стан систем перед масштабуванням бізнесу
+                    </h1>
+                    <p class="article-preview__descr">
+                        Що потрібно перевірити перед розвитком, щоб уникнути обмежень, ризиків і зайвих витрат
+                    </p>
+                </div>
+                <div class="article-preview__pic">
+                    <img src="./assets/imgs/event.jpg" alt="Picture">
                 </div>
             </div>
         </section>
-        <div class="media">
+        <div class="article-details">
             <div class="container">
-                <div class="media__head">
-                    <div class="filter-box">
-                        <select class="js-select" id="caseFilter_1" name="caseFilter_1">
-                            <option value="" disabled selected>Всі</option>
-                            <option value="1">Події</option>
-                            <option value="2">Новини</option>
-                            <option value="3">Івенти</option>
-                        </select>
-                    </div>
-                    <div class="media__state">
-                        <button class="media__btn js-grid-state" data-layout="grid">
-                            <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="8" height="8" fill="#D9D9D9" />
-                                <rect x="11" width="8" height="8" fill="#D9D9D9" />
-                                <rect x="11" y="12" width="8" height="8" fill="#D9D9D9" />
-                                <rect y="12" width="8" height="8" fill="#D9D9D9" />
-                            </svg>
-                        </button>
-                        <button class="media__btn js-list-state" data-layout="list">
-                            <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="19" height="2" fill="#D9D9D9" />
-                                <rect y="9" width="19" height="2" fill="#D9D9D9" />
-                                <rect y="18" width="19" height="2" fill="#D9D9D9" />
-                            </svg>
-                        </button>
+                <div class="article-details__item article-details__item--time">
+                    <p class="article-details__title">Час прочитання:</p>
+                    <p class="article-details__info">6хв</p>
+                </div>
+                <div class="article-details__item article-details__item--speaker">
+                    <p class="article-details__title">Редактор:</p>
+                    <div class="article-details__person">
+                        <img class="article-details__avatar" width="34" height="34" src="./assets/imgs/ico/people.png"
+                            alt="Avatar">
+                        <div class="article-details__person-info">
+                            <p class="article-details__name">Анна Майра</p>
+                            <p class="article-details__role">менеджер</p>
+                        </div>
                     </div>
                 </div>
-                <div class="media__content js-media-wrapper">
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">новини</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">новини</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">події</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">події</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">події</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="event-box">
-                        <div class="event-box__info">
-                            <span class="event-box__date">24 квітня 2026</span>
-                            <div class="event-box__details">
-                                <p class="event-box__name">AI у бізнесі: можливості та виклики</p>
-                                <p class="event-box__descr">
-                                    Онлайн-подія про практичне використання AI для автоматизації бізнес-процесів
-                                    та
-                                    аналітики.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="event-box__thumb">
-                            <img src="./assets/imgs/event.jpg" alt="Picture">
-                            <span class="event-box__label">події</span>
-                        </div>
-                        <div class="event-box__description">
-                            <div class="event-box__type">
-                                <p>Тип:</p>
-                                <p>Події</p>
-                            </div>
-                            <div class="event-box__cta">
-                                <p>Перейти</p>
-                                <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
+                <div class="article-details__item article-details__item--category">
+                    <p class="article-details__title">Категорія:</p>
+                    <p class="article-details__info">Стаття</p>
                 </div>
-                <button type="button" class="content-more">
-                    Більше
-                    <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                </button>
-                <div class="content-pagination">
-                    <button type="button" class="content-pagination__btn content-pagination__btn--control">
-                        <svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.61426 0.291016L0.614257 7.29102L5.61426 14.291" stroke="white" />
-                        </svg>
-                    </button>
-                    <button type="button" class="content-pagination__btn is-current">1</button>
-                    <button type="button" class="content-pagination__btn">2</button>
-                    <button type="button" class="content-pagination__btn">3</button>
-                    <button type="button" class="content-pagination__btn">4</button>
-                    <button type="button" class="content-pagination__btn">5</button>
-                    <button type="button" class="content-pagination__btn content-pagination__btn--control">
-                        <svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.407227 14.291L5.40723 7.29102L0.407228 0.291016" stroke="white" />
-                        </svg>
-
-                    </button>
+                <div class="article-details__item article-details__item--date">
+                    <p class="article-details__title">Дата публікації:</p>
+                    <p class="article-details__info article-details__info--sm">05.03.2024</p>
                 </div>
             </div>
         </div>
-        <section class="promo">
+        <section class="article js-anchor-block">
             <div class="container">
-                <div class="promo__box">
-                    <h3 class="promo__title">Стратегічні рішення для розвитку бізнесу</h3>
-                    <div class="promo__text js-text-box">
-                        <p>
-                            O-Digital — сервісна компанія, що допомагає бізнесу впроваджувати сучасні рішення та
-                            розвивати
-                            інфраструктуру. Ми працюємо з компаніями, які прагнуть підвищити ефективність процесів,
-                            покращити управління даними та впроваджувати нові підходи до розвитку.
+                <ul class="article-navigation">
+                    <li class="article-navigation__item">
+                        <button type="button" class="article-navigation__anchor js-anchor-btn">
+                            Як оцінити стан систем перед масштабуванням бізнесу
+                        </button>
+                    </li>
+                    <li class="article-navigation__item">
+                        <button type="button" class="article-navigation__anchor js-anchor-btn">
+                            Оцінка ІТ-інфраструктури
+                        </button>
+                    </li>
+                    <li class="article-navigation__item">
+                        <button type="button" class="article-navigation__anchor js-anchor-btn">
+                            Комплексна оцінка дозволяє:
+                        </button>
+                    </li>
+                </ul>
+                <div class="article__content">
+                    <div class="article__block js-anchor-target">
+                        <h2 class="article__heading js-anchor-title">
+                            Як оцінити стан систем перед масштабуванням бізнесу
+                        </h2>
+                        <p class="article__text">
+                            Розвиток бізнесу майже завжди пов’язаний із ростом навантаження на внутрішні системи.
+                            Збільшення
+                            кількості клієнтів, розширення команди, запуск нових продуктів — усе це створює додаткові
+                            вимоги
+                            до інфраструктури та процесів. У цей момент стає критично важливо зрозуміти, чи готові
+                            існуючі
+                            системи до масштабування.
                         </p>
-                        <p>
-                            Наші спеціалісти мають глибоку експертизу у стратегічному консалтингу, автоматизації
-                            процесів та
-                            роботі з даними. Ми допомагаємо компаніям аналізувати поточний стан систем, визначати
-                            ключові
-                            виклики та знаходити можливості для покращення.
+                        <p class="article__text">
+                            Однак на практиці компанії часто стикаються з ситуацією, коли рішення приймаються без
+                            повного
+                            розуміння поточного стану. Це призводить до неефективних витрат, технічних обмежень та
+                            ризиків
+                            для бізнесу.
                         </p>
-                        <p>
-
-                            Ми підтримуємо бізнес на різних етапах розвитку — від аналізу та планування до впровадження
-                            рішень і подальшої підтримки. Такий підхід дозволяє створювати системи, які відповідають
-                            реальним потребам компанії та сприяють її стабільному зростанню.
+                        <blockquote class="article__excerpt">
+                            Розвиток бізнесу майже завжди пов’язаний із ростом навантаження на внутрішні системи. <span
+                                class="gradient-text">Збільшення кількості</span> клієнтів, розширення команди, запуск
+                            нових
+                            продуктів — усе це створює додаткові вимоги
+                            до інфраструктури та процесів. У цей момент стає критично важливо зрозуміти, чи готові
+                            існуючі
+                            системи до масштабування.
+                        </blockquote>
+                        <blockquote class="article__quote">
+                            ”Розвиток бізнесу майже завжди пов’язаний із ростом навантаження на внутрішні системи.
+                            Збільшення кількості клієнтів, розширення команди, запуск нових продуктів — усе це створює
+                            додаткові вимоги до інфраструктури та процесів. У цей момент стає критично важливо
+                            зрозуміти, чи
+                            готові існуючі системи до масштабування.”
+                            <cite>Анна Мален</cite>
+                        </blockquote>
+                        <div class="video-box js-video-box">
+                            <button type="button" class="video-box__play js-video-play">
+                                <svg width="53" height="61" viewBox="0 0 53 61" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M52.5 30.3109L-2.64986e-06 60.6218L0 -2.29485e-06L52.5 30.3109Z"
+                                        fill="#D9D9D9" />
+                                </svg>
+                            </button>
+                            <video webkit-playsinline preload="none" playsinline poster="./assets/imgs/res_1.jpg">
+                                <source data-src="./assets/video/blob.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="article__details">
+                            <div class="article__details-item">
+                                <div class="article__details-headings">
+                                    <p>Оцінка ІТ-інфраструктури</p>
+                                    <p>
+                                        Оцінюємо технологічну основу бізнесу та її готовність до навантажень і
+                                        масштабування.
+                                    </p>
+                                </div>
+                                <ul class="article__details-list">
+                                    <li>
+                                        Аудит ІТ‑інфраструктури: сервери, мережі, системи зберігання,робочі місця,
+                                        програмне
+                                        забезпечення, хмарні сервіси (basic)
+                                    </li>
+                                    <li>
+                                        Оцінка архітектури (on-prem / cloud / hybrid)(basic)
+                                    </li>
+                                    <li>Оцінка процесів резервного копіювання (basic)</li>
+                                    <li>
+                                        Оцінка базових інфраструктурних сервісів (Active Directory,пошта файловий
+                                        сервер)
+                                        (basic)
+                                    </li>
+                                    <li>
+                                        Аудит робочих місць користувачів та стандартів End‑User Computing (basic)
+                                    </li>
+                                    <li>
+                                        Аудит мережевої інфраструктури (LAN/WAN/Wi‑Fi) <span
+                                            class="gradient-text">(опціонально)*</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="article__details-item">
+                                <div class="article__details-headings">
+                                    <p>Оцінка ІТ-інфраструктури</p>
+                                    <p>
+                                        Оцінюємо технологічну основу бізнесу та її готовність до навантажень і
+                                        масштабування.
+                                    </p>
+                                </div>
+                                <ul class="article__details-list">
+                                    <li>
+                                        Аудит ІТ‑інфраструктури: сервери, мережі, системи зберігання,робочі місця,
+                                        програмне
+                                        забезпечення, хмарні сервіси (basic)
+                                    </li>
+                                    <li>
+                                        Оцінка архітектури (on-prem / cloud / hybrid)(basic)
+                                    </li>
+                                    <li>Оцінка процесів резервного копіювання (basic)</li>
+                                    <li>
+                                        Оцінка базових інфраструктурних сервісів (Active Directory,пошта файловий
+                                        сервер)
+                                        (basic)
+                                    </li>
+                                    <li>
+                                        Аудит робочих місць користувачів та стандартів End‑User Computing (basic)
+                                    </li>
+                                    <li>
+                                        Аудит мережевої інфраструктури (LAN/WAN/Wi‑Fi) <span
+                                            class="gradient-text">(опціонально)*</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article__block js-anchor-target">
+                        <h2 class="article__heading js-anchor-title">Оцінка ІТ-інфраструктури</h2>
+                        <p class="article__text">
+                            Перед тим як інвестувати у розвиток, необхідно визначити, наскільки поточні системи
+                            відповідають
+                            бізнес-потребам. Без цього складно зрозуміти, які зміни дійсно необхідні, а які лише
+                            ускладнять
+                            процеси.
                         </p>
-                        <p>
-                            Наші спеціалісти мають глибоку експертизу у стратегічному консалтингу, автоматизації
-                            процесів та
-                            роботі з даними. Ми допомагаємо компаніям аналізувати поточний стан систем, визначати
-                            ключові
-                            виклики та знаходити можливості для покращення.
+                        <h3 class="article__subheading">Комплексна оцінка дозволяє:</h3>
+                        <ul class="article__list article__list--arrows">
+                            <li>визначити слабкі місця в інфраструктурі</li>
+                            <li>оцінити ефективність існуючих процесів</li>
+                            <li>сформувати чіткий план розвитку</li>
+                            <li>зрозуміти обмеження поточних рішень</li>
+                        </ul>
+                        <h3 class="article__subheading">Комплексна оцінка дозволяє:</h3>
+                        <ul class="article__list article__list--dots">
+                            <li>визначити слабкі місця в інфраструктурі</li>
+                            <li>оцінити ефективність існуючих процесів</li>
+                            <li>сформувати чіткий план розвитку</li>
+                            <li>зрозуміти обмеження поточних рішень</li>
+                        </ul>
+                    </div>
+                    <div class="article__block js-anchor-target">
+                        <h2 class="article__heading js-anchor-title">
+                            Комплексна оцінка дозволяє:
+                        </h2>
+                        <p class="article__text">
+                            Перед тим як інвестувати у розвиток, необхідно визначити, наскільки поточні системи
+                            відповідають
+                            бізнес-потребам. Без цього складно зрозуміти, які зміни дійсно необхідні, а які лише
+                            ускладнять
+                            процеси.
                         </p>
-                        <p>
-
-                            Ми підтримуємо бізнес на різних етапах розвитку — від аналізу та планування до впровадження
-                            рішень і подальшої підтримки. Такий підхід дозволяє створювати системи, які відповідають
-                            реальним потребам компанії та сприяють її стабільному зростанню.
-                        </p>
+                        <div class="article__table">
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table">Аудит IT-інфраструктури</div>
+                            <div class="article__table-cell js-article-table"></div>
+                            <div class="article__table-cell js-article-table"></div>
+                        </div>
                     </div>
                 </div>
-                <button type="button" class="promo__more js-text-more">
-                    Детальніше
-                    <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M6.65618 16.7071C7.0467 17.0976 7.67986 17.0976 8.07039 16.7071L14.4343 10.3431C14.8249 9.95262 14.8249 9.31946 14.4343 8.92893C14.0438 8.53841 13.4107 8.53841 13.0201 8.92893L7.36328 14.5858L1.70643 8.92893C1.3159 8.53841 0.682738 8.53841 0.292214 8.92893C-0.0983105 9.31946 -0.0983105 9.95262 0.292214 10.3431L6.65618 16.7071ZM7.36328 0L6.36328 4.37113e-08L6.36328 16L7.36328 16L8.36328 16L8.36328 -4.37113e-08L7.36328 0Z"
-                            fill="white" />
-                    </svg>
-                </button>
             </div>
         </section>
         <section class="contacts">

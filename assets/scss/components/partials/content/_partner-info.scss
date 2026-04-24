@@ -3,12 +3,9 @@
 @use '../../../base/media' as *;
 
 body {
-    &:has(.partner-info) {
-        &:has(.header.is-transform) {
-            .partner-preview {
-                top: rem(24px);
-                // transform: translateY(rem(-150px));
-            }
+    &:has(.header.is-transform) {
+        .sticky-block {
+            top: rem(35px);
         }
     }
 }
@@ -23,9 +20,12 @@ body {
         justify-content: space-between;
     }
 
-    .partner-preview {
+    .sticky-block {
+        max-width: rem(475px);
+        width: 100%;
         position: sticky;
         top: rem(160px);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
     .supplier-box {

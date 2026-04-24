@@ -1,0 +1,57 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.article-preview {
+    z-index: 5;
+    min-height: rem(473px);
+    padding-block: rem(176px) rem(70px);
+
+    &::before {
+        content: '';
+        background: #0f0f0f1a;
+        filter: blur(132px);
+        width: rem(1087px);
+        height: rem(449px);
+        position: absolute;
+        left: -15%;
+        bottom: rem(20px);
+        border-radius: 999px;
+        z-index: 2;
+    }
+
+    .breadcrumbs {
+        margin-bottom: rem(35px);
+    }
+
+    .container {
+        max-width: rem(944px);
+        margin: 0 auto;
+        display: flex;
+        gap: rem(12px);
+    }
+
+    &__title {
+        font: 500 #{rem(40px)} / 110% $ff;
+        margin-bottom: rem(25px);
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__descr {
+        max-width: rem(464px);
+        font: 400 #{rem(18px)} / 110% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__pic {
+        max-width: rem(368px);
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
