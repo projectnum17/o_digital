@@ -22,6 +22,7 @@ import { initToggleUILayout } from './modules/initToggleUILayout.js';
 import { initAnchorsHandler } from './modules/initAnchorsHandler.js';
 import { initCountDownEvent } from './modules/initCountDownEvent.js';
 import { initClassHelper } from './modules/initClassHelper.js';
+import { reloadWindowHelper } from './modules/reloadWindowHelper.js';
 
 // FOR FEATURE
 // import initShowMore from './modules/initShowMore.js';
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnchorsHandler('.js-article-content');
     initAnchorsHandler('.js-legals-content');
     initCountDownEvent();
+    reloadWindowHelper('.js-reload-window')
     // FOR FEATURE
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

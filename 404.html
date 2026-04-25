@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./assets/fonts/ff_400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/ff_500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/ff_600.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="./assets/libs/datepicker/datepicker.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/main.min.css" />
+
+    <link rel="shortcut icon" href="./assets/imgs/favicon/favicon.png" type="image/png" />
+    <title>O-Digital | 404</title>
+</head>
+
+<body>
+    <header class="header js-header">
+        <div class="container">
+            <div class="header__top">
+                <input id="themeSwitcher" class="theme-toggle" type="checkbox">
+                <div class="header__panel">
+                    <button type="button" class="header__search js-search-trigger">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.88316 1.60502e-08C7.54679 -8.97127e-05 6.23738 0.376043 5.1048 1.08535C3.97222 1.79466 3.06223 2.80849 2.47895 4.01081C1.89568 5.21314 1.6627 6.55538 1.80667 7.88392C1.95064 9.21247 2.46574 10.4736 3.29304 11.5231L0.235052 14.581C0.0825233 14.7389 -0.00187683 14.9504 3.14713e-05 15.17C0.00193882 15.3895 0.0900011 15.5995 0.245252 15.7548C0.400502 15.91 0.610518 15.9981 0.830069 16C1.04962 16.0019 1.26113 15.9175 1.41906 15.765L4.47705 12.7071C5.36845 13.4096 6.41492 13.8887 7.52916 14.1045C8.6434 14.3203 9.79309 14.2665 10.8823 13.9476C11.9715 13.6288 12.9687 13.0541 13.7907 12.2715C14.6126 11.4888 15.2354 10.521 15.6072 9.44875C15.979 8.37647 16.089 7.23083 15.928 6.10741C15.767 4.98399 15.3396 3.91536 14.6816 2.99068C14.0236 2.066 13.1539 1.31209 12.1452 0.791843C11.1366 0.271595 10.0181 9.67028e-05 8.88316 1.60502e-08ZM8.88316 1.67463C10.3267 1.67463 11.7111 2.24804 12.7318 3.26871C13.7525 4.28939 14.3259 5.67372 14.3259 7.11717C14.3259 8.56063 13.7525 9.94496 12.7318 10.9656C11.7111 11.9863 10.3267 12.5597 8.88316 12.5597C7.43966 12.5597 6.05527 11.9863 5.03456 10.9656C4.01384 9.94496 3.44041 8.56063 3.44041 7.11717C3.44041 5.67372 4.01384 4.28939 5.03456 3.26871C6.05527 2.24804 7.43966 1.67463 8.88316 1.67463Z"
+                                fill="white" fill-opacity="0.5" />
+                        </svg>
+                    </button>
+                    <button class="btn-primary js-consultation">
+                        <span class="btn-primary__text">консультація</span>
+                        <span class="glow-mask">
+                            <span class="glow-mask__circles"></span>
+                        </span>
+                    </button>
+                    <ul class="header__lang">
+                        <li class="header__lang-current">
+                            <span class="header__lang-label">UA</span>
+                            <svg width="9" height="4" viewBox="0 0 9 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 4L-3.49691e-07 -1.66869e-07L9 -9.53674e-07L4.5 4Z" fill="white" />
+                            </svg>
+                        </li>
+                        <div class="header__lang-inner">
+                            <ul class="header__lang-list">
+                                <li class="header__lang-item header__lang-item--active">
+                                    <span class="header__lang-link">
+                                        UA
+                                    </span>
+                                </li>
+                                <li class="header__lang-item">
+                                    <a class="header__lang-link" href="#!">
+                                        EN
+                                    </a>
+                                </li>
+                                <li class="header__lang-item">
+                                    <a class="header__lang-link" href="#!">
+                                        RU
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__bot">
+                <a href="/" class="header__logo">
+                    <img src="./assets/imgs/ico/logo_wth.svg" alt="Logo">
+                    <img src="./assets/imgs/ico/logo_drk.svg" alt="Logo">
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li>
+                            <a href="javascript: void(0)">Експертиза</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Ліцензії та обладнання</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Про компанію</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Кейси</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Медіа та події</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="error">
+            <div class="video-bg">
+                <video muted autoplay loop playsinline class="js-video-autoplay" poster="./assets/img/poster-waves.png">
+                    <source data-src="./assets/video/blob.mp4" type="video/mp4">
+                    <p>Your browser does not support the video tag.</p>
+                </video>
+            </div>
+            <div class="container">
+                <div class="error__head">
+                    <span class="error__title" data-text="4">4</span>
+                    <div class="error__ico">
+                        <img src="./assets/imgs/error-logo_drk.svg" alt="Icon">
+                        <img src="./assets/imgs/error-logo_lght.svg" alt="Icon">
+                    </div>
+                    <span class="error__title" data-text="4">4</span>
+                </div>
+                <div class="error__wrapper">
+                    <div class="error__box">
+                        <p class="error__subtitle">Сторінку не знайдено</p>
+                        <p class="error__text">
+                            Можливо, посилання застаріло або сторінка була переміщена. Спробуйте повернутися на головну
+                            або
+                            скористатися навігацією.
+                        </p>
+                        <a href="/" class="btn-primary">
+                            <span class="btn-primary__text">На головну</span>
+                            <span class="glow-mask">
+                                <span class="glow-mask__circles"></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__details">
+                    <div class="footer__logo">
+                        <img width="149" height="62" loading="lazy" decoding="async"
+                            src="./assets/imgs/ico/logo_wth.svg" alt="Logo" />
+                        <img width="149" height="62" loading="lazy" decoding="async"
+                            src="./assets/imgs/ico/logo_drk.svg" alt="Logo" />
+                    </div>
+                    <p class="footer__info">
+                        O-Digital — ваш партнер у цифровій трансформації бізнесу.
+                    </p>
+                </div>
+                <div class="footer__menu">
+                    <div class="footer__nav">
+                        <p class="footer__title">Навігація</p>
+                        <ul class="footer__list">
+                            <li>
+                                <a href="javascript: void(0)">Експертиза</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Обладнання та ліцензії</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Про компанію</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Медіа</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Кейси</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav">
+                        <p class="footer__title">Послуги</p>
+                        <ul class="footer__list">
+                            <li>
+                                <a href="javascript: void(0)">IT Governance</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Automation</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Data & Analytics</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">AI</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">Інфраструктура</a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)">IT Безпека</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__contacts">
+                    <ul class="footer__support">
+                        <li>
+                            <a href="tel:+380676161011">
+                                <span>
+                                    <img width="41" height="41" loading="lazy" decoding="async"
+                                        src="./assets/imgs/ico/ico-phone.svg" alt="Icon">
+                                </span>
+                                +38 (067) 616-10 -11
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@o-digital.ua">
+                                <span>
+                                    <img width="41" height="41" loading="lazy" decoding="async"
+                                        src="./assets/imgs/ico/ico-mail.svg" alt="Icon">
+                                </span>
+                                info@o-digital.ua
+                            </a>
+                        </li>
+                        <li>
+                            <span>
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-pin.svg" alt="Icon">
+                            </span>
+                            г. Киев, ул. Верхний Вал, 72
+                        </li>
+                    </ul>
+                    <ul class="footer__media">
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-inst.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-face.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="41" height="41" loading="lazy" decoding="async"
+                                    src="./assets/imgs/ico/ico-in.svg" alt="LinkedIn">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bot">
+                <div class="footer__copy">
+                    <p>
+                        © 2026 O-Digital. Усі права захищені.
+                    </p>
+                    <div class="footer__legals">
+                        <a class="gradient-hover" data-text="Політика конфіденційності" target="_blank"
+                            href="javascript: void(0)">
+                            Політика конфіденційності
+                        </a>
+                        <a class="gradient-hover" data-text="Умови користування" target="_blank"
+                            href="javascript: void(0)">
+                            Умови користування
+                        </a>
+                        <a class="gradient-hover" data-text="Cookies Policy" target="_blank" href="javascript: void(0)">
+                            Cookies Policy
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__subscribe">
+                    <form>
+                        <div class="footer__subscribe-field">
+                            <label data-text="підписатись на e-mail розсилки" for="footerSubscribe"
+                                class="footer__subscribe-title gradient-hover">
+                                підписатись на e-mail розсилки
+                            </label>
+                            <input placeholder="Email" type="email" name="footerSubscribe" id="footerSubscribe">
+                        </div>
+                        <button type="submit" class="footer__subscribe-submit">
+                            Підписатись
+                            <svg width="18" height="8" viewBox="0 0 18 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.3536 4.03519C17.5488 3.83993 17.5488 3.52335 17.3536 3.32809L14.1716 0.146105C13.9763 -0.0491567 13.6597 -0.0491567 13.4645 0.146106C13.2692 0.341368 13.2692 0.65795 13.4645 0.853212L16.2929 3.68164L13.4645 6.51007C13.2692 6.70533 13.2692 7.02191 13.4645 7.21717C13.6597 7.41244 13.9763 7.41244 14.1716 7.21717L17.3536 4.03519ZM0 3.68164L4.37114e-08 4.18164L17 4.18164L17 3.68164L17 3.18164L-4.37114e-08 3.18164L0 3.68164Z"
+                                    fill="#F6F6F6" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <p class="footer__by">
+                    Design by <a class="gradient-hover" data-text="Esfirum" href="javascript: void(0)"
+                        target="_blank">Esfirum</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div class="search-panel js-search-panel">
+        <div class="container">
+            <div class="search-panel__box js-search-wrapper">
+                <form>
+                    <div class="search-panel__handler">
+                        <div class="search-panel__field">
+                            <input placeholder="Пошук" type="search" name="webSiteSearch" id="webSiteSearch"
+                                class="js-search-field">
+                            <button type="submit" class="search-panel__submit">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.88316 1.60502e-08C7.54679 -8.97127e-05 6.23738 0.376043 5.1048 1.08535C3.97222 1.79466 3.06223 2.80849 2.47895 4.01081C1.89568 5.21314 1.6627 6.55538 1.80667 7.88392C1.95064 9.21247 2.46574 10.4736 3.29304 11.5231L0.235052 14.581C0.0825233 14.7389 -0.00187683 14.9504 3.14713e-05 15.17C0.00193882 15.3895 0.0900011 15.5995 0.245252 15.7548C0.400502 15.91 0.610518 15.9981 0.830069 16C1.04962 16.0019 1.26113 15.9175 1.41906 15.765L4.47705 12.7071C5.36845 13.4096 6.41492 13.8887 7.52916 14.1045C8.6434 14.3203 9.79309 14.2665 10.8823 13.9476C11.9715 13.6288 12.9687 13.0541 13.7907 12.2715C14.6126 11.4888 15.2354 10.521 15.6072 9.44875C15.979 8.37647 16.089 7.23083 15.928 6.10741C15.767 4.98399 15.3396 3.91536 14.6816 2.99068C14.0236 2.066 13.1539 1.31209 12.1452 0.791843C11.1366 0.271595 10.0181 9.67028e-05 8.88316 1.60502e-08ZM8.88316 1.67463C10.3267 1.67463 11.7111 2.24804 12.7318 3.26871C13.7525 4.28939 14.3259 5.67372 14.3259 7.11717C14.3259 8.56063 13.7525 9.94496 12.7318 10.9656C11.7111 11.9863 10.3267 12.5597 8.88316 12.5597C7.43966 12.5597 6.05527 11.9863 5.03456 10.9656C4.01384 9.94496 3.44041 8.56063 3.44041 7.11717C3.44041 5.67372 4.01384 4.28939 5.03456 3.26871C6.05527 2.24804 7.43966 1.67463 8.88316 1.67463Z"
+                                        fill="white" fill-opacity="0.5"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button type="button" class="search-panel__close js-search-close">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.3555 0.353516L0.355468 14.3535" stroke="white" />
+                                <path d="M0.355469 0.353516L14.3555 14.3535" stroke="white" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="search-panel__results">
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                    <a href="javascript: void(0)" class="search-panel__result">
+                        <p>Сервіси</p>
+                        <p>IT Governance </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/libs/gsap/gsap.min.js"></script>
+    <script src="./assets/libs/gsap/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/datepicker/datepicker.min.js"></script>
+    <script src="./assets/libs/swiper/swiper.min.js"></script>
+    <script defer type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -40,6 +40,7 @@
     --bg_videos: rgba(255, 255, 255, 0.5);
     --bg_divider: #1111111a;
     --bg_dark: #dbdbdb;
+    --bg_blur: #45454533;
 
     --border_footer: #11111180;
     --border_default: #11111133;
@@ -88,6 +89,7 @@
     --bg_videos: rgba(0, 0, 0, 0.5);
     --bg_divider: #d9d9d91a;
     --bg_dark: #111111;
+    --bg_blur: #4545454d;
 
     --border_footer: #ffffff80;
     --border_default: #ffffff33;
@@ -101,48 +103,10 @@ html {
 
     &.light {
         @include lightTheme;
-        .header {
-            &__logo {
-                img:first-child {
-                    opacity: 0;
-                }
-            }
-        }
-        .footer {
-            &__logo {
-                img:first-child {
-                    opacity: 0;
-                }
-            }
-        }
-        .ceil-bg {
-            svg:first-child {
-                opacity: 0;
-            }
-        }
     }
 
     &.dark {
         @include darkTheme;
-        .header {
-            &__logo {
-                img:last-child {
-                    opacity: 0;
-                }
-            }
-        }
-        .footer {
-            &__logo {
-                img:last-child {
-                    opacity: 0;
-                }
-            }
-        }
-        .ceil-bg {
-            svg:last-child {
-                opacity: 0;
-            }
-        }
     }
 }
 

@@ -2,6 +2,34 @@
 @use '../../base/mixins' as *;
 @use '../../base/media' as *;
 
+html {
+    &.light {
+        .footer {
+            &__logo {
+                img:first-child {
+                    opacity: 0;
+                }
+                img:last-child {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.dark {
+        .footer {
+            &__logo {
+                img:first-child {
+                    opacity: 1;
+                }
+                img:last-child {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
 .footer {
     padding-block: rem(70px) rem(45px);
     margin-top: auto;
@@ -129,6 +157,12 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            &:first-child {
+                opacity: 1;
+            }
+            &:last-child {
+                opacity: 0;
+            }
         }
     }
 
