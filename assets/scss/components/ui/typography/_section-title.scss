@@ -4,6 +4,7 @@
 
 .section-title {
     font: 500 #{rem(50px)} / 110% $ff;
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
     &--sm {
         font-size: rem(30px);

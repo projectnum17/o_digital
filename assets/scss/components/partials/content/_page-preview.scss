@@ -70,4 +70,17 @@
             width: 100%;
         }
     }
+
+    &--simple {
+        .page-preview__info {
+            flex-direction: column;
+            max-width: rem(720px);
+            margin: 0 auto;
+            gap: rem(44px);
+        }
+
+        .section-title {
+            margin-bottom: 0;
+        }
+    }
 }
