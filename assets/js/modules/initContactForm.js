@@ -1,10 +1,25 @@
-export const initContactForm = () => {
+export const initContactForm = (successModal) => {
     const forms = document.querySelectorAll('form');
     if (!forms.length) return;
 
     forms.forEach((form) => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            if (form.querySelector('.js-search-field')) return;
+
+            const canShowSuccess =
+                successModal && typeof successModal.open === 'function';
+
+            if (canShowSuccess) {
+                successModal.open();
+
+                const modalForm = form.closest('.js-form-panel');
+                if (modalForm && typeof modalForm.close === 'function') {
+                    modalForm.close();
+                }
+            }
+            form.reset();
         });
     });
 
@@ -16,11 +31,45 @@ export const initContactForm = () => {
         if (!planningBlocks.length) return;
 
         const localeUk = {
-            days: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', "П'ятниця", 'Субота'],
+            days: [
+                'Неділя',
+                'Понеділок',
+                'Вівторок',
+                'Середа',
+                'Четвер',
+                "П'ятниця",
+                'Субота',
+            ],
             daysShort: ['Нед', 'Пон', 'Вів', 'Сер', 'Чет', "П'ят", 'Суб'],
             daysMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            months: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
-            monthsShort: ['Січ', 'Лют', 'Бер', 'Кві', 'Тра', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лис', 'Гру'],
+            months: [
+                'Січень',
+                'Лютий',
+                'Березень',
+                'Квітень',
+                'Травень',
+                'Червень',
+                'Липень',
+                'Серпень',
+                'Вересень',
+                'Жовтень',
+                'Листопад',
+                'Грудень',
+            ],
+            monthsShort: [
+                'Січ',
+                'Лют',
+                'Бер',
+                'Кві',
+                'Тра',
+                'Чер',
+                'Лип',
+                'Сер',
+                'Вер',
+                'Жов',
+                'Лис',
+                'Гру',
+            ],
             today: 'Сьогодні',
             clear: 'Очистити',
             dateFormat: 'dd.MM.yyyy',
@@ -29,11 +78,45 @@ export const initContactForm = () => {
         };
 
         const localeEn = {
-            days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            days: [
+                'Sunday',
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+            ],
             daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-            months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            months: [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December',
+            ],
+            monthsShort: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec',
+            ],
             today: 'Today',
             clear: 'Clear',
             dateFormat: 'dd/MM/yyyy',
@@ -41,8 +124,8 @@ export const initContactForm = () => {
             firstDay: 1,
         };
 
-        const currentLang = document.documentElement.lang
-        const selectedLang = currentLang === 'en' ? localeEn : localeUk
+        const currentLang = document.documentElement.lang;
+        const selectedLang = currentLang === 'en' ? localeEn : localeUk;
 
         planningBlocks.forEach((block) => {
             const dateInput = block.querySelector('.js-date-picker');
@@ -76,20 +159,32 @@ export const initContactForm = () => {
                 },
             });
 
+            dateInput.airDatepicker = dp;
+
+            const parentForm = block.closest('form');
+            if (parentForm) {
+                parentForm.addEventListener('reset', () => {
+                    dp.clear();
+                    dateText.textContent = defaultText;
+                });
+            }
+
             const dateHandler = dateRadio.closest('.form-box__handler');
             dateHandler.addEventListener('click', (e) => {
                 if (e.target.tagName !== 'INPUT') {
                     dp.show();
                 }
             });
-
             allRadios.forEach((radio) => {
-                radio.addEventListener('change', (e) => {
+                radio.addEventListener('change', () => {
                     if (radio === dateRadio) {
                         dp.show();
                     } else {
                         dp.clear();
-                        dp.hide();
+                        dateText.textContent = defaultText;
+                        try {
+                            dp.hide();
+                        } catch (error) {}
                     }
                 });
             });

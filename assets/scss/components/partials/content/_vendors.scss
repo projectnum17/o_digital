@@ -22,7 +22,8 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         border-radius: rem(45px);
-        border: 1px solid #494949;
+        border: 1px solid var(--border_default);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
     &__item {
@@ -30,7 +31,16 @@
         @include flexCenter();
         justify-content: center;
         padding: rem(41px) rem(10px);
-        border: 0.5px solid #494949;
+        border-right: 1px solid var(--border_default);
+        border-bottom: 1px solid var(--border_default);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &:nth-child(5n) {
+            border-right: none;
+        }
+
+        &.no-border {
+            border-bottom: none;
+        }
 
         img {
             max-width: 50%;

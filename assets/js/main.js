@@ -23,6 +23,7 @@ import { initAnchorsHandler } from './modules/initAnchorsHandler.js';
 import { initCountDownEvent } from './modules/initCountDownEvent.js';
 import { initClassHelper } from './modules/initClassHelper.js';
 import { reloadWindowHelper } from './modules/reloadWindowHelper.js';
+import { initModal } from './modules/initModal.js';
 
 // FOR FEATURE
 // import initShowMore from './modules/initShowMore.js';
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCeilHandler();
     initResultsSlider();
     initAutoHeightHandler();
-    initContactForm();
     initFAQBoxes();
     initValuesCards();
     initProgressScroll();
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
     updateGridTableUIState('.js-article-table', 768, 2, 3);
+    updateGridTableUIState('.js-vendor-box', 768, 2, 5);
     initSelect();
     initVideoPlayer();
     initToggleUILayout();
@@ -55,7 +56,62 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnchorsHandler('.js-article-content');
     initAnchorsHandler('.js-legals-content');
     initCountDownEvent();
-    reloadWindowHelper('.js-reload-window')
+    reloadWindowHelper('.js-reload-window');
+    initModal({
+        triggerSelector: '.js-search-trigger',
+        modalSelector: '.js-search-panel',
+        closeSelector: '.js-search-close',
+        wrapperSelector: '.js-search-wrapper',
+
+        onOpen: (modal) => {
+            const input = modal.querySelector('.js-search-field');
+
+            setTimeout(() => {
+                input?.focus();
+            }, 100);
+        },
+
+        onClose: (modal) => {
+            const form = modal.querySelector('form');
+
+            setTimeout(() => {
+                form?.reset();
+            }, 500);
+        },
+    });
+    initModal({
+        triggerSelector: '.js-lang-trigger',
+        modalSelector: '.js-lang-panel',
+        closeSelector: '.js-lang-close',
+        wrapperSelector: '.js-lang-wrapper',
+    });
+    initModal({
+        triggerSelector: '.js-form-trigger',
+        modalSelector: '.js-form-panel',
+        closeSelector: '.js-form-close',
+        wrapperSelector: '.js-form-wrapper',
+        onClose: (modal) => {
+            const form = modal.querySelector('form');
+            const dateInput = modal.querySelector('.js-date-picker');
+
+            if (dateInput && dateInput.airDatepicker) {
+                try {
+                    dateInput.airDatepicker.hide();
+                } catch (error) {}
+            }
+
+            setTimeout(() => {
+                form?.reset();
+            }, 500);
+        },
+    });
+    const successModal = initModal({
+        modalSelector: '.js-success-panel',
+        closeSelector: '.js-success-close',
+        wrapperSelector: '.js-success-wrapper',
+        autoCloseDelay: 4000,
+    });
+    initContactForm(successModal);
     // FOR FEATURE
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

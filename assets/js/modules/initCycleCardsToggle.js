@@ -6,7 +6,7 @@ export const initCycleCardsToggle = () => {
         card.addEventListener('click', (e) => {
             e.stopPropagation();
 
-            const primaryBtn = card.querySelector('.js-consultation');
+            const primaryBtn = card.querySelector('.js-form-trigger');
             const isOpen = card.classList.contains('is-open');
 
             if (primaryBtn.contains(e.target)) return;
