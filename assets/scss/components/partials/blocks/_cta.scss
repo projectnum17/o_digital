@@ -1,0 +1,113 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+html {
+    &.light {
+        .cta {
+            &--gradients {
+                .container {
+                    &::after {
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cta {
+    &--video {
+        padding-block: rem(50px);
+
+        .cta__box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: rem(13px);
+            padding-block: rem(75px);
+            overflow: hidden;
+            backdrop-filter: blur(29px);
+            background: var(--bg_panels);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            &::after,
+            &::before {
+                content: '';
+                z-index: -1;
+                opacity: 0.2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: url('../imgs/ico/logo_circ.svg') no-repeat center
+                    center / cover;
+                width: rem(375px);
+                aspect-ratio: 1;
+                filter: blur(5px);
+            }
+            &::after {
+                left: rem(-110px);
+            }
+
+            &::before {
+                right: rem(-110px);
+            }
+        }
+
+        .cta__title {
+            margin-bottom: rem(40px);
+        }
+
+        .section-description {
+            max-width: rem(467px);
+            margin: 0 auto rem(53px);
+        }
+    }
+
+    &--gradients {
+        .container {
+            padding-block: rem(156px);
+            position: relative;
+            &::after {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: url('../imgs/ico/logo_circ_d.svg') no-repeat center
+                    center / cover;
+                width: rem(574px);
+                aspect-ratio: 1;
+                filter: blur(5px);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+        }
+
+        .cta__box {
+            max-width: rem(1210px);
+            margin-left: auto;
+        }
+
+        .cta__title {
+            margin-bottom: rem(27px);
+        }
+
+        .section-description {
+            margin-bottom: rem(61px);
+        }
+    }
+
+    &__title {
+        font: 500 #{rem(60px)} / 100% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}
