@@ -26,9 +26,20 @@ import { initLegalPage } from './modules/initLegalPage.js';
 import { reloadWindowHelper } from './modules/reloadWindowHelper.js';
 import { initModal } from './modules/initModal.js';
 
-// FOR FEATURE
+// Show more script (remove if u need)
 // import initShowMore from './modules/initShowMore.js';
-// FOR FEATURE
+
+const toTopHandler = () => {
+    const btn = document.querySelector('.js-to-top');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -123,8 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
         autoCloseDelay: 4000,
     });
     initContactForm(successModal);
-    // FOR FEATURE
+    toTopHandler();
+    // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);
-    // FOR FEATURE
 });
