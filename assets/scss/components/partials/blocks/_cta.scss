@@ -77,7 +77,9 @@ html {
                 content: '';
                 z-index: -1;
                 position: absolute;
+                pointer-events: none;
                 top: 50%;
+                left: 0;
                 transform: translateY(-50%);
                 background: url('../imgs/ico/logo_circ_d.svg') no-repeat center
                     center / cover;

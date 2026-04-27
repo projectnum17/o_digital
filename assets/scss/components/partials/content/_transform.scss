@@ -2,6 +2,23 @@
 @use '../../../base/mixins' as *;
 @use '../../../base/media' as *;
 
+$title_h: #{rem(39px)};
+
+body:has(section.regarding) {
+    .transform {
+        &__list {
+            gap: rem(67px);
+            li {
+                color: var(--c_half);
+
+                span {
+                    color: var(--txt_primary);
+                }
+            }
+        }
+    }
+}
+
 .transform {
     padding-block: rem(65px);
     overflow: hidden;
@@ -12,6 +29,11 @@
 
     .section-description {
         max-width: rem(467px);
+
+        span {
+            color: var(--txt_primary);
+            font-weight: 500;
+        }
     }
 
     .container {
@@ -45,7 +67,7 @@
             width: 0%;
             position: absolute;
             height: 1px;
-            top: 50%;
+            top: calc($title_h + #{rem(10px)});
             left: 0;
             transform: translate(0%, -50%);
             background: var(--border_default);
@@ -55,6 +77,7 @@
         }
 
         li {
+            max-width: rem(330px);
             font: 400 #{rem(18px)} / 100% $ff;
             display: flex;
             gap: rem(20px);
@@ -67,13 +90,16 @@
             );
             span {
                 text-transform: uppercase;
+                min-height: $title_h;
+                display: flex;
+                align-items: center;
             }
 
             &:nth-child(1) {
                 svg {
                     width: rem(366px);
                     height: rem(366px);
-                    left: 100%;
+                    // left: 100%;
                 }
                 circle {
                     transition-delay: 1s;
@@ -90,7 +116,7 @@
             }
             &:nth-child(3) {
                 svg {
-                    left: 100%;
+                    // left: 100%;
                     width: rem(760px);
                     height: rem(760px);
                 }
@@ -100,6 +126,8 @@
             }
 
             svg {
+                opacity: .4;
+                pointer-events: none;
                 position: absolute;
                 left: 50%;
                 top: 50%;

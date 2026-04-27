@@ -21,6 +21,7 @@ import { initVideoPlayer } from './modules/initVideoPlayer.js';
 import { initToggleUILayout } from './modules/initToggleUILayout.js';
 import { initAnchorsHandler } from './modules/initAnchorsHandler.js';
 import { initCountDownEvent } from './modules/initCountDownEvent.js';
+import { initHistoryScroll } from './modules/initHistoryScroll.js';
 import { initLegalPage } from './modules/initLegalPage.js';
 import { reloadWindowHelper } from './modules/reloadWindowHelper.js';
 import { initModal } from './modules/initModal.js';
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnchorsHandler('.js-legals-content');
     initCountDownEvent();
     reloadWindowHelper('.js-reload-window');
+    initHistoryScroll();
     initModal({
         triggerSelector: '.js-search-trigger',
         modalSelector: '.js-search-panel',

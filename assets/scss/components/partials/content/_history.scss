@@ -1,0 +1,174 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.history {
+    --line-height: 0px;
+    --line-top: 0px;
+    .container {
+        display: flex;
+        gap: rem(28px);
+    }
+
+    .glow-mask {
+        opacity: 1;
+        z-index: -1;
+        height: rem(800px);
+    }
+
+    &__col {
+        padding-block: rem(106px);
+        width: 50%;
+        position: relative;
+
+        &:first-of-type {
+            padding-block: rem(150px) rem(106px);
+        }
+
+        &:last-of-type {
+            display: flex;
+            align-items: center;
+
+            &::after,
+            &::before {
+                position: absolute;
+                content: '';
+                left: rem(-14px);
+                // transform: translateX(#{rem(-14px)});
+                width: 1px;
+                height: 100%;
+                display: inline-flex;
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+
+            &::before {
+                top: var(--line-top);
+                height: var(--line-full-height);
+                background: var(--bg_lines);
+                z-index: 1;
+                // top: rem(160px);
+                // top: 0;
+                // height: calc(100% - 250px);
+                // top: 50%;
+                // transform: translateY(-50%);
+                // height: 95%;
+                // background: var(--bg_lines);
+            }
+            &::after {
+                z-index: 2;
+                top: var(--line-top);
+                height: var(--line-height);
+                background: linear-gradient(180deg, #fe6a20 0%, #ff9c07 100%);
+                will-change: height;
+                // top: var(--line-top);
+                // height: var(--line-height);
+                // will-change: transform;
+                // transform-origin: top;
+                // background: linear-gradient(90deg, #fe6a20 0%, #ff9c07 100%);
+            }
+        }
+    }
+
+    .section-description {
+        max-width: rem(420px);
+        color: var(--txt_primary);
+    }
+
+    &__cards {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: rem(93px);
+    }
+
+    &__info {
+        height: 100%;
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+
+        &.is-active {
+            &::before {
+                background: $c_accent;
+            }
+        }
+
+        &::before {
+            content: '';
+            z-index: 3;
+            position: relative;
+            display: inline-flex;
+            flex-shrink: 0;
+            width: rem(28px);
+            height: rem(28px);
+            margin-top: rem(20px);
+            transform: translateX(-100%);
+            border-radius: 50%;
+            background: #959595;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        div {
+            max-width: rem(472px);
+            width: 100%;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            gap: rem(16px);
+            padding: rem(30px);
+            backdrop-filter: blur(29px);
+            border-radius: rem(13px);
+            background: var(--bg_cards);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+
+        p {
+            margin: 0;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            * {
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+
+            &:first-child {
+                font: 600 #{rem(40px)} / 120% $ff;
+            }
+
+            &:last-child {
+                font: 500 #{rem(18px)} / 100% $ff;
+                color: var(--c_half);
+                span {
+                    color: var(--txt_primary);
+                }
+            }
+        }
+    }
+
+    &__headings {
+        display: flex;
+        flex-direction: column;
+        gap: rem(30px);
+    }
+
+    &__title {
+        max-width: rem(370px);
+        font: 500 #{rem(40px)} / 121% $ff;
+    }
+}

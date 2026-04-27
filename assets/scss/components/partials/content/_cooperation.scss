@@ -1,0 +1,70 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.cooperation {
+    padding-block: rem(75px) rem(70px);
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rem(84px);
+
+        .section-title {
+            max-width: 50%;
+        }
+    }
+
+    &__projects {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60px);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60px);
+
+        .section-description {
+            max-width: rem(739px);
+            color: var(--txt_primary);
+        }
+
+        .link-more {
+            max-width: rem(127px);
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: rem(24px);
+    }
+
+    &__headings {
+        display: flex;
+        flex-direction: column;
+        gap: rem(12px);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: rem(22px);
+    }
+
+    &__subheading {
+        font: 500 #{rem(30px)} / 100% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__heading {
+        font: 500 #{rem(40px)} / 110% $ff;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}
