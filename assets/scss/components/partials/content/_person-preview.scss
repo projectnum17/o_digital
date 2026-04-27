@@ -1,0 +1,93 @@
+@use '../../../base/var' as *;
+@use '../../../base/mixins' as *;
+@use '../../../base/media' as *;
+
+.person-preview {
+    z-index: 5;
+    min-height: rem(473px);
+    padding-block: rem(176px) rem(70px);
+
+    &::before {
+        content: '';
+        background: #0f0f0f1a;
+        filter: blur(132px);
+        width: rem(1087px);
+        height: rem(449px);
+        position: absolute;
+        left: -15%;
+        bottom: rem(20px);
+        border-radius: 999px;
+        z-index: 2;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(24px);
+    }
+
+    .section-title {
+        order: 2;
+    }
+
+    &__position {
+        font: 500 #{rem(30px)} / 110% $ff;
+        order: 1;
+        color: var(--txt_primary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+
+    &__medias {
+        order: 3;
+        display: flex;
+        align-items: center;
+        gap: rem(14px);
+
+        li {
+            width: rem(42px);
+            height: rem(42px);
+        }
+
+        a {
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: var(--bg_ico);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                transform: scale(1.05);
+            }
+        }
+
+        svg {
+            width: rem(25px);
+            height: rem(25px);
+            color: var(--c_ico);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+        }
+    }
+
+    &__col {
+        width: 100%;
+        &:first-child {
+            max-width: rem(518px);
+            display: flex;
+            flex-direction: column;
+            gap: rem(17px);
+        }
+
+        &:last-child {
+            max-width: rem(467px);
+        }
+    }
+}

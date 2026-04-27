@@ -153,4 +153,10 @@
         gap: rem(12px);
         margin-bottom: rem(39px);
     }
+
+    &__projects {
+        display: flex;
+        gap: rem(23px);
+        margin-bottom: rem(39px);
+    }
 }
