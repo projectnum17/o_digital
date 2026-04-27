@@ -76,6 +76,7 @@
             }
             .advantages__title {
                 color: transparent;
+                background-position: 100% 50%;
                 pointer-events: all;
 
                 &::after {
@@ -95,7 +96,11 @@
         width: 100%;
         font: 500 #{rem(40px)} / 110% $ff;
         color: var(--c_hidden);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        background-color: var(--c_hidden);
+        transition:
+            color 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+            background-color 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+            background-position .6s cubic-bezier(0.768, 0.304, 0.496, 0.884);
     }
 
     &__descr {

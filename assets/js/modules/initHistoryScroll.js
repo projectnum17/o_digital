@@ -25,7 +25,6 @@ export const initHistoryScroll = () => {
 
         const currentScrollPixels = triggerPoint - (firstBox.top + DOT_OFFSET);
 
-        // Ограничиваем высоту активной линии от 0 до fullHeight
         let activeHeight = Math.max(
             0,
             Math.min(fullHeight, currentScrollPixels),

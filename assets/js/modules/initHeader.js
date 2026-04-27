@@ -21,4 +21,24 @@ export const initHeader = () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    const initDDMenu = () => {
+        const triggers = document.querySelectorAll(
+            '.js-header li:has(.dd-menu)',
+        );
+        if (!triggers.length) return;
+
+        triggers.forEach((trigger) => {
+            const ddMenu = trigger.querySelector('.dd-menu');
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (ddMenu) {
+                    trigger.classList.toggle('is-active')
+                    ddMenu.classList.toggle('is-active');
+                }
+            });
+        });
+    };
+
+    initDDMenu();
 };

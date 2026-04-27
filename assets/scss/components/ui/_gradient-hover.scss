@@ -3,28 +3,17 @@
 @use '../../base/media' as *;
 
 .gradient-hover {
+    display: inline;
     position: relative;
+    background-image: $text_gradient;
+    background-size: 200% 100%;
+    background-position: 200% 50%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-    &::after {
-        content: attr(data-text);
-        position: absolute;
-        pointer-events: none;
-        inset: 0;
-        opacity: 0;
-        background: $text_gradient;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-    }
-
     @include hover {
-        color: transparent;
-
-        &::after {
-            opacity: 1;
-        }
+        background-position: 100% 50%;
     }
 }
