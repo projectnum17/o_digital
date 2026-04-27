@@ -97,12 +97,21 @@ html {
         }
 
         a {
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-animation: gradient-anim 3s ease infinite;
+            animation: gradient-anim 3s ease infinite;
+            background-image: $text_gradient;
             font: inherit;
             color: var(--txt_secondary);
             @include transitions(
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include hover {
+                color: rgba(0, 0, 0, 0);
+            }
         }
     }
 

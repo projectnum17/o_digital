@@ -1,0 +1,17 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.btn-sorted {
+    font: 600 #{rem(22px)} / 120% $ff;
+    display: flex;
+    align-items: center;
+    gap: rem(10px);
+    color: var(--txt_special);
+    @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+    svg {
+        color: var(--txt_secondary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    }
+}

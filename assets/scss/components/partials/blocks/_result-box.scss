@@ -97,4 +97,34 @@
         background: #fff;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
+
+    &--sm {
+        min-height: rem(285px);
+        max-width: rem(456px);
+        border-radius: rem(10px);
+
+        .result-box__review {
+            padding: rem(15px);
+        }
+
+        .result-box__info {
+            padding: rem(29px) rem(15px);
+            backdrop-filter: blur(13px);
+        }
+
+        .result-box__title {
+            font-size: rem(20px);
+        }
+
+        .result-box__text {
+            display: none;
+        }
+        .result-box__final {
+            display: none;
+        }
+
+        .testimonial-box {
+            display: none;
+        }
+    }
 }

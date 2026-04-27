@@ -3,6 +3,7 @@
 @use '../../base/media' as *;
 
 .filter-box {
+    flex-shrink: 0;
     position: relative;
     display: inline-flex;
     outline: none;

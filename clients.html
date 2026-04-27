@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./assets/css/main.min.css" />
 
     <link rel="shortcut icon" href="./assets/imgs/favicon/favicon.png" type="image/png" />
-    <title>O-Digital | Cases</title>
+    <title>O-Digital | Customers</title>
 </head>
 
 <body>
@@ -95,7 +95,7 @@
         </div>
     </header>
     <main class="main">
-        <section class="page-preview">
+        <section class="page-preview page-preview--started">
             <div class="video-bg">
                 <video muted autoplay loop playsinline class="js-video-autoplay" poster="./assets/img/poster-waves.png">
                     <source data-src="./assets/video/blob.mp4" type="video/mp4">
@@ -108,124 +108,476 @@
                         <a href="/">Головна</a>
                     </li>
                     <li>
-                        <a href="javascript: void(0)">Кейси</a>
+                        <a href="javascript: void(0)">Клієнти</a>
                     </li>
                 </ul>
                 <div class="page-preview__info">
                     <div class="page-preview__col">
-                        <h2 class="section-title">Реальні проєкти — реальний ефект</h2>
+                        <h2 class="section-title">
+                            Бізнеси довіряють нам розвиток своїх IT-рішень
+                        </h2>
                     </div>
                     <div class="page-preview__col">
                         <p class="section-description section-description--lg">
-                            SAP SE — це німецька корпорація, один із глобальних лідерів у сфері корпоративного
-                            програмного забезпечення.
+                            Постачаємо ліцензійне програмне забезпечення та обладнання від провідних світових вендорів.
                         </p>
-                        <button class="btn-primary js-form-trigger">
-                            <span class="btn-primary__text">Отримати консультацію</span>
-                            <span class="glow-mask">
-                                <span class="glow-mask__circles"></span>
-                            </span>
-                        </button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="cases">
-            <div class="container">
-                <div class="cases__filters">
-                    <div class="filter-box">
-                        <select class="js-select" id="caseFilter_1" name="caseFilter_1">
-                            <option value="" disabled selected>галузь</option>
-                            <option value="1">Галузь 1</option>
-                            <option value="2">Галузь 2</option>
-                            <option value="3">Галузь 3</option>
-                        </select>
-                    </div>
-                    <div class="filter-box">
-                        <select class="js-select" id="caseFilter_2" name="caseFilter_2">
-                            <option value="" disabled selected>Напрямок</option>
-                            <option value="1">Напрямок 1</option>
-                            <option value="2">Напрямок 2</option>
-                            <option value="3">Напрямок 3</option>
-                        </select>
-                    </div>
+        <section class="ticker-logos">
+            <div class="ticker-logos__marquee">
+                <div class="ticker-logos__track" aria-hidden="false">
+                    <img src="./assets/imgs/p_1.png" alt="Logo">
+                    <img src="./assets/imgs/p_2.png" alt="Logo">
+                    <img src="./assets/imgs/p_3.png" alt="Logo">
+                    <img src="./assets/imgs/p_4.png" alt="Logo">
+                    <img src="./assets/imgs/p_5.png" alt="Logo">
+                    <img src="./assets/imgs/p_6.png" alt="Logo">
+                    <img src="./assets/imgs/p_7.png" alt="Logo">
+                    <img src="./assets/imgs/p_8.png" alt="Logo">
                 </div>
-                <div class="cases__list">
-                    <a href="javascript: void(0)" class="result-box result-box--sm">
-                        <div class="result-box__bg">
-                            <img src="./assets/imgs/res_1.jpg" alt="">
-                        </div>
-                        <div class="result-box__info">
-                            <div class="result-box__details">
-                                <h3 class="result-box__title">
-                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="result-box__review">
-                            <div class="result-box__logo">
-                                <img src="./assets/imgs/partner_2.png" alt="Logo">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="result-box result-box--sm">
-                        <div class="result-box__bg">
-                            <img src="./assets/imgs/res_1.jpg" alt="">
-                        </div>
-                        <div class="result-box__info">
-                            <div class="result-box__details">
-                                <h3 class="result-box__title">
-                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="result-box__review">
-                            <div class="result-box__logo">
-                                <img src="./assets/imgs/partner_2.png" alt="Logo">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="javascript: void(0)" class="result-box result-box--sm">
-                        <div class="result-box__bg">
-                            <img src="./assets/imgs/res_1.jpg" alt="">
-                        </div>
-                        <div class="result-box__info">
-                            <div class="result-box__details">
-                                <h3 class="result-box__title">
-                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="result-box__review">
-                            <div class="result-box__logo">
-                                <img src="./assets/imgs/partner_2.png" alt="Logo">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <button type="button" class="content-more">
-                    Більше
-                    <img src="./assets/imgs/ico/arrow-light.svg" alt="">
-                </button>
-                <div class="content-pagination">
-                    <button type="button" class="content-pagination__btn content-pagination__btn--control">
-                        <svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.61426 0.291016L0.614257 7.29102L5.61426 14.291" stroke="white" />
-                        </svg>
-                    </button>
-                    <button type="button" class="content-pagination__btn is-current">1</button>
-                    <button type="button" class="content-pagination__btn">2</button>
-                    <button type="button" class="content-pagination__btn">3</button>
-                    <button type="button" class="content-pagination__btn">4</button>
-                    <button type="button" class="content-pagination__btn">5</button>
-                    <button type="button" class="content-pagination__btn content-pagination__btn--control">
-                        <svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.407227 14.291L5.40723 7.29102L0.407228 0.291016" stroke="white" />
-                        </svg>
-
-                    </button>
+                <div class="ticker-logos__track" aria-hidden="true">
+                    <img src="./assets/imgs/p_1.png" alt="Logo">
+                    <img src="./assets/imgs/p_2.png" alt="Logo">
+                    <img src="./assets/imgs/p_3.png" alt="Logo">
+                    <img src="./assets/imgs/p_4.png" alt="Logo">
+                    <img src="./assets/imgs/p_5.png" alt="Logo">
+                    <img src="./assets/imgs/p_6.png" alt="Logo">
+                    <img src="./assets/imgs/p_7.png" alt="Logo">
+                    <img src="./assets/imgs/p_8.png" alt="Logo">
                 </div>
             </div>
+        </section>
+        <section class="customers">
+            <div class="container">
+                <div class="customers__head">
+                    <div class="customers__filters">
+                        <div class="filter-box">
+                            <select class="js-select" id="customersFilter_1" name="customersFilter_1">
+                                <option value="" disabled selected>галузь</option>
+                                <option value="1">Галузь 1</option>
+                                <option value="2">Галузь 2</option>
+                                <option value="3">Галузь 3</option>
+                            </select>
+                        </div>
+                        <div class="filter-box">
+                            <select class="js-select" id="customersFilter_2" name="customersFilter_2">
+                                <option value="" disabled selected>Напрямок</option>
+                                <option value="1">Напрямок 1</option>
+                                <option value="2">Напрямок 2</option>
+                                <option value="3">Напрямок 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-sorted">
+                        Сортувати
+                        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.65618 17.7071C7.0467 18.0976 7.67986 18.0976 8.07039 17.7071L14.4343 11.3431C14.8249 10.9526 14.8249 10.3195 14.4343 9.92893C14.0438 9.53841 13.4107 9.53841 13.0201 9.92893L7.36328 15.5858L1.70643 9.92893C1.3159 9.53841 0.682738 9.53841 0.292214 9.92893C-0.0983105 10.3195 -0.0983105 10.9526 0.292214 11.3431L6.65618 17.7071ZM7.36328 0L6.36328 4.37114e-08L6.36328 17L7.36328 17L8.36328 17L8.36328 -4.37114e-08L7.36328 0Z"
+                                fill="white"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="customers__collect">
+                    <div class="customers__item">
+                        <div class="customers__info">
+                            <div class="customers__details">
+                                <div class="customers__logo">
+                                    <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                </div>
+                                <span class="tag">Спортивно-розважальна індустрія</span>
+                            </div>
+                            <div class="customers__heading">
+                                <h2 class="customers__naming">LeoLand</h2>
+                                <p class="section-description">
+                                    Proxima Research International — провідний постачальник технологічних інновацій для
+                                    сфери охорони здоров’я з більш ніж 30-річним досвідом
+                                </p>
+                            </div>
+                        </div>
+                        <div class="customers__results swiper js-customers-slider">
+                            <div class="customers__results-wrapper swiper-wrapper">
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customers__item">
+                        <div class="customers__info">
+                            <div class="customers__details">
+                                <div class="customers__logo">
+                                    <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                </div>
+                                <span class="tag">Спортивно-розважальна індустрія</span>
+                            </div>
+                            <div class="customers__heading">
+                                <h2 class="customers__naming">LeoLand</h2>
+                                <p class="section-description">
+                                    Proxima Research International — провідний постачальник технологічних інновацій для
+                                    сфери охорони здоров’я з більш ніж 30-річним досвідом
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customers__item">
+                        <div class="customers__info">
+                            <div class="customers__details">
+                                <div class="customers__logo">
+                                    <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                </div>
+                                <span class="tag">Спортивно-розважальна індустрія</span>
+                            </div>
+                            <div class="customers__heading">
+                                <h2 class="customers__naming">LeoLand</h2>
+                                <p class="section-description">
+                                    Proxima Research International — провідний постачальник технологічних інновацій для
+                                    сфери охорони здоров’я з більш ніж 30-річним досвідом
+                                </p>
+                            </div>
+                        </div>
+                        <div class="customers__results swiper js-customers-slider">
+                            <div class="customers__results-wrapper swiper-wrapper">
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="customers__results-slide swiper-slide">
+                                    <a href="javascript: void(0)" class="result-box result-box--sm">
+                                        <div class="result-box__bg">
+                                            <img src="./assets/imgs/res_1.jpg" alt="">
+                                        </div>
+                                        <div class="result-box__info">
+                                            <div class="result-box__details">
+                                                <h3 class="result-box__title">
+                                                    Оцінка IT-інфраструктури та ERP Microsoft Business Central
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="result-box__review">
+                                            <div class="result-box__logo">
+                                                <img src="./assets/imgs/partner_2.png" alt="Logo">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Відповіді на часті запитання</h2>
+                <ul class="faq__list">
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq-box js-faq-box">
+                        <div class="faq-box__head">
+                            <h3 class="faq-box__title">Які послуги надає O-Digital?</h3>
+                            <svg width="43" height="15" viewBox="0 0 43 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.865234L21.2847 12.8652L42.0693 0.865234" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="faq-box__inner">
+                            <p class="faq-box__text">
+                                “Команда продемонструвала високий рівень експертизи та глибоке розуміння наших
+                                бізнес-процесів. Завдяки їхнім рекомендаціям ми отримали чітке бачення подальшого
+                                розвитку наших систем.”
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ceil-bg js-ceil-bg">
+                <svg width="726" height="608" viewBox="0 0 726 608" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.341486" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="242.115" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="363.002" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="483.884" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="604.771" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="0.341486" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="365.049" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="486.619" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                </svg>
+                <svg width="726" height="608" viewBox="0 0 726 608" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.341486" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="242.115" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="363.002" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="483.884" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="604.771" y="0.341486" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="0.341486" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="121.91" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="121.228" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="243.48" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="365.049" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="365.049" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="0.341486" y="486.619" width="120.886" height="120.886" stroke="#727272"
+                        stroke-opacity="0.1" stroke-width="0.682973" />
+                    <rect x="121.228" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="242.115" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="363.002" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="483.884" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                    <rect x="604.771" y="486.619" width="120.886" height="120.886" stroke="#727272" stroke-opacity="0.1"
+                        stroke-width="0.682973" />
+                </svg>
+            </div>
+            <div class="faq__helper"></div>
         </section>
         <section class="promo">
             <div class="container">

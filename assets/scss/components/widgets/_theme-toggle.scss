@@ -27,8 +27,8 @@ $c_black: #000;
 
     &::before {
         content: '';
-        background: $c_white url('../imgs/ico/ico-moon.svg') no-repeat center
-            center / cover;
+        background: $c_black url('../imgs/ico/toggle-sun.svg') no-repeat center
+            center;
         display: block;
         position: absolute;
         z-index: 2;
@@ -45,11 +45,10 @@ $c_black: #000;
         background: $c_black;
 
         &::before {
-            transform: translateY(-50%) rotate(100deg);
+            transform: translateY(-50%) rotate(360deg);
             content: '';
             right: calc(#{$widthSwitch} - #{$widthSwitcher} - 2px);
-            background: url('../imgs/ico/ico-sun.svg') no-repeat center center /
-                cover;
+            background: $c_white url('../imgs/ico/toggle-moon.svg') no-repeat center center;
         }
     }
 }

@@ -13,24 +13,6 @@
         margin-bottom: rem(60px);
     }
 
-    &__person,
-    &__filter {
-        font: 600 #{rem(22px)} / 120% $ff;
-        display: flex;
-        align-items: center;
-        gap: rem(10px);
-        color: var(--txt_special);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-
-        svg {
-            color: var(--txt_secondary);
-            @include transitions(
-                0.3s,
-                cubic-bezier(0.768, 0.304, 0.496, 0.884)
-            );
-        }
-    }
-
     &__table {
         display: grid;
         border-radius: rem(7px);

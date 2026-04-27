@@ -14,7 +14,7 @@ import { initProgressScroll } from './modules/initProgressScroll.js';
 import { updateIntegrationSectionUI } from './modules/updateIntegrationSectionUI.js';
 import { initCycleCardsToggle } from './modules/initCycleCardsToggle.js';
 import { observerHelper } from './modules/observerHelper.js';
-import { initSuppliersSliders } from './modules/initSuppliersSliders.js';
+import { initSimpleSliderHelper } from './modules/initSimpleSliderHelper.js';
 import { updateGridTableUIState } from './modules/updateGridTableUIState.js';
 import { initSelect } from './modules/initSelect.js';
 import { initVideoPlayer } from './modules/initVideoPlayer.js';
@@ -44,7 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initCycleCardsToggle();
     observerHelper('.js-circles-anim', 'is-visible');
     observerHelper('.js-steps-block', 'is-animated', 0.6);
-    initSuppliersSliders();
+    initSimpleSliderHelper({
+        parent: '.js-supplier-slider',
+        slidesShown: 'auto',
+        gap: 24,
+    });
+    initSimpleSliderHelper({
+        parent: '.js-customers-slider',
+        slidesShown: 'auto',
+        gap: 22,
+    });
     updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
     updateGridTableUIState('.js-article-table', 768, 2, 3);
