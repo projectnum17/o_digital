@@ -26,15 +26,27 @@ export const initHeader = () => {
         const triggers = document.querySelectorAll(
             '.js-header li:has(.dd-menu)',
         );
+
         if (!triggers.length) return;
 
         triggers.forEach((trigger) => {
             const ddMenu = trigger.querySelector('.dd-menu');
+
             trigger.addEventListener('click', (e) => {
                 e.stopPropagation();
-                if (ddMenu) {
-                    trigger.classList.toggle('is-active')
-                    ddMenu.classList.toggle('is-active');
+                if (!ddMenu) return;
+
+                const isActive = trigger.classList.contains('is-active');
+
+                triggers.forEach((el) => {
+                    const menu = el.querySelector('.dd-menu');
+                    el.classList.remove('is-active');
+                    menu?.classList.remove('is-active');
+                });
+
+                if (!isActive) {
+                    trigger.classList.add('is-active');
+                    ddMenu.classList.add('is-active');
                 }
             });
         });
