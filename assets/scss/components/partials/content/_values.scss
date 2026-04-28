@@ -4,13 +4,22 @@
 
 .values {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         max-width: rem(784px);
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     .section-description {
         max-width: rem(467px);
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     &__head {
@@ -19,11 +28,69 @@
         justify-content: space-between;
         gap: rem(24px);
         margin-bottom: rem(76px);
+        @include media('mobile') {
+            flex-direction: column;
+            gap: rem(20px);
+            margin-bottom: rem(30px);
+        }
     }
 
     &__cards {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: rem(12px) 0;
+        border-left: 1px solid var(--border_default);
+        border-right: 1px solid var(--border_default);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        &-slide {
+            height: auto;
+            .value-box {
+                border-right: 1px solid var(--border_default);
+                @include media('mobile') {
+                    border: none;
+                }
+            }
+
+            &.swiper-slide-next {
+                .value-box {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: rem(8px);
+        margin-top: rem(46px);
+
+        &:has(.swiper-button-lock) {
+            display: none;
+        }
+
+        &-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: rem(56px);
+            height: rem(56px);
+            border-radius: 50%;
+            background: var(--bg_divider);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            &:last-child {
+                transform: rotate(180deg);
+            }
+
+            svg {
+                color: var(--txt_secondary);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+        }
     }
 }

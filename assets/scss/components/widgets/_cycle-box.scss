@@ -9,6 +9,9 @@
     width: 100%;
     padding-block: rem(60px);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding-block: rem(20px);
+    }
 
     &.is-open {
         .cycle-box__inner {
@@ -17,6 +20,9 @@
 
         .cycle-box__head {
             margin-bottom: rem(50px);
+            @include media('mobile') {
+                margin-bottom: rem(21px);
+            }
 
             svg {
                 transform: rotate(180deg);
@@ -31,6 +37,11 @@
         justify-content: space-between;
         gap: rem(12px);
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(28px);
+        }
     }
 
     &__inner {
@@ -53,6 +64,10 @@
         display: flex;
         flex-direction: column;
         gap: rem(33px);
+        @include media('mobile') {
+            gap: rem(21px);
+            max-width: 100%;
+        }
     }
 
     &__info {
@@ -61,6 +76,11 @@
         padding-right: rem(62px);
         border-right: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            max-width: 100%;
+            padding-right: 0;
+            border: none;
+        }
     }
 
     &__details {
@@ -71,6 +91,10 @@
         display: flex;
         flex-direction: column;
         gap: rem(24px);
+        @include media('mobile') {
+            max-width: 100%;
+            gap: rem(12px);
+        }
 
         .cycle-box__text {
             position: relative;
@@ -93,6 +117,13 @@
         justify-content: space-between;
         border-top: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        @include media('mobile') {
+            padding-block: rem(21px);
+            flex-direction: column;
+            gap: rem(21px);
+        }
+
         &:last-child {
             padding-block: rem(25px) 0;
         }
@@ -102,8 +133,11 @@
                 display: none;
             }
             .cycle-box__details {
-                padding-left: 0;
+                padding-left: rem(24px);
                 margin-left: 0;
+                @include media('mobile') {
+                    padding-left: 0;
+                }
             }
         }
     }
@@ -114,6 +148,12 @@
         width: 100%;
         color: var(--c_half);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            grid-column: span 2;
+        }
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__subtitle {
@@ -128,23 +168,39 @@
 
     p.cycle-box__text {
         margin-bottom: rem(50px);
+        @include media('mobile') {
+            margin-bottom: rem(21px);
+        }
     }
 
     &__text {
         font: 400 #{rem(20px)} / 120% $ff;
         color: var(--c_half);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     svg {
         flex-shrink: 0;
         color: var(--txt_secondary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            margin-left: auto;
+        }
+        @include media('mobile') {
+            width: rem(44px);
+        }
     }
 
     .btn-primary {
         margin-left: auto;
         margin-right: rem(114px);
         padding: rem(20px) rem(59px);
+        @include media('tablet') {
+            margin-right: auto;
+            margin-left: 0;
+        }
     }
 }

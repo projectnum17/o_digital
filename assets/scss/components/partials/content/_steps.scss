@@ -5,7 +5,46 @@
 .steps {
     padding-block: rem(80px);
     overflow-x: clip;
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
+    .container {
+        @include media('tablet') {
+            padding: 0;
+        }
+    }
     .section-title {
         margin-bottom: rem(73px);
+        @include media('tablet') {
+            padding-inline: $container_pdd;
+        }
+        @include media('mobile') {
+            margin-bottom: rem(40px);
+        }
+    }
+
+    .step-way {
+        @include media('tablet') {
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: $container_pdd;
+            padding-inline: $container_pdd;
+        }
+
+        &__item {
+            @include media('tablet') {
+                flex-shrink: 0;
+                max-width: rem(250px);
+                scroll-snap-align: start;
+                &:nth-child(5n + 4) {
+                    order: 5;
+                }
+            }
+        }
     }
 }

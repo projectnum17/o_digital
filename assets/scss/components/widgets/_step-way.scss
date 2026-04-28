@@ -2,6 +2,33 @@
 @use '../../base/mixins' as *;
 @use '../../base/media' as *;
 
+.after-wrapper {
+    position: relative;
+
+    &:has(.step-way.is-animated) {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        top: rem(47px);
+        left: 0;
+        height: rem(2px);
+        background: var(--border_default);
+        transition:
+            background 0.3s,
+            cubic-bezier(0.768, 0.304, 0.496, 0.884),
+            width 3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+        @include media('mobile') {
+            top: rem(21px);
+        }
+    }
+}
+
 .step-way {
     --turn: 50px;
     display: grid;
@@ -9,6 +36,10 @@
     gap: rem(90px) rem(20px);
     grid-template-columns: repeat(3, 1fr);
     z-index: 1;
+    @include media('tablet') {
+        display: flex;
+        align-items: flex-start;
+    }
 
     &.is-animated {
         .step-way__item::before {
@@ -56,6 +87,9 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('tablet') {
+                display: none;
+            }
         }
 
         &:nth-child(1)::before {
@@ -116,6 +150,12 @@
         background: $c_accent;
         color: var(--bg_accent);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            width: rem(42px);
+            height: rem(42px);
+            font-size: rem(31px);
+            margin-bottom: rem(15px);
+        }
     }
 
     &__title {
@@ -123,12 +163,19 @@
         margin-bottom: rem(20px);
         color: var(--txt_secondary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(18px);
+            margin-bottom: rem(15px);
+        }
     }
 
     &__descr {
         font: 400 #{rem(18px)} / 120% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     @keyframes drawLine {

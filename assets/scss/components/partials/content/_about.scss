@@ -60,8 +60,7 @@
         border-radius: rem(12px);
         backdrop-filter: blur(20px);
 
-        @include media('mobile') {
-            max-width: rem(222px);
+        @include media('tablet') {
             padding: rem(12px);
             border-radius: rem(6px);
 
@@ -72,6 +71,9 @@
             &:nth-child(4n + 3) {
                 margin-left: auto;
             }
+        }
+        @include media('mobile') {
+            max-width: rem(222px);
         }
 
         &:nth-child(1) {

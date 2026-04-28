@@ -4,13 +4,22 @@
 
 .cycle {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         max-width: 50%;
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     .section-description {
         max-width: rem(387px);
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     &__head {
@@ -19,6 +28,12 @@
         justify-content: space-between;
         gap: rem(24px);
         margin-bottom: rem(85px);
+        @include media('mobile') {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: rem(42px);
+            gap: rem(17px);
+        }
     }
 
     &__item {

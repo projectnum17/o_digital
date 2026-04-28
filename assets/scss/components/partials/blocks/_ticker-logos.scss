@@ -2,6 +2,26 @@
 @use '../../../base/mixins' as *;
 @use '../../../base/media' as *;
 
+:root {
+    --gap: #{rem(112px)};
+}
+
+@include media('mobile') {
+    :root {
+        --gap: #{rem(60px)};
+    }
+}
+
+body {
+    &:has(section.business) {
+        .ticker-logos {
+            @include media('mobile') {
+                padding: rem(10px);
+            }
+        }
+    }
+}
+
 .ticker-logos {
     padding-block: rem(24px);
     position: relative;
@@ -29,7 +49,7 @@
     &__marquee {
         display: flex;
         user-select: none;
-        gap: rem(112px);
+        gap: var(--gap);
 
         @include hover {
             .ticker-logos__track {
@@ -41,9 +61,9 @@
     &__track {
         flex-shrink: 0;
         min-width: 100%;
-        @include flexCenter(#{rem(112px)});
         justify-content: space-around;
         animation: scroll-left 60s linear infinite;
+        @include flexCenter(var(--gap));
         img {
             max-width: rem(120px);
         }
@@ -54,7 +74,7 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(calc(-100% - #{rem(95px)}));
+            transform: translateX(calc(-100% - var(--gap)));
         }
     }
 }

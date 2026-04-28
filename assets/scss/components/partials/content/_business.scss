@@ -4,8 +4,25 @@
 
 .business {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-bottom: rem(40px);
+    }
     .section-title {
         max-width: rem(833px);
+        @include media('mobile') {
+            max-width: 100%;
+            order: 1;
+        }
+    }
+    .btn-primary {
+        @include media('mobile') {
+            order: 3;
+        }
+    }
+    .ticker-logos {
+        @include media('mobile') {
+            order: 2;
+        }
     }
     &__head {
         margin-bottom: rem(42px);
@@ -13,5 +30,10 @@
         align-items: flex-end;
         justify-content: space-between;
         gap: rem(24px);
+        @include media('mobile') {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
     }
 }

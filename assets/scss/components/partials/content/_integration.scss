@@ -6,16 +6,22 @@
     padding-block: rem(70px);
     position: relative;
     overflow: hidden;
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     &:has(.integration__content.is-small) {
         padding-block: rem(150px);
+        @include media('mobile') {
+            padding-block: rem(70px);
+        }
     }
 
     &::after,
     &::before {
         content: '';
         z-index: -1;
-        opacity: 0.2;
+        opacity: 0.1;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -23,13 +29,23 @@
             cover;
         width: rem(375px);
         aspect-ratio: 1;
+
+        @include media('mobile') {
+            width: rem(190px);
+        }
     }
     &::after {
         left: rem(-110px);
+        @include media('mobile') {
+            left: rem(-130px);
+        }
     }
 
     &::before {
         right: rem(-110px);
+        @include media('mobile') {
+            right: rem(-130px);
+        }
     }
 
     .section-description {
@@ -42,10 +58,18 @@
         align-items: center;
         text-align: center;
         gap: rem(48px);
+        @include media('mobile') {
+            gap: rem(20px);
+            align-items: flex-start;
+            text-align: left;
+        }
 
         &.is-small {
             flex-direction: row;
             justify-content: center;
+            @include media('mobile') {
+                align-items: center;
+            }
             .section-title {
                 max-width: rem(418px);
                 text-align: left;
@@ -63,11 +87,18 @@
         display: flex;
         flex-wrap: wrap;
         gap: rem(32px);
+        @include media('mobile') {
+            gap: rem(20px);
+        }
 
         li {
             flex-shrink: 0;
             width: rem(152px);
             height: rem(152px);
+            @include media('mobile') {
+                width: rem(90px);
+                height: rem(90px);
+            }
         }
     }
 
@@ -81,6 +112,9 @@
         border-radius: rem(20px);
         border: 1px solid var(--bg_grafit);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            border-radius: rem(12px);
+        }
 
         img {
             max-width: 80%;

@@ -16,6 +16,7 @@ import { updateIntegrationSectionUI } from './modules/updateIntegrationSectionUI
 import { initCycleCardsToggle } from './modules/initCycleCardsToggle.js';
 import { observerHelper } from './modules/observerHelper.js';
 import { initSimpleSliderHelper } from './modules/initSimpleSliderHelper.js';
+import { initValuesSlider } from './modules/initValuesSlider.js';
 import { updateGridTableUIState } from './modules/updateGridTableUIState.js';
 import { initSelect } from './modules/initSelect.js';
 import { initVideoPlayer } from './modules/initVideoPlayer.js';
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgressScroll();
     updateIntegrationSectionUI();
     initCycleCardsToggle();
+    initValuesSlider();
     observerHelper('.js-circles-anim', 'is-visible');
     observerHelper('.js-steps-block', 'is-animated', 0.6);
     initSimpleSliderHelper({
@@ -188,6 +190,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortalBlock({
         selector: '.transform .section-description',
         target: '.transform .transform__wrapper',
+        breakpoint: 767,
+    });
+    initPortalBlock({
+        selector: '.business .ticker-logos',
+        target: '.business  .business__head',
         breakpoint: 767,
     });
     // Show more script (remove if u need)
