@@ -11,6 +11,10 @@
     backdrop-filter: blur(14px);
     background: var(--bg_suitable);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        max-width: rem(291px);
+        padding: rem(12px) rem(12px) rem(23px) rem(12px);
+    }
 
     &:not(:has(.btn-primary)) {
         .supplier-box__descr {
@@ -30,6 +34,10 @@
         width: rem(90px);
         height: rem(90px);
         flex-shrink: 0;
+        @include media('mobile') {
+            width: rem(60px);
+            height: rem(60px);
+        }
 
         img {
             width: 100%;
@@ -42,6 +50,9 @@
         font: 500 #{rem(30px)} / 114% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(19px);
+        }
     }
 
     &__heading {
@@ -49,6 +60,10 @@
         margin-bottom: rem(30px);
         color: var(--txt_secondary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(16px);
+            margin-bottom: rem(20px);
+        }
     }
 
     &__descr {
@@ -56,10 +71,22 @@
         margin-bottom: rem(54px);
         color: var(--txt_special);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+            margin-bottom: rem(22px);
+        }
     }
 
     .btn-primary {
         width: 100%;
         margin-top: auto;
+        @include media('mobile') {
+            font-size: rem(14px);
+            padding: rem(11px);
+            border-radius: rem(8px);
+            &::after {
+                border-radius: rem(10px);
+            }
+        }
     }
 }

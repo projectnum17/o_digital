@@ -88,13 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
         parent: '.js-supplier-slider',
         slidesShown: 'auto',
         gap: 24,
+        breakpoints: {
+            0: {
+                spaceBetween: 12,
+            },
+
+            768: {
+                spaceBetween: 24,
+            },
+        },
     });
     initSimpleSliderHelper({
         parent: '.js-customers-slider',
         slidesShown: 'auto',
         gap: 22,
     });
-    updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
+    updateGridTableUIState('.js-supplier-btn', 992, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
     updateGridTableUIState('.js-article-table', 768, 2, 3);
     updateGridTableUIState('.js-vendor-box', 992, 2, 5);
@@ -196,6 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
         selector: '.business .ticker-logos',
         target: '.business  .business__head',
         breakpoint: 767,
+    });
+    initPortalBlock({
+        selector:
+            'body:has(.supplier) section.page-preview .section-description',
+        target: '.page-preview__info .page-preview__col:first-child',
+        breakpoint: 991,
     });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);

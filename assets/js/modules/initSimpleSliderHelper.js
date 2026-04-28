@@ -1,4 +1,9 @@
-export const initSimpleSliderHelper = ({ parent, slidesShown, gap }) => {
+export const initSimpleSliderHelper = ({
+    parent,
+    slidesShown,
+    gap,
+    breakpoints = {},
+}) => {
     if (typeof Swiper === 'undefined') return;
 
     const sliderRows = document.querySelectorAll(parent);
@@ -9,6 +14,7 @@ export const initSimpleSliderHelper = ({ parent, slidesShown, gap }) => {
             slidesPerView: slidesShown || 3,
             spaceBetween: gap || 24,
             speed: 900,
+            breakpoints,
         });
     });
 };

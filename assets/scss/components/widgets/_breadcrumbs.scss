@@ -2,6 +2,14 @@
 @use '../../base/mixins' as *;
 @use '../../base/media' as *;
 
+body:has(.page-preview) {
+    .breadcrumbs {
+        @include media('mobile') {
+            margin-bottom: rem(43px);
+        }
+    }
+}
+
 .breadcrumbs {
     display: flex;
     align-items: center;
