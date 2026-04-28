@@ -22,6 +22,9 @@ body:has(section.regarding) {
 .transform {
     padding-block: rem(65px);
     overflow: hidden;
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         max-width: rem(623px);
@@ -40,6 +43,17 @@ body:has(section.regarding) {
         display: flex;
         flex-direction: column;
         gap: rem(215px);
+        @include media('mobile') {
+            gap: rem(163px);
+        }
+    }
+
+    &__wrapper {
+        @include media('mobile') {
+            display: flex;
+            flex-direction: column;
+            gap: rem(20px);
+        }
     }
 
     &__list {
@@ -51,10 +65,21 @@ body:has(section.regarding) {
         gap: rem(213px);
         justify-content: flex-end;
         position: relative;
+        @include media('tablet') {
+            gap: rem(90px);
+        }
+        @include media('mobile') {
+            gap: rem(175px);
+            flex-direction: column;
+        }
 
         &.is-visible {
             &::after {
                 width: 150%;
+                @include media('mobile') {
+                    height: 150%;
+                    width: 1px;
+                }
             }
 
             .reveal-circle {
@@ -73,52 +98,97 @@ body:has(section.regarding) {
             background: var(--border_default);
             transition:
                 background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884),
-                width 5s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+                width 5s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+                height 3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+
+            @include media('mobile') {
+                transform-origin: top;
+                width: 1px;
+                height: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                top: 50%;
+            }
         }
 
         li {
             max-width: rem(330px);
-            font: 400 #{rem(18px)} / 100% $ff;
             display: flex;
             gap: rem(20px);
             flex-direction: column;
             position: relative;
-            color: var(--txt_primary);
-            @include transitions(
-                0.3s,
-                cubic-bezier(0.768, 0.304, 0.496, 0.884)
-            );
+
+            @include media('mobile') {
+                width: 100%;
+                max-width: 100%;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            p {
+                margin: 0;
+                font: 400 #{rem(18px)} / 100% $ff;
+                color: var(--txt_primary);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include media('mobile') {
+                    width: 50%;
+                    font-size: rem(14px);
+                }
+            }
+
             span {
                 text-transform: uppercase;
                 min-height: $title_h;
                 display: flex;
                 align-items: center;
+                @include media('mobile') {
+                    min-height: auto;
+                    width: 50%;
+                    justify-content: flex-end;
+                }
             }
 
-            &:nth-child(1) {
+            &:nth-child(3n + 1) {
                 svg {
                     width: rem(366px);
                     height: rem(366px);
-                    // left: 100%;
+                    @include media('mobile') {
+                        width: rem(274px);
+                        height: rem(274px);
+                    }
                 }
                 circle {
                     transition-delay: 1s;
                 }
             }
-            &:nth-child(2) {
+            &:nth-child(3n + 2) {
                 svg {
                     width: rem(494px);
                     height: rem(494px);
+                    @include media('mobile') {
+                        width: rem(316px);
+                        height: rem(316px);
+                    }
                 }
                 circle {
                     transition-delay: 0.5s;
                 }
             }
-            &:nth-child(3) {
+            &:nth-child(3n + 3) {
                 svg {
                     // left: 100%;
                     width: rem(760px);
                     height: rem(760px);
+                    @include media('mobile') {
+                        width: rem(488px);
+                        height: rem(488px);
+                        transform: translate(-50%, -25%);
+                    }
                 }
                 circle {
                     transition-delay: 1.5s;
@@ -126,7 +196,7 @@ body:has(section.regarding) {
             }
 
             svg {
-                opacity: .4;
+                opacity: 0.4;
                 pointer-events: none;
                 position: absolute;
                 left: 50%;

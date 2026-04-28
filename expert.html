@@ -24,7 +24,8 @@
                 <div class="header__panel">
                     <div class="header__mobile">
                         <button type="button" class="header__search js-search-trigger">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.88316 1.60502e-08C7.54679 -8.97127e-05 6.23738 0.376043 5.1048 1.08535C3.97222 1.79466 3.06223 2.80849 2.47895 4.01081C1.89568 5.21314 1.6627 6.55538 1.80667 7.88392C1.95064 9.21247 2.46574 10.4736 3.29304 11.5231L0.235052 14.581C0.0825233 14.7389 -0.00187683 14.9504 3.14713e-05 15.17C0.00193882 15.3895 0.0900011 15.5995 0.245252 15.7548C0.400502 15.91 0.610518 15.9981 0.830069 16C1.04962 16.0019 1.26113 15.9175 1.41906 15.765L4.47705 12.7071C5.36845 13.4096 6.41492 13.8887 7.52916 14.1045C8.6434 14.3203 9.79309 14.2665 10.8823 13.9476C11.9715 13.6288 12.9687 13.0541 13.7907 12.2715C14.6126 11.4888 15.2354 10.521 15.6072 9.44875C15.979 8.37647 16.089 7.23083 15.928 6.10741C15.767 4.98399 15.3396 3.91536 14.6816 2.99068C14.0236 2.066 13.1539 1.31209 12.1452 0.791843C11.1366 0.271595 10.0181 9.67028e-05 8.88316 1.60502e-08ZM8.88316 1.67463C10.3267 1.67463 11.7111 2.24804 12.7318 3.26871C13.7525 4.28939 14.3259 5.67372 14.3259 7.11717C14.3259 8.56063 13.7525 9.94496 12.7318 10.9656C11.7111 11.9863 10.3267 12.5597 8.88316 12.5597C7.43966 12.5597 6.05527 11.9863 5.03456 10.9656C4.01384 9.94496 3.44041 8.56063 3.44041 7.11717C3.44041 5.67372 4.01384 4.28939 5.03456 3.26871C6.05527 2.24804 7.43966 1.67463 8.88316 1.67463Z"
                                     fill="white" fill-opacity="0.5" />
@@ -433,11 +434,14 @@
                             <a href="javascript: void(0)">Експертиза</a>
                         </li>
                     </ul>
-                    <h1 class="section-title">IT Governance и Бизнес консалтинг</h1>
+                    <h1 class="section-title section-title--main">IT Governance и Бизнес консалтинг</h1>
                     <p class="section-description">
                         ИТ аудит и оценка зрелости ИТ. Разработка ИТ-стратегии и Цифровая трансформация. Формирование
                         ИТ-команд. CIO Advisory Service.
                     </p>
+                    <div class="intro__pic mobile--visible">
+                        <img src="./assets/imgs/areas_1.png" alt="Thumbnail">
+                    </div>
                     <button class="btn-primary js-form-trigger">
                         <span class="btn-primary__text">Отримати консультацію</span>
                         <span class="glow-mask">
@@ -445,18 +449,20 @@
                         </span>
                     </button>
                 </div>
-                <div class="intro__pic">
+                <div class="intro__pic mobile--hidden">
                     <img src="./assets/imgs/areas_1.png" alt="Thumbnail">
                 </div>
             </div>
         </section>
         <section class="transform">
             <div class="container">
-                <h2 class="section-title">Ефективне управління та трансформація</h2>
+                <div class="transform__wrapper">
+                    <h2 class="section-title">Ефективне управління та трансформація</h2>
+                </div>
                 <ul class="transform__list js-circles-anim">
                     <li>
                         <span>ОЦІНКА</span>
-                        Поточний стан
+                        <p>Поточний стан</p>
                         <svg width="366" height="366" viewBox="0 0 366 366">
                             <defs>
                                 <mask id="reveal_1">
@@ -471,7 +477,7 @@
                     </li>
                     <li>
                         <span>СТРАТЕГІЯ</span>
-                        План розвитку
+                        <p>План розвитку</p>
                         <svg width="366" height="366" viewBox="0 0 366 366">
                             <defs>
                                 <mask id="reveal_2">
@@ -486,7 +492,7 @@
                     </li>
                     <li>
                         <span>РЕАЛІЗАЦІЯ</span>
-                        Впровадження рішень
+                        <p>Впровадження рішень</p>
                         <svg width="366" height="366" viewBox="0 0 366 366">
                             <defs>
                                 <mask id="reveal_3">
@@ -912,8 +918,7 @@
                             <p class="form-box__tcpa">
                                 Надсилаючи цю форму, я погоджуюсь з тим, що компанія O-Digital обробляє мої персональні
                                 дані відповідно до
-                                <a target="_blank" href="javascript: void(0)"
-                                    class="gradient-hover">
+                                <a target="_blank" href="javascript: void(0)" class="gradient-hover">
                                     Політики конфіденційності.
                                 </a>
                             </p>
@@ -1465,8 +1470,7 @@
                             <p class="form-box__tcpa">
                                 Надсилаючи цю форму, я погоджуюсь з тим, що компанія O-Digital обробляє мої персональні
                                 дані відповідно до
-                                <a target="_blank" href="javascript: void(0)"
-                                    class="gradient-hover">
+                                <a target="_blank" href="javascript: void(0)" class="gradient-hover">
                                     Політики конфіденційності.
                                 </a>
                             </p>

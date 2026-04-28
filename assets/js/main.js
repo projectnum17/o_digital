@@ -185,6 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
         target: '.js-form-panel .form-box__details',
         breakpoint: 767,
     });
+    initPortalBlock({
+        selector: '.transform .section-description',
+        target: '.transform .transform__wrapper',
+        breakpoint: 767,
+    });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

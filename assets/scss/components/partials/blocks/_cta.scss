@@ -19,6 +19,9 @@ html {
 .cta {
     &--video {
         padding-block: rem(50px);
+        @include media('tablet') {
+            padding-block: rem(20px);
+        }
 
         .cta__box {
             position: relative;
@@ -28,6 +31,7 @@ html {
             text-align: center;
             border-radius: rem(13px);
             padding-block: rem(75px);
+            padding-inline: $container_pdd;
             overflow: hidden;
             backdrop-filter: blur(29px);
             background: var(--bg_panels);
@@ -35,6 +39,12 @@ html {
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('tablet') {
+                padding-block: rem(60px);
+            }
+            @include media('mobile') {
+                padding-block: rem(40px);
+            }
 
             &::after,
             &::before {
@@ -49,6 +59,9 @@ html {
                 width: rem(375px);
                 aspect-ratio: 1;
                 filter: blur(5px);
+                @include media('mobile') {
+                    width: rem(200px);
+                }
             }
             &::after {
                 left: rem(-110px);
@@ -61,11 +74,17 @@ html {
 
         .cta__title {
             margin-bottom: rem(40px);
+            @include media('mobile') {
+                margin-bottom: rem(24px);
+            }
         }
 
         .section-description {
             max-width: rem(467px);
             margin: 0 auto rem(53px);
+            @include media('mobile') {
+                margin: 0 auto rem(24px);
+            }
         }
     }
 
@@ -73,6 +92,9 @@ html {
         .container {
             padding-block: rem(156px);
             position: relative;
+            @include media('mobile') {
+                padding-block: rem(70px);
+            }
             &::after {
                 content: '';
                 z-index: -1;
@@ -90,6 +112,9 @@ html {
                     0.3s,
                     cubic-bezier(0.768, 0.304, 0.496, 0.884)
                 );
+                @include media('mobile') {
+                    width: rem(320px);
+                }
             }
         }
 
@@ -100,10 +125,16 @@ html {
 
         .cta__title {
             margin-bottom: rem(27px);
+            @include media('mobile') {
+                margin-bottom: rem(24px);
+            }
         }
 
         .section-description {
             margin-bottom: rem(61px);
+            @include media('mobile') {
+                margin-bottom: rem(24px);
+            }
         }
     }
 
@@ -111,5 +142,11 @@ html {
         font: 500 #{rem(60px)} / 100% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            font-size: rem(42px);
+        }
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 }

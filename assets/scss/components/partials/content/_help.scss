@@ -4,8 +4,15 @@
 
 .help {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
+        color: var(--c_mute);
         margin-bottom: rem(56px);
+        @include media('mobile') {
+            margin-bottom: rem(52px);
+        }
     }
 }

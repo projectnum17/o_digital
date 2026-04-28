@@ -4,6 +4,9 @@
 
 .intro {
     padding-block: rem(150px) rem(20px);
+    @include media('mobile') {
+        padding-block: rem(125px) rem(30px);
+    }
 
     &::before {
         content: '';
@@ -23,22 +26,57 @@
         align-items: center;
         justify-content: space-between;
         gap: rem(24px);
+        @include media('mobile') {
+            flex-direction: column;
+        }
     }
 
     .section-title {
         margin-bottom: rem(44px);
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
     }
 
     .section-description {
         margin-bottom: rem(44px);
         max-width: rem(467px);
+
+        @include media('mobile') {
+            max-width: 100%;
+            margin-bottom: rem(12px);
+        }
     }
 
     &__info {
         max-width: rem(855px);
+        @include media('mobile') {
+            max-width: 100%;
+            width: 100%;
+        }
     }
 
     &__pic {
         max-width: rem(500px);
+        @include media('tablet') {
+            max-width: rem(350px);
+        }
+        @include media('mobile') {
+            margin-bottom: rem(12px);
+            max-width: rem(272px);
+            margin-left: auto;
+        }
+
+        &.mobile--hidden {
+            @include media('mobile') {
+                display: none;
+            }
+        }
+        &.mobile--visible {
+            display: none;
+            @include media('mobile') {
+                display: block;
+            }
+        }
     }
 }

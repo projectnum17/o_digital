@@ -7,12 +7,21 @@
     align-items: center;
     gap: rem(34px);
     margin-bottom: rem(44px);
+    @include media('mobile') {
+        margin-bottom: rem(6px);
+        gap: rem(20px);
+    }
 
     li {
         &:not(:last-child) {
             display: flex;
             align-items: center;
             gap: rem(34px);
+
+            @include media('mobile') {
+                gap: rem(20px);
+            }
+
             &::after {
                 content: '/';
             }
@@ -29,5 +38,8 @@
         font: 400 #{rem(16px)} / 120% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 }
