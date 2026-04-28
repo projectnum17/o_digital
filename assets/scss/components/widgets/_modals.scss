@@ -73,6 +73,11 @@
         border-radius: rem(12px);
         background: var(--bg_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            width: rem(30px);
+            height: rem(30px);
+            border-radius: rem(6px);
+        }
 
         &::after {
             content: '';
@@ -96,6 +101,10 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                width: rem(12px);
+                height: rem(12px);
+            }
         }
     }
 
@@ -103,6 +112,9 @@
         font: 400 #{rem(18px)} / 120% $ff;
         color: var(--txt_special);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     &__langs {
@@ -153,6 +165,16 @@
                 background: transparent;
                 backdrop-filter: none;
             }
+
+            .modal__close {
+                width: rem(38px);
+                height: rem(38px);
+                border-radius: rem(12px);
+
+                svg {
+                    width: rem(15px);
+                }
+            }
         }
     }
 
@@ -171,11 +193,19 @@
         .modal {
             &__box {
                 padding: rem(24px) rem(20px) rem(40px) rem(45px);
+                @include media('mobile') {
+                    padding: rem(16px);
+                    border-radius: rem(6px);
+                }
             }
 
             &__title {
                 margin-bottom: rem(41px);
                 margin-top: rem(15px);
+                @include media('mobile') {
+                    margin-top: 0;
+                    margin-bottom: rem(12px);
+                }
             }
         }
     }
