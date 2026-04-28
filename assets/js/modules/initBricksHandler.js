@@ -4,23 +4,61 @@ export const initBricksHandler = () => {
 
     if (!container || !bg) return;
 
-    const rect = bg.getBoundingClientRect();
-    const startX = rect.width / 2;
-    const startY = rect.height / 2;
+    const isTouch = matchMedia('(pointer: coarse)').matches;
 
-    bg.style.setProperty('--x', `${startX}px`);
-    bg.style.setProperty('--y', `${startY}px`);
+    let rect = container.getBoundingClientRect();
 
-    window.addEventListener('mousemove', (e) => {
-        const rect = bg.getBoundingClientRect();
+    let lastX = rect.width / 2;
+    let lastY = rect.height / 2;
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    const updateRect = () => {
+        rect = container.getBoundingClientRect();
 
-        bg.style.setProperty('--x', `${x}px`);
-        bg.style.setProperty('--y', `${y}px`);
+        setCoords(lastX, lastY);
+    };
 
-        container.style.setProperty('--x', `${e.clientX}px`);
-        container.style.setProperty('--y', `${e.clientY}px`);
-    });
+    const setCoords = (x, y) => {
+        const bgRect = bg.getBoundingClientRect();
+
+        const localX = x - bgRect.left;
+        const localY = y - bgRect.top;
+
+        bg.style.setProperty('--x', `${localX}px`);
+        bg.style.setProperty('--y', `${localY}px`);
+
+        container.style.setProperty('--x', `${x}px`);
+        container.style.setProperty('--y', `${y}px`);
+
+        lastX = x;
+        lastY = y;
+    };
+
+    setCoords(lastX, lastY);
+
+    window.addEventListener('resize', updateRect);
+
+    if (!isTouch) {
+        window.addEventListener('pointermove', (e) => {
+            setCoords(e.clientX, e.clientY);
+        });
+        return;
+    }
+
+    window.addEventListener(
+        'scroll',
+        () => {
+            const viewportHeight = window.innerHeight;
+
+            const progress =
+                (viewportHeight - rect.top) / (viewportHeight + rect.height);
+
+            const clamped = Math.max(0, Math.min(1, progress));
+
+            const x = rect.width * 0.5;
+            const y = rect.height * clamped;
+
+            setCoords(x, y);
+        },
+        { passive: true },
+    );
 };

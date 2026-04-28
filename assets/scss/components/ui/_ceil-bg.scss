@@ -52,6 +52,13 @@ html.dark {
     left: 45%;
     transform: translateX(-50%);
     top: rem(-150px);
+    @include media('mobile') {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        left: 50%;
+    }
 
     svg {
         position: absolute;
@@ -72,5 +79,9 @@ html.dark {
         fill: transparent;
         transition: fill 0.3s ease-out;
         pointer-events: none;
+
+        @include media('mobile') {
+            opacity: 0.8;
+        }
     }
 }

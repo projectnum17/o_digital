@@ -10,12 +10,22 @@ export const initResultsSlider = () => {
         slidesPerView: 'auto',
         speed: 900,
         autoplay: {
-            delay: 3000,
+            delay: 4500,
             disableOnInteraction: true,
         },
         pagination: {
             el: '.js-results-progress',
             type: 'progressbar',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+            },
         },
 
         on: {

@@ -5,9 +5,15 @@
 .vendors {
     padding-block: rem(70px);
     &__head {
-        @include flexCenter(#{rem(24px)});
         justify-content: space-between;
         margin-bottom: rem(50px);
+        @include flexCenter(#{rem(24px)});
+        @include media('mobile') {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: rem(40px);
+            gap: rem(20px);
+        }
     }
 
     &__info {
@@ -15,6 +21,10 @@
         flex-direction: column;
         gap: rem(50px);
         max-width: rem(467px);
+        @include media('mobile') {
+            max-width: 100%;
+            gap: rem(20px);
+        }
     }
 
     &__list {
@@ -24,6 +34,12 @@
         border-radius: rem(45px);
         border: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media('mobile') {
+            border-radius: rem(32px);
+        }
     }
 
     &__item {
@@ -34,8 +50,15 @@
         border-right: 1px solid var(--border_default);
         border-bottom: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            height: auto;
+            padding: rem(18px);
+        }
         &:nth-child(5n) {
             border-right: none;
+            @include media('tablet') {
+                border-right: 1px solid var(--border_default);
+            }
         }
 
         &.no-border {
@@ -44,10 +67,23 @@
 
         img {
             max-width: 50%;
+            @include media('tablet') {
+                max-width: rem(150px);
+                aspect-ratio: 1;
+                object-fit: contain;
+            }
+            @include media('mobile') {
+                max-width: rem(90px);
+            }
         }
     }
 
     .btn-primary {
-        padding: rem(20px) rem(45px);
+        padding: rem(20px);
+        width: 100%;
+        @include media('mobile') {
+            font-size: rem(12px);
+            padding: rem(15px) rem(15px);
+        }
     }
 }

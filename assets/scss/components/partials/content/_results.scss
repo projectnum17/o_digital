@@ -5,19 +5,34 @@
 .results {
     overflow: hidden;
     padding-block: rem(75px);
+
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
+
     &__head {
         justify-content: space-between;
-        @include flexCenter(#{rem(24px)});
         margin-bottom: rem(60px);
+        @include flexCenter(#{rem(24px)});
+        @include media('mobile') {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: rem(30px);
+            gap: rem(12px);
+        }
     }
 
     &__slider {
         margin-bottom: rem(50px);
-        overflow: visible !important;
+        overflow: visible;
+        @include media('mobile') {
+            margin-bottom: rem(35px);
+        }
 
         &-slide {
+            height: auto;
             max-width: rem(941px);
-            width: 100% !important;
+            width: 100%;
         }
     }
 }

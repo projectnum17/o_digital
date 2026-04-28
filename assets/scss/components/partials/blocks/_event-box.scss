@@ -49,6 +49,10 @@
         max-width: rem(162px);
         aspect-ratio: 162 / 213;
         position: relative;
+        @include media('mobile') {
+            max-width: rem(115px);
+            aspect-ratio: 115 / 149;
+        }
 
         img {
             width: 100%;
@@ -133,6 +137,9 @@
         margin-bottom: rem(12px);
         color: var(--c_half);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__descr {

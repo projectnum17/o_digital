@@ -31,6 +31,29 @@ import { initPortalBlock } from './modules/initPortalBlock.js';
 // Show more script (remove if u need)
 // import initShowMore from './modules/initShowMore.js';
 
+const bodyLock = (() => {
+    let locks = 0;
+
+    const update = () => {
+        document.body.classList.toggle('is-locked', locks > 0);
+    };
+
+    return {
+        lock() {
+            locks++;
+            update();
+        },
+        unlock() {
+            locks = Math.max(0, locks - 1);
+            update();
+        },
+        reset() {
+            locks = 0;
+            update();
+        },
+    };
+})();
+
 const toTopHandler = () => {
     const btn = document.querySelector('.js-to-top');
     if (!btn) return;
@@ -46,7 +69,7 @@ const toTopHandler = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initHeader();
-    initMobileMenu();
+    initMobileMenu({ bodyLock });
     initVideoAutoPlay();
     initBricksHandler();
     initCeilHandler();
@@ -72,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGridTableUIState('.js-supplier-btn', 768, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
     updateGridTableUIState('.js-article-table', 768, 2, 3);
-    updateGridTableUIState('.js-vendor-box', 768, 2, 5);
+    updateGridTableUIState('.js-vendor-box', 992, 2, 5);
     initSelect();
     initVideoPlayer();
     initToggleUILayout();
@@ -83,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reloadWindowHelper('.js-reload-window');
     initHistoryScroll();
     initModal({
+        bodyLock,
         triggerSelector: '.js-search-trigger',
         modalSelector: '.js-search-panel',
         closeSelector: '.js-search-close',
@@ -105,12 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
     initModal({
+        bodyLock,
         triggerSelector: '.js-lang-trigger',
         modalSelector: '.js-lang-panel',
         closeSelector: '.js-lang-close',
         wrapperSelector: '.js-lang-wrapper',
     });
     initModal({
+        bodyLock,
         triggerSelector: '.js-form-trigger',
         modalSelector: '.js-form-panel',
         closeSelector: '.js-form-close',
@@ -131,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
     const successModal = initModal({
+        bodyLock,
         modalSelector: '.js-success-panel',
         closeSelector: '.js-success-close',
         wrapperSelector: '.js-success-wrapper',
@@ -142,6 +169,21 @@ document.addEventListener('DOMContentLoaded', () => {
         selector: '.footer__by',
         target: '.footer__copy',
         breakpoint: 991,
+    });
+    initPortalBlock({
+        selector: '.clients__logos',
+        target: '.clients__info',
+        breakpoint: 767,
+    });
+    initPortalBlock({
+        selector: '.form-box__tcpa',
+        target: '.form-box__details',
+        breakpoint: 767,
+    });
+    initPortalBlock({
+        selector: '.js-form-panel .form-box__tcpa',
+        target: '.js-form-panel .form-box__details',
+        breakpoint: 767,
     });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);

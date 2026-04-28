@@ -6,6 +6,13 @@
     position: relative;
     font: 500 #{rem(50px)} / 110% $ff;
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('tablet') {
+        font-size: rem(36px);
+    }
+
+    @include media('mobile') {
+        font-size: rem(24px);
+    }
 
     &--sm {
         font-size: rem(30px);

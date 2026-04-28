@@ -1,4 +1,5 @@
 export const initModal = ({
+    bodyLock,
     triggerSelector,
     modalSelector,
     closeSelector,
@@ -21,7 +22,7 @@ export const initModal = ({
 
     const open = () => {
         modal.classList.add('is-show');
-        document.body.classList.add('is-locked');
+        bodyLock.lock();
 
         if (typeof onOpen === 'function') {
             onOpen(modal);
@@ -38,7 +39,7 @@ export const initModal = ({
 
     const close = () => {
         modal.classList.remove('is-show');
-        document.body.classList.remove('is-locked');
+        bodyLock.unlock();
 
         if (autoCloseTimer) {
             clearTimeout(autoCloseTimer);

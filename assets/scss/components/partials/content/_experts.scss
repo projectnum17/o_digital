@@ -4,14 +4,21 @@
 
 .experts {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
+
     .section-title {
         max-width: rem(878px);
     }
 
     &__head {
-        @include flexCenter(#{rem(24px)});
         justify-content: space-between;
         margin-bottom: rem(70px);
+        @include flexCenter(#{rem(24px)});
+        @include media('mobile') {
+            margin-bottom: rem(30px);
+        }
     }
 
     &__logo {
@@ -28,5 +35,13 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: rem(20px) rem(30px);
+        @include media('tablet') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: rem(10px);
+
+            .expert-box {
+                max-width: 100%;
+            }
+        }
     }
 }

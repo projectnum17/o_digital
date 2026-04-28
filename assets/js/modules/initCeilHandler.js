@@ -6,10 +6,10 @@ export const initCeilHandler = () => {
 
     const sampleSvg = bg.querySelector('svg');
     if (!sampleSvg) return;
-    const totalCells = sampleSvg.querySelectorAll('rect').length;
 
+    const totalCells = sampleSvg.querySelectorAll('rect').length;
     const svgs = bg.querySelectorAll('svg');
-    const cellSize = 121.105;
+
     const cols = 6;
 
     let lastIndex = -1;
@@ -17,6 +17,9 @@ export const initCeilHandler = () => {
 
     section.addEventListener('mousemove', (e) => {
         const bgRect = bg.getBoundingClientRect();
+
+        // 🔥 динамический размер клетки
+        const cellSize = bgRect.width / cols;
 
         const x = e.clientX - bgRect.left;
         const y = e.clientY - bgRect.top;
@@ -32,6 +35,7 @@ export const initCeilHandler = () => {
             currentCells.forEach((cell) => {
                 cell.classList.remove('is-current');
                 cell.classList.add('active');
+
                 setTimeout(() => {
                     cell.classList.remove('active');
                 }, 50);

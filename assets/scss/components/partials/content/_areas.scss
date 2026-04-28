@@ -5,9 +5,15 @@
 .areas {
     $picRatio: rem(500px);
     padding-block: rem(69px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         margin-bottom: rem(80px);
+        @include media('mobile') {
+            margin-bottom: rem(50px);
+        }
     }
 
     .section-description {
@@ -23,6 +29,9 @@
         margin-bottom: rem(80px);
         border-bottom: 1px solid var(--border_grey);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            margin-bottom: rem(43px);
+        }
     }
 
     &__item {
@@ -36,6 +45,17 @@
         padding-block: rem(136px);
         justify-content: space-between;
         @include flexCenter($picRatio);
+        @include media('desktop') {
+            gap: rem(24px);
+            padding-block: rem(50px);
+        }
+        @include media('tablet') {
+            flex-direction: column;
+        }
+        @include media('mobile') {
+            padding-block: rem(30px);
+            gap: rem(12px);
+        }
 
         @include hover {
             .areas__wrapper {
@@ -67,12 +87,31 @@
         transform: translate(-50%, -50%);
         animation: picBounce 4s ease-in-out infinite;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('desktop') {
+            animation: picBounceDesk 4s ease-in-out infinite;
+            position: relative;
+            left: auto;
+            width: 100%;
+            top: auto;
+            transform: translate(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        @include media('mobile') {
+            max-width: rem(250px);
+        }
     }
 
     &__info {
         max-width: rem(467px);
         position: relative;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: rem(28px);
+        }
     }
 
     &__cta {
@@ -86,6 +125,16 @@
         transform: translateY(70%);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         color: var(--c_half);
+        @include media('tablet') {
+            position: relative;
+            transform: translate(0);
+            bottom: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+        @include media('mobile') {
+            justify-content: space-between;
+        }
 
         img {
             animation: arrowMove 1.2s ease-in-out infinite;
@@ -104,6 +153,15 @@
         align-items: center;
         color: var(--c_half);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            flex-shrink: 1;
+            max-width: 100%;
+        }
+        @include media('mobile') {
+            gap: rem(28px);
+            font-size: rem(18px);
+            justify-content: flex-start;
+        }
 
         span {
             max-width: rem(273px);
@@ -125,6 +183,10 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                width: rem(45px);
+                height: rem(42px);
+            }
         }
     }
 
@@ -134,7 +196,7 @@
             transform: translate(0px);
         }
         50% {
-            transform: translate(5px);
+            transform: translate(3px);
         }
     }
 
@@ -147,6 +209,24 @@
         }
         100% {
             transform: translate(-50%, -50%);
+        }
+    }
+
+    @keyframes picBounceDesk {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-12px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .section-description {
+        @include media('mobile') {
+            font-size: rem(14px);
         }
     }
 }

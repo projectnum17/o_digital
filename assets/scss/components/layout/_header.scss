@@ -42,20 +42,21 @@ body {
     }
 
     &:has(.mobile-menu.is-open) {
-        .header__search {
-            width: rem(39px);
+        .header {
+            &__search {
+                width: rem(39px);
+            }
+            &__mobile {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0%, -50%);
+            }
+            .btn-primary {
+                margin-top: -150%;
+            }
         }
         .theme-toggle.mobile--visible {
             width: rem(36px);
-        }
-        .btn-primary {
-            margin-top: -150%;
-        }
-
-        .header__mobile {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0%, -50%);
         }
     }
 }

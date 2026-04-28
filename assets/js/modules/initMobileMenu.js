@@ -1,14 +1,23 @@
-export const initMobileMenu = () => {
+export const initMobileMenu = ({ bodyLock }) => {
     const initMobileVisible = () => {
         const burger = document.querySelector('.js-menu-trigger');
         const menuBox = document.querySelector('.js-mobile-menu');
         if (!burger || !menuBox) return;
 
+        let isOpen = false;
+
         burger.addEventListener('click', () => {
-            burger.classList.toggle('is-active')
-            menuBox.classList.toggle('is-open')
-            document.body.classList.toggle('is-locked')
-        })
+            isOpen = !isOpen;
+
+            burger.classList.toggle('is-active', isOpen);
+            menuBox.classList.toggle('is-open', isOpen);
+
+            if (isOpen) {
+                bodyLock.lock();
+            } else {
+                bodyLock.unlock();
+            }
+        });
     };
     const initDDMenu = () => {
         const items = document.querySelectorAll('.mobile-menu__routes > li');

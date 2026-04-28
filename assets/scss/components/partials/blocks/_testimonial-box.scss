@@ -12,19 +12,33 @@
     background: var(--bg_accent);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
+    @include media('mobile') {
+        padding: rem(12px);
+        max-width: 100%;
+    }
+
     &__title {
         font: 700 #{rem(16px)} / 120% $ff;
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     &__text {
         font: 400 #{rem(16px)} / 120% $ff;
         color: var(--c_half);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(12px);
+        }
     }
 
     &__name {
         font: 500 #{rem(14px)} / 120% $ff;
         color: var(--txt_secondary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(12px);
+        }
     }
 }

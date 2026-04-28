@@ -33,6 +33,9 @@ html {
 
 .promo {
     padding-block: rem(65px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     &__box {
         max-width: rem(926px);

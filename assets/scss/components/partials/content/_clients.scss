@@ -2,24 +2,54 @@
 @use '../../../base/mixins' as *;
 @use '../../../base/media' as *;
 
+:root {
+    --scroll-gap: #{rem(95px)};
+}
+
+@include media('mobile') {
+    :root {
+        --scroll-gap: #{rem(40px)};
+    }
+}
+
 .clients {
     padding-block: rem(70px) rem(92px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         margin-bottom: rem(67px);
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+            order: 1;
+        }
     }
 
     .btn-primary {
         padding: rem(20px) rem(27px);
+        @include media('mobile') {
+            padding: rem(17px);
+            order: 3;
+        }
     }
 
     .container {
-        @include flexCenter(#{rem(20px)});
         justify-content: space-between;
+        @include flexCenter(#{rem(20px)});
+        @include media('mobile') {
+            flex-direction: column;
+        }
     }
 
     &__info {
         max-width: rem(519px);
+        @include media('mobile') {
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__logos {
@@ -47,12 +77,20 @@
 
         mask-size: cover;
         -webkit-mask-size: cover;
+        @include media('mobile') {
+            order: 2;
+            gap: rem(12px);
+            margin-bottom: rem(24px);
+        }
     }
 
     &__marquee {
         display: flex;
         user-select: none;
-        gap: rem(95px);
+        gap: var(--scroll-gap);
+        @include media('mobile') {
+            gap: var(--scroll-gap);
+        }
 
         &:nth-child(1),
         &:nth-child(3) {
@@ -75,10 +113,17 @@
     &__track {
         flex-shrink: 0;
         min-width: 100%;
-        @include flexCenter(#{rem(95px)});
         justify-content: space-around;
+        @include flexCenter(var(--scroll-gap));
+        @include media('mobile') {
+            gap: var(--scroll-gap);
+        }
         img {
             max-width: rem(100px);
+
+            @include media('mobile') {
+                max-width: rem(90px);
+            }
         }
     }
 
@@ -87,13 +132,13 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(calc(-100% - #{rem(95px)}));
+            transform: translateX(calc(-100% - var(--scroll-gap)));
         }
     }
 
     @keyframes scroll-right {
         from {
-            transform: translateX(calc(-100% - #{rem(95px)}));
+            transform: translateX(calc(-100% - var(--scroll-gap)));
         }
         to {
             transform: translateX(0);

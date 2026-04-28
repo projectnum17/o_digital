@@ -7,6 +7,7 @@
     width: 100%;
     height: 100vh;
     height: 100svh;
+    z-index: 10;
     backdrop-filter: blur(24px);
     transform: translateX(-100%);
     background: var(--bg_menu);

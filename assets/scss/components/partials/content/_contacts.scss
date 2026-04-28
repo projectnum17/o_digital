@@ -4,11 +4,20 @@
 
 .contacts {
     padding-block: rem(75px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .container {
         display: flex;
         justify-content: space-between;
         gap: rem(24px);
+        @include media('desktop') {
+            flex-direction: column;
+        }
+        @include media('mobile') {
+            gap: rem(30px);
+        }
     }
 
     &__info {
@@ -16,5 +25,15 @@
         flex-direction: column;
         gap: rem(40px);
         max-width: rem(471px);
+        @include media('mobile') {
+            max-width: 100%;
+            gap: rem(20px);
+        }
+
+        .section-description {
+            @include media('mobile') {
+                font-size: rem(14px);
+            }
+        }
     }
 }
