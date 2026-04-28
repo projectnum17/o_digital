@@ -1,0 +1,288 @@
+@use '../../base/var' as *;
+@use '../../base/mixins' as *;
+@use '../../base/media' as *;
+
+.mobile-menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    backdrop-filter: blur(24px);
+    transform: translateX(-100%);
+    background: var(--bg_menu);
+    transition:
+        transform 0.5s cubic-bezier(0.768, 0.304, 0.496, 0.884),
+        background 0.3s cubic-bezier(0.768, 0.304, 0.496, 0.884);
+
+        &.is-open {
+            transform: translateX(0);
+        }
+
+    .container {
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: rem(32px);
+        padding-block: rem(120px) rem(33px);
+    }
+
+    .dd-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        &.is-active {
+            grid-template-rows: 1fr;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            padding: rem(13px);
+            border-radius: rem(13px);
+            position: relative;
+            background: var(--bg_link);
+            box-shadow: 7px 12px 29.1px 0px #fe6a201a;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                img {
+                    transform: translateX(5px);
+                }
+            }
+            * {
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                padding: 1px;
+                border-radius: inherit;
+                background: linear-gradient(
+                    90deg,
+                    rgba(254, 106, 32, 0.2) 0%,
+
+                    rgba(255, 156, 7, 0.2) 100%
+                );
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                pointer-events: none;
+            }
+
+            p:first-child {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: rem(4px);
+                margin-bottom: rem(11px);
+                font: 500 #{rem(16px)} / 100% $ff;
+                color: var(--txt_secondary);
+            }
+
+            p:last-child {
+                font: 500 #{rem(14px)} / 100% $ff;
+                color: var(--c_footer);
+            }
+        }
+
+        &__heading {
+            width: 100%;
+            font: 500 #{rem(16px)} / 100% $ff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: rem(4px);
+            color: $c_accent;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            &::after {
+                content: '';
+                width: rem(10px);
+                height: rem(10px);
+                mask: url('../imgs/ico/ico-drop.svg') no-repeat center center;
+                background: var(--txt_secondary);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+        }
+
+        &__wrapper {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: rem(20px);
+        }
+
+        &__submenu {
+            flex-direction: column;
+            display: flex;
+            padding-left: rem(20px);
+
+            &.is-active {
+                .dd-menu__subroutes {
+                    grid-template-rows: 1fr;
+                }
+                .dd-menu__heading {
+                    margin-bottom: rem(20px);
+                    &::after {
+                        background: $c_accent;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        &__subroutes {
+            display: grid;
+            grid-template-rows: 0fr;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            div {
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: rem(12px);
+            }
+
+            a {
+                font: 500 #{rem(14px)} / 100% $ff;
+                display: inline-flex;
+                align-items: center;
+                gap: rem(7px);
+                color: var(--txt_secondary);
+                &::after {
+                    content: '';
+                    width: rem(28px);
+                    height: rem(16px);
+                    background: url('../imgs/ico/arrow-light.svg') no-repeat
+                        center center;
+                    @include transitions(
+                        0.3s,
+                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                    );
+                }
+
+                @include hover {
+                    &::after {
+                        transform: translateX(3px);
+                    }
+                }
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+            }
+        }
+    }
+
+    &__routes {
+        display: flex;
+        flex-direction: column;
+        gap: rem(35px);
+
+        li {
+            &:has(.dd-menu) {
+                &.is-active {
+                    > a {
+                        margin-bottom: rem(20px);
+                        background-position: 100% 50% !important;
+                        &::after {
+                            transform: rotate(180deg);
+                            background: $c_accent;
+                        }
+                    }
+                }
+
+                > a {
+                    width: 100%;
+                    justify-content: space-between;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: rem(4px);
+
+                    &::after {
+                        content: '';
+                        width: rem(10px);
+                        height: rem(10px);
+                        mask: url('../imgs/ico/ico-drop.svg') no-repeat center
+                            center;
+                        background: var(--txt_secondary);
+                        @include transitions(
+                            0.3s,
+                            cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                        );
+                    }
+
+                    @include hover {
+                        &::after {
+                            background: $c_accent;
+                        }
+                    }
+                }
+            }
+        }
+
+        > li > a {
+            font: 500 #{rem(18px)} / 100% $ff;
+            position: relative;
+            background-image: $text_gradient;
+            background-size: 200% 100%;
+            background-position: 200% 50%;
+            background-repeat: no-repeat;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--txt_secondary);
+            background-color: var(--txt_secondary);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+            @include hover {
+                background-position: 100% 50%;
+            }
+        }
+    }
+
+    &__langs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(42px);
+    }
+
+    &__lang {
+        font: 500 #{rem(18px)} / 100% $ff;
+        text-transform: uppercase;
+        color: var(--txt_secondary);
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        &.is-current {
+            color: $c_accent;
+        }
+    }
+}

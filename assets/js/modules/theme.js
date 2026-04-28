@@ -1,19 +1,20 @@
 export const initTheme = () => {
-    const toggle = document.querySelector('#themeSwitcher');
+    const toggles = document.querySelectorAll('.js-theme-trigger');
 
-    if (!toggle) return;
+    if (!toggles.length) return;
 
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
     const savedTheme = localStorage.getItem('currentTheme');
 
     let currentTheme = savedTheme || (darkQuery.matches ? 'dark' : 'light');
 
     applyTheme(currentTheme, !!savedTheme);
 
-    toggle.addEventListener('change', () => {
-        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(currentTheme, true);
+    toggles.forEach((toggle) => {
+        toggle.addEventListener('change', () => {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(currentTheme, true);
+        });
     });
 
     darkQuery.addEventListener('change', (e) => {
@@ -24,10 +25,14 @@ export const initTheme = () => {
     });
 
     function applyTheme(theme, persist = true) {
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-        document.documentElement.classList.toggle('light', theme === 'light');
+        const html = document.documentElement;
 
-        toggle.checked = theme === 'light';
+        html.classList.toggle('dark', theme === 'dark');
+        html.classList.toggle('light', theme === 'light');
+
+        toggles.forEach((toggle) => {
+            toggle.checked = theme === 'light';
+        });
 
         if (persist) {
             localStorage.setItem('currentTheme', theme);

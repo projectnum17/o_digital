@@ -35,12 +35,21 @@ html {
     margin-top: auto;
     background: var(--bg_content);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding-block: rem(50px);
+    }
 
     &__top {
         display: flex;
         justify-content: space-between;
         margin-bottom: rem(35px);
         gap: rem(24px);
+        @include media('tablet') {
+            flex-direction: column;
+        }
+        @include media('mobile') {
+            gap: rem(31px);
+        }
     }
 
     &__details {
@@ -48,6 +57,12 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include media('tablet') {
+            gap: rem(21px);
+        }
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     &__menu {
@@ -63,8 +78,11 @@ html {
         display: flex;
         flex-direction: column;
         gap: rem(13px);
-        max-width: rem(235px);
+        max-width: rem(300px);
         width: 100%;
+        @include media('tablet') {
+            max-width: 100%;
+        }
     }
 
     &__totop {
@@ -85,6 +103,11 @@ html {
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+        }
+
+        @include media('tablet') {
+            transform: translate(0);
+            margin-bottom: 0;
         }
     }
 
@@ -125,6 +148,13 @@ html {
         display: flex;
         flex-direction: column;
         gap: rem(10px);
+
+        li {
+            font: 500 #{rem(16px)} / 100% $ff;
+            @include media('mobile') {
+                font-size: rem(14px);
+            }
+        }
 
         li,
         a {
@@ -191,6 +221,9 @@ html {
         font: 500 #{rem(16px)} / 100% $ff;
         color: var(--c_footer);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     &__title {
@@ -198,6 +231,10 @@ html {
         margin-bottom: rem(37px);
         color: var(--c_footer);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+            margin-bottom: rem(20px);
+        }
     }
 
     &__list {
@@ -247,6 +284,13 @@ html {
         justify-content: space-between;
         align-items: flex-end;
         gap: rem(12px);
+        @include media('tablet') {
+            flex-direction: column-reverse;
+            gap: rem(24px);
+        }
+        @include media('mobile') {
+            gap: rem(76px);
+        }
     }
 
     &__subscribe {
@@ -256,6 +300,10 @@ html {
             display: flex;
             gap: rem(29px);
             align-items: flex-end;
+            @include media('mobile') {
+                flex-direction: column;
+                gap: rem(20px);
+            }
         }
 
         input {
@@ -286,6 +334,9 @@ html {
             gap: rem(6px);
             max-width: rem(291px);
             width: 100%;
+            @include media('mobile') {
+                max-width: 100%;
+            }
         }
 
         &-title {
@@ -329,6 +380,17 @@ html {
         font-weight: 500;
         font-family: $ff;
         font-size: rem(10px);
+
+        @include media('tablet') {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @include media('mobile') {
+            justify-content: flex-start;
+            gap: rem(4px);
+        }
+
         p {
             margin: 0;
             line-height: 100%;
@@ -365,6 +427,10 @@ html {
         font: 500 #{rem(10px)} / 150% $ff;
         color: var(--txt_special);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            width: 100%;
+            justify-content: flex-end;
+        }
 
         a {
             text-decoration: underline;

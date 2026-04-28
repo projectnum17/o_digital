@@ -53,6 +53,9 @@
         filter: blur(10px);
         top: 10%;
         -webkit-mask-image: none;
+        @include media('mobile') {
+            z-index: -1;
+        }
     }
 
     &__text {

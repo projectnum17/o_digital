@@ -2,6 +2,7 @@
 
 import { initTheme } from './modules/theme.js';
 import { initHeader } from './modules/initHeader.js';
+import { initMobileMenu } from './modules/initMobileMenu.js';
 import { initVideoAutoPlay } from './modules/initVideoAutoPlay.js';
 import { initBricksHandler } from './modules/initBricksHandler.js';
 import { initCeilHandler } from './modules/initCeilHandler.js';
@@ -25,6 +26,7 @@ import { initHistoryScroll } from './modules/initHistoryScroll.js';
 import { initLegalPage } from './modules/initLegalPage.js';
 import { reloadWindowHelper } from './modules/reloadWindowHelper.js';
 import { initModal } from './modules/initModal.js';
+import { initPortalBlock } from './modules/initPortalBlock.js';
 
 // Show more script (remove if u need)
 // import initShowMore from './modules/initShowMore.js';
@@ -44,6 +46,7 @@ const toTopHandler = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initHeader();
+    initMobileMenu();
     initVideoAutoPlay();
     initBricksHandler();
     initCeilHandler();
@@ -135,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     initContactForm(successModal);
     toTopHandler();
+    initPortalBlock({
+        selector: '.footer__by',
+        target: '.footer__copy',
+        breakpoint: 991,
+    });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

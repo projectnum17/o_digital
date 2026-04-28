@@ -81,6 +81,10 @@
     flex-direction: column;
     max-height: rem(270px);
     overflow: auto;
+    @include media('mobile') {
+        max-height: calc(90vh - #{rem(48px)});
+        max-height: calc(90svh - #{rem(48px)});
+    }
 
     &::-webkit-scrollbar {
         width: 2px;
