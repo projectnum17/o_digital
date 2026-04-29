@@ -1,9 +1,29 @@
 'use strict';
+const loader = document.querySelector('.loader');
+let loaderHidden = false;
+
+const hideLoader = () => {
+    if (loader && !loaderHidden) {
+        loaderHidden = true;
+        loader.classList.add('is-hide');
+
+        setTimeout(() => loader.remove(), 500);
+    }
+};
+
+if (document.readyState === 'complete') {
+    hideLoader();
+} else {
+    window.addEventListener('load', hideLoader);
+}
+
+setTimeout(hideLoader, 7000);
 
 import { initTheme } from './modules/theme.js';
 import { initHeader } from './modules/initHeader.js';
 import { initMobileMenu } from './modules/initMobileMenu.js';
 import { initVideoAutoPlay } from './modules/initVideoAutoPlay.js';
+import { initAnimation } from './modules/initAnimation.js';
 import { initBricksHandler } from './modules/initBricksHandler.js';
 import { initCeilHandler } from './modules/initCeilHandler.js';
 import { initResultsSlider } from './modules/initResultsSlider.js';
@@ -72,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initMobileMenu({ bodyLock });
     initVideoAutoPlay();
+    initAnimation();
     initBricksHandler();
     initCeilHandler();
     initResultsSlider();
@@ -222,23 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
         breakpoint: 991,
     });
     initPortalBlock({
-        selector:
-            '.person-preview .section-description',
+        selector: '.person-preview .section-description',
         target: '.person-preview .person-preview__col:first-child',
         breakpoint: 767,
     });
     initPortalBlock({
-        selector:
-            '.cooperation .btn-primary',
+        selector: '.cooperation .btn-primary',
         target: '.cooperation .cooperation__projects',
         breakpoint: 767,
     });
-    // initPortalBlock({
-    //     selector:
-    //         'body:has(.partner-info) section.page-preview .section-description',
-    //     target: '.page-preview__info .page-preview__col:first-child',
-    //     breakpoint: 991,
-    // });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);

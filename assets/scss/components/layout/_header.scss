@@ -94,11 +94,8 @@ body {
         }
         &.mobile--visible {
             display: none;
-            // width: 0;
             @include media('mobile') {
                 display: block;
-                // order: 2;
-                // width: 0;
             }
         }
     }
@@ -333,13 +330,6 @@ body {
         border: 1px solid var(--border_default);
         background: var(--bg_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            // display: none;
-            // order: 1;
-            // border: none;
-            // width: 0;
-            // box-shadow: inset 0 0 0 1px var(--border_default);
-        }
 
         img {
             width: rem(16px);
@@ -437,7 +427,6 @@ body {
         padding: rem(9px) rem(22px);
         font-size: rem(14px);
         @include media('mobile') {
-            // order: 3;
             font-size: rem(12px);
             padding: rem(15px) rem(13px);
         }
