@@ -71,6 +71,7 @@ html {
 
     &__details {
         display: flex;
+        z-index: 2;
         max-width: rem(375px);
         flex-direction: column;
         @include media('desktop') {
