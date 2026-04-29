@@ -141,12 +141,6 @@ html {
         display: flex;
         flex-wrap: wrap;
         gap: rem(8px);
-        overflow: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
     }
 
     &__handler {
@@ -199,6 +193,16 @@ html {
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+
+            &:has(.js-date-text) {
+                min-height: rem(40px);
+            }
+
+            &:has(.is-date) {
+                svg {
+                    display: none;
+                }
+            }
 
             svg {
                 width: rem(24px);

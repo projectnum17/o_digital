@@ -26,6 +26,15 @@
         background: var(--bg_labels);
         border: 1px solid var(--border_datepick);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            max-height: rem(150px);
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
 
         &--pointer {
             display: none;

@@ -27,7 +27,6 @@ export const initContactForm = (successModal) => {
         const planningBlocks = document.querySelectorAll(
             '.js-planning-wrapper',
         );
-
         if (!planningBlocks.length) return;
 
         const localeUk = {
@@ -152,8 +151,16 @@ export const initContactForm = (successModal) => {
                         const year = date.getFullYear();
 
                         dateText.textContent = `${day}/${month}/${year}`;
+                        dateText.classList.add('is-date');
                         dateRadio.checked = true;
                     } else {
+                        dateText.textContent = defaultText;
+                        dateText.classList.remove('is-date');
+                    }
+                },
+                onHide() {
+                    if (dp.selectedDates.length === 0) {
+                        dateRadio.checked = false;
                         dateText.textContent = defaultText;
                     }
                 },
@@ -161,27 +168,61 @@ export const initContactForm = (successModal) => {
 
             dateInput.airDatepicker = dp;
 
-            const parentForm = block.closest('form');
-            if (parentForm) {
-                parentForm.addEventListener('reset', () => {
-                    dp.clear();
-                    dateText.textContent = defaultText;
+            const resetDateState = () => {
+                dp.clear();
+                dateText.textContent = defaultText;
+
+                dateRadio.checked = false;
+
+                block
+                    .querySelectorAll('input[type="checkbox"]')
+                    .forEach((cb) => {
+                        cb.checked = false;
+                    });
+            };
+
+            const closeOnScroll = () => {
+                if (dp.visible) {
+                    dp.hide();
+                }
+            };
+
+            const scrollParent =
+                dateInput.closest('.modal__box') || dateInput.closest('.modal');
+
+            window.addEventListener('scroll', closeOnScroll, { passive: true });
+
+            if (scrollParent) {
+                scrollParent.addEventListener('scroll', closeOnScroll, {
+                    passive: true,
                 });
             }
 
+            window.addEventListener('touchmove', closeOnScroll, {
+                passive: true,
+            });
+
+            window.addEventListener('resize', closeOnScroll);
+
+            const parentForm = block.closest('form');
+            if (parentForm) {
+                parentForm.addEventListener('reset', resetDateState);
+            }
+
             const dateHandler = dateRadio.closest('.form-box__handler');
+
             dateHandler.addEventListener('click', (e) => {
                 if (e.target.tagName !== 'INPUT') {
                     dp.show();
                 }
             });
+
             allRadios.forEach((radio) => {
                 radio.addEventListener('change', () => {
                     if (radio === dateRadio) {
                         dp.show();
                     } else {
-                        dp.clear();
-                        dateText.textContent = defaultText;
+                        resetDateState();
                         try {
                             dp.hide();
                         } catch (error) {}
