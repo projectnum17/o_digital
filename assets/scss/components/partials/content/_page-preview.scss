@@ -83,6 +83,9 @@
             &:not(:has(.btn-primary)) {
                 .section-title {
                     margin-bottom: 0;
+                    @include media('tablet') {
+                        margin-bottom: rem(20px);
+                    }
                 }
             }
 
@@ -92,6 +95,9 @@
                 gap: rem(33px);
                 .section-title {
                     margin-bottom: 0;
+                    @include media('tablet') {
+                        margin-bottom: rem(20px);
+                    }
                 }
             }
         }
@@ -104,6 +110,8 @@
             width: 100%;
             @include media('tablet') {
                 max-width: 100%;
+                flex-direction: column-reverse;
+                gap: 0;
             }
         }
     }

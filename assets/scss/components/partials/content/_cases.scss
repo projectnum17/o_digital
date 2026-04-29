@@ -4,12 +4,18 @@
 
 .cases {
     padding-block: rem(60px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     &__filters {
         display: flex;
         align-items: center;
         gap: rem(11px);
         margin-bottom: rem(40px);
+        @include media('mobile') {
+            margin-bottom: rem(18px);
+        }
     }
 
     &__list {
@@ -17,5 +23,16 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(22px);
         margin-bottom: rem(47px);
+        @include media('desktop') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            .result-box {
+                max-width: 100%;
+            }
+        }
+        @include media('mobile') {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: rem(18px);
+            margin-bottom: rem(40px);
+        }
     }
 }

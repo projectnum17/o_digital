@@ -147,6 +147,11 @@
         max-width: rem(456px);
         border-radius: rem(10px);
 
+        @include media('mobile') {
+            min-height: rem(206px);
+            flex-direction: row;
+        }
+
         .result-box__review {
             padding: rem(15px);
         }
@@ -154,10 +159,17 @@
         .result-box__info {
             padding: rem(29px) rem(15px);
             backdrop-filter: blur(13px);
+            @include media('mobile') {
+                padding: rem(11px) rem(11px) rem(16px) rem(11px);
+                width: 50%;
+            }
         }
 
         .result-box__title {
             font-size: rem(20px);
+            @include media('desktop') {
+                font-size: rem(16px);
+            }
         }
 
         .result-box__text {

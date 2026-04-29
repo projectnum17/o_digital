@@ -212,12 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
         target: '.page-preview__info .page-preview__col:first-child',
         breakpoint: 991,
     });
-    initPortalBlock({
-        selector:
-            'body:has(.partner-info) section.page-preview .section-description',
-        target: '.page-preview__info .page-preview__col:first-child',
-        breakpoint: 991,
-    });
+    // initPortalBlock({
+    //     selector:
+    //         'body:has(.partner-info) section.page-preview .section-description',
+    //     target: '.page-preview__info .page-preview__col:first-child',
+    //     breakpoint: 991,
+    // });
     // Show more script (remove if u need)
     // initShowMore('.js-vendors-list', '.js-vendor-box', '.js-vendor-more', 9);
     // initShowMore('.js-areas-list', '.js-areas-box', '.js-areas-more', 4);
