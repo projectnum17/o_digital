@@ -55,6 +55,9 @@
             flex-direction: column;
             gap: 0;
         }
+        @include media('mobile') {
+            align-items: flex-start;
+        }
     }
 
     &__logo {
@@ -144,6 +147,12 @@
         .page-preview__col:last-child {
             margin-top: rem(25px);
             max-width: rem(448px);
+        }
+    }
+
+    *:last-child {
+        @include media('mobile') {
+            margin-bottom: 0;
         }
     }
 }

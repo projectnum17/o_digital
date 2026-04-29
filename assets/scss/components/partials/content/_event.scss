@@ -8,10 +8,6 @@
         padding-block: rem(40px);
     }
 
-    *:last-child {
-        margin-bottom: 0;
-    }
-
     .container {
         max-width: rem(1000px);
     }
@@ -329,6 +325,12 @@
             @include media('mobile') {
                 padding: rem(17px);
             }
+        }
+    }
+
+    *:last-child {
+        @include media('mobile') {
+            margin-bottom: 0;
         }
     }
 }
