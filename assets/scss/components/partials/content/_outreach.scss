@@ -4,6 +4,9 @@
 
 .outreach {
     padding-block: rem(80px) rem(112px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .container {
         display: flex;
@@ -13,6 +16,9 @@
 
     &__box {
         max-width: rem(349px);
+        @include media('tablet') {
+            max-width: 100%;
+        }
         * {
             @include transitions(
                 0.3s,
@@ -23,31 +29,52 @@
 
     &__guide {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: rem(12px);
+        @include media('tablet') {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include media('mobile') {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__title {
         font: 400 #{rem(20px)} / 100% $ff;
         margin-bottom: rem(38px);
         color: var(--txt_primary);
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+            font-size: rem(18px);
+        }
     }
 
     &__head {
         font: 400 #{rem(16px)} / 100% $ff;
         color: var(--txt_primary);
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 
     &__connect {
         display: flex;
         flex-direction: column;
         gap: rem(40px);
+        @include media('mobile') {
+            gap: rem(24px);
+        }
     }
 
     &__details {
         display: flex;
         flex-direction: column;
         gap: rem(16px);
+        @include media('mobile') {
+            gap: rem(10px);
+        }
     }
 
     &__link {
@@ -56,12 +83,19 @@
         @include hover {
             color: $c_accent;
         }
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__socials {
         display: flex;
         flex-direction: column;
         gap: rem(20px);
+        @include media('mobile') {
+            gap: rem(12px);
+            flex-direction: row;
+        }
     }
 
     &__media {
@@ -74,6 +108,12 @@
             color: $c_accent;
             .outreach__ico {
                 transform: scale(1.05);
+            }
+        }
+        @include media('mobile') {
+            font-size: rem(18px);
+            span {
+                display: none;
             }
         }
     }
@@ -99,6 +139,11 @@
         border-radius: rem(22px);
         overflow: hidden;
 
+        @include media('mobile') {
+            height: rem(350px);
+            border-radius: rem(12px);
+        }
+
         img {
             width: 100%;
             height: 100%;
@@ -118,6 +163,12 @@
         background: var(--bg_dark);
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            right: rem(8px);
+            bottom: rem(8px);
+            gap: rem(8px);
+            padding: rem(12px);
+        }
         * {
             @include transitions(
                 0.3s,
@@ -130,10 +181,16 @@
 
             &:first-child {
                 font: 400 #{rem(16px)} / 100% $ff;
+                @include media('mobile') {
+                    font-size: rem(14px);
+                }
             }
 
             &:last-child {
                 font: 500 #{rem(24px)} / 100% $ff;
+                @include media('mobile') {
+                    font-size: rem(18px);
+                }
             }
         }
     }

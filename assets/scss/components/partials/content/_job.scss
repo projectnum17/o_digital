@@ -4,14 +4,23 @@
 
 .job {
     padding-block: rem(80px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .section-title {
         margin-bottom: rem(50px);
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: rem(32px);
+        @include media('mobile') {
+            gap: rem(20px);
+        }
     }
 }
