@@ -85,6 +85,12 @@ html {
         text-transform: uppercase;
         color: transparent;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('tablet') {
+            font-size: rem(350px);
+        }
+        @include media('mobile') {
+            font-size: rem(150px);
+        }
 
         &::before,
         &::after {
@@ -120,6 +126,10 @@ html {
         width: rem(355px);
         height: rem(355px);
         position: relative;
+        @include media('mobile') {
+            width: rem(150px);
+            height: rem(150px);
+        }
 
         img {
             inset: 0;
@@ -148,6 +158,9 @@ html {
         transform: translate(-50%, -30%);
         left: 50%;
         padding-inline: $container_pdd;
+        @include media('mobile') {
+            bottom: 0;
+        }
     }
 
     &__box {
@@ -161,6 +174,10 @@ html {
         backdrop-filter: blur(38px);
         background: var(--bg_panels);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            padding: rem(16px);
+            border-radius: rem(8px);
+        }
         * {
             @include transitions(
                 0.3s,
@@ -173,6 +190,10 @@ html {
         margin-bottom: rem(23px);
         font: 500 #{rem(30px)} / 100% $ff;
         color: var(--txt_primary);
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+            font-size: rem(24px);
+        }
     }
 
     &__text {
@@ -180,5 +201,8 @@ html {
         margin-bottom: rem(50px);
         font: 500 #{rem(16px)} / 100% $ff;
         color: var(--c_footer);
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 }
