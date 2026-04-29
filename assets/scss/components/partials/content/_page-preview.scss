@@ -3,6 +3,7 @@
 @use '../../../base/media' as *;
 
 .page-preview {
+    overflow: hidden;
     z-index: 5;
     min-height: rem(473px);
     padding-block: rem(176px) rem(70px);
@@ -101,6 +102,9 @@
             gap: rem(22px);
             max-width: rem(467px);
             width: 100%;
+            @include media('tablet') {
+                max-width: 100%;
+            }
         }
     }
 
