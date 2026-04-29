@@ -4,6 +4,10 @@
 
 .vendors {
     padding-block: rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
+
     &__head {
         justify-content: space-between;
         margin-bottom: rem(50px);

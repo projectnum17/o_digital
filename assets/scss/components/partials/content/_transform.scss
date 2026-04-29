@@ -218,5 +218,30 @@ body:has(section.regarding) {
                 transition: stroke-dashoffset 4s ease;
             }
         }
+
+        &--lg {
+            @include media('mobile') {
+                &::after {
+                    display: none;
+                }
+
+                li {
+                    gap: rem(7px);
+                    flex-direction: column;
+                    max-width: 80%;
+                    margin: 0 auto;
+
+                    span,
+                    p {
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    span {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
     }
 }

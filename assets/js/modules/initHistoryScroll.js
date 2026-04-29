@@ -4,9 +4,8 @@ export const initHistoryScroll = () => {
 
     if (!infoBlock || !boxes.length) return;
 
-    // Константа смещения центра кружка от верха <li>
-    // margin-top: 20px + (height: 28px / 2) = 34px
-    const DOT_OFFSET = 34;
+    const isMobile = innerWidth <= 767;
+    let DOT_OFFSET = isMobile ? 7 : 34;
 
     const updateProgress = () => {
         const windowHeight = window.innerHeight;

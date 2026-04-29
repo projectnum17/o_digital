@@ -24,11 +24,13 @@ html {
         text-align: center;
         position: relative;
         padding-block: rem(122px);
+        @include media('mobile') {
+            padding-block: rem(70px);
+        }
         &::after,
         &::before {
             content: '';
             z-index: -1;
-
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -41,19 +43,37 @@ html {
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                width: rem(320px);
+            }
         }
 
         &::before {
             right: -20%;
+            @include media('mobile') {
+                right: rem(-200px);
+            }
         }
 
         &::after {
             left: -20%;
+            @include media('mobile') {
+                left: rem(-200px);
+            }
         }
     }
 
     .section-description {
         margin-bottom: rem(48px);
+        @include media('mobile') {
+            margin-bottom: rem(24px);
+        }
+    }
+
+    .btns-panel {
+        @include media('mobile') {
+            width: 100%;
+        }
     }
 
     &__title {
@@ -61,5 +81,9 @@ html {
         margin-bottom: rem(16px);
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(24px);
+            margin-bottom: rem(12px);
+        }
     }
 }

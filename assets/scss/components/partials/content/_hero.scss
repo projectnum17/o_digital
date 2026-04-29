@@ -70,40 +70,11 @@
         }
     }
 
-    &__statistics {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+    .stats-block {
         gap: rem(20px);
         @include media('tablet') {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
             order: 2;
             margin-bottom: rem(40px);
-        }
-    }
-
-    &__statistic {
-        display: flex;
-        flex-direction: column;
-        gap: rem(10px);
-    }
-
-    &__val {
-        font: 600 #{rem(40px)} / 110% $ff;
-        color: var(--txt_secondary);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            font-size: rem(24px);
-        }
-    }
-
-    &__text {
-        font: 400 #{rem(16px)} / 110% $ff;
-        color: var(--txt_special);
-        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
-        @include media('mobile') {
-            font-size: rem(14px);
         }
     }
 

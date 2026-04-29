@@ -4,12 +4,21 @@
 
 .cooperation {
     padding-block: rem(75px) rem(70px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     &__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: rem(84px);
+        gap: rem(12px);
+        flex-wrap: wrap;
+
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
 
         .section-title {
             max-width: 50%;
@@ -20,12 +29,18 @@
         display: flex;
         flex-direction: column;
         gap: rem(60px);
+        @include media('mobile') {
+            gap: rem(36px);
+        }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         gap: rem(60px);
+        @include media('mobile') {
+            gap: rem(24px);
+        }
 
         .section-description {
             max-width: rem(739px);
@@ -34,6 +49,9 @@
 
         .link-more {
             max-width: rem(127px);
+            @include media('mobile') {
+                max-width: 100%;
+            }
         }
     }
 
@@ -42,6 +60,10 @@
         align-items: flex-end;
         justify-content: space-between;
         gap: rem(24px);
+        flex-wrap: wrap;
+        @include media('mobile') {
+            gap: rem(12px);
+        }
     }
 
     &__headings {
@@ -51,20 +73,46 @@
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        scroll-snap-type: x mandatory;
         gap: rem(22px);
+
+        @include media('mobile') {
+            gap: rem(12px);
+        }
+
+        li {
+            flex-shrink: 0;
+            max-width: rem(450px);
+            scroll-snap-align: start;
+            @include media('mobile') {
+                max-width: rem(320px);
+            }
+        }
     }
 
     &__subheading {
         font: 500 #{rem(30px)} / 100% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__heading {
         font: 500 #{rem(40px)} / 110% $ff;
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 }

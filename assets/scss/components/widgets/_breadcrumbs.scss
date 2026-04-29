@@ -2,28 +2,13 @@
 @use '../../base/mixins' as *;
 @use '../../base/media' as *;
 
-body:has(.page-preview) {
-    .breadcrumbs {
-        @include media('mobile') {
-            margin-bottom: rem(43px);
-        }
-    }
-}
-body:has(.masthead) {
-    .breadcrumbs {
-        @include media('mobile') {
-            margin-bottom: rem(43px);
-        }
-    }
-}
-
 .breadcrumbs {
     display: flex;
     align-items: center;
     gap: rem(34px);
     margin-bottom: rem(44px);
     @include media('mobile') {
-        margin-bottom: rem(6px);
+        margin-bottom: rem(43px);
         gap: rem(20px);
     }
 

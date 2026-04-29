@@ -227,6 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
         target: '.person-preview .person-preview__col:first-child',
         breakpoint: 767,
     });
+    initPortalBlock({
+        selector:
+            '.cooperation .btn-primary',
+        target: '.cooperation .cooperation__projects',
+        breakpoint: 767,
+    });
     // initPortalBlock({
     //     selector:
     //         'body:has(.partner-info) section.page-preview .section-description',

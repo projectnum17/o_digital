@@ -4,11 +4,17 @@
 
 .founder {
     padding-block: rem(30px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .container {
         display: flex;
         align-items: center;
         gap: rem(24px);
+        @include media('tablet') {
+            flex-direction: column-reverse;
+        }
     }
 
     &__pic {
@@ -16,6 +22,10 @@
         aspect-ratio: 471 / 368;
         border-radius: rem(22px);
         overflow: hidden;
+        @include media('mobile') {
+            border-radius: rem(12px);
+            aspect-ratio: 350 / 200;
+        }
 
         img {
             width: 100%;
@@ -30,6 +40,12 @@
         gap: rem(28px);
         max-width: rem(900px);
         width: 100%;
+        @include media('tablet') {
+            max-width: 100%;
+        }
+        @include media('mobile') {
+            gap: rem(12px);
+        }
 
         * {
             color: var(--txt_primary);
@@ -42,14 +58,23 @@
 
     &__name {
         font: 500 #{rem(40px)} / 131% $ff;
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
     &__pos {
         font: 500 #{rem(22px)} / 131% $ff;
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__descr {
         p {
             font: 400 #{rem(18px)} / 131% $ff;
+            @include media('mobile') {
+                font-size: rem(14px);
+            }
         }
     }
 }
