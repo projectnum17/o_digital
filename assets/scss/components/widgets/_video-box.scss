@@ -7,6 +7,9 @@
     position: relative;
     border-radius: rem(13px);
     overflow: hidden;
+    @include media('mobile') {
+        border-radius: rem(12px);
+    }
 
     &::after {
         content: '';
@@ -45,7 +48,14 @@
 
         svg {
             color: var(--c_grey);
-            @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            @include media('mobile') {
+                width: rem(40px);
+            }
         }
     }
 }

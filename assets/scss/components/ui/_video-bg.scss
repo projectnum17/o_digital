@@ -4,6 +4,7 @@
 
 section:has(.video-bg) {
     position: relative;
+    overflow: hidden;
 
     .container {
         position: relative;

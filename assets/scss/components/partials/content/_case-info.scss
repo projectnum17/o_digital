@@ -4,25 +4,50 @@
 
 .case-info {
     padding-block: rem(50px);
+    @include media('desktop') {
+        overflow: hidden;
+    }
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     .container {
         display: flex;
         align-items: flex-start;
         gap: rem(24px);
         justify-content: space-between;
+        @include media('desktop') {
+            flex-direction: column-reverse;
+        }
+        @include media('mobile') {
+            gap: rem(40px);
+        }
     }
 
     .sticky-block {
         max-width: rem(475px);
         width: 100%;
+        @include media('mobile') {
+            max-width: 100%;
+        }
     }
 
     .video-box {
         margin-bottom: rem(39px);
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
     }
 
     .step-way {
         margin-bottom: rem(39px);
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
+    }
+
+    &__content {
+        width: 100%;
     }
 
     &__article {
@@ -45,26 +70,46 @@
         img {
             margin-bottom: rem(33px);
             border-radius: rem(24px);
+            @include media('mobile') {
+                margin-bottom: rem(20px);
+                border-radius: rem(12px);
+            }
         }
 
         h2 {
             font: 500 #{rem(40px)} / 110% $ff;
             margin-bottom: rem(30px);
+            @include media('mobile') {
+                font-size: rem(18px);
+                margin-bottom: rem(20px);
+            }
         }
 
         h3 {
             font: 500 #{rem(24px)} / 110% $ff;
             margin-bottom: rem(16px);
+            @include media('mobile') {
+                font-size: rem(18px);
+                margin-bottom: rem(20px);
+            }
         }
 
         h4 {
             font: 500 #{rem(22px)} / 120% $ff;
             margin-bottom: rem(32px);
+            @include media('mobile') {
+                font-size: rem(18px);
+                margin-bottom: rem(20px);
+            }
         }
         h5,
         h6 {
             font: 500 #{rem(20px)} / 120% $ff;
             margin-bottom: rem(32px);
+            @include media('mobile') {
+                font-size: rem(18px);
+                margin-bottom: rem(20px);
+            }
         }
 
         p {
@@ -73,9 +118,15 @@
                 font: 400 #{rem(18px)} / 110% $ff;
                 text-transform: uppercase;
                 color: var(--txt_primary);
+                @include media('mobile') {
+                    font-size: rem(16px);
+                }
             }
             &:where(:not([class]):not(:last-child)) {
                 margin-bottom: rem(39px);
+                @include media('mobile') {
+                    margin-bottom: rem(20px);
+                }
             }
         }
 
@@ -88,6 +139,13 @@
             padding-left: rem(28px);
             gap: rem(20px);
             color: var(--txt_primary);
+
+            @include media('mobile') {
+                font-size: rem(16px);
+                padding-block: rem(14px);
+                padding-left: rem(14px);
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -106,9 +164,16 @@
             padding: 0 0 0 rem(14px);
             margin-bottom: rem(32px);
             max-width: rem(816px);
+            @include media('mobile') {
+                max-width: 100%;
+                margin-bottom: rem(20px);
+            }
 
             li {
                 font: 400 #{rem(18px)} / 154% $ff;
+                @include media('mobile') {
+                    font-size: rem(16px);
+                }
             }
         }
 
@@ -144,6 +209,9 @@
         margin-bottom: rem(20px);
         color: var(--txt_primary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__digital {
@@ -152,6 +220,20 @@
         justify-content: space-between;
         gap: rem(12px);
         margin-bottom: rem(39px);
+        @include media('mobile') {
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scroll-snap-type: x mandatory;
+            .digital-box {
+                flex-shrink: 0;
+                max-width: rem(190px);
+                scroll-snap-align: start;
+            }
+        }
     }
 
     &__projects {

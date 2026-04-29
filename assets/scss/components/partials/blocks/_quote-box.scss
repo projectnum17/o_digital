@@ -11,11 +11,18 @@
     gap: rem(16px);
     border: 1px solid var(--border_default);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        border-radius: rem(8px);
+        padding: rem(12px);
+    }
 
     &__text {
         font: 400 #{rem(22px)} / 120% $ff;
         color: var(--txt_special);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(18px);
+        }
     }
 
     &__info {
@@ -28,11 +35,17 @@
         font: 500 #{rem(20px)} / 120% $ff;
         color: var(--txt_secondary);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(16px);
+        }
     }
 
     &__position {
         font: 500 #{rem(18px)} / 120% $ff;
         color: var(--c_footer);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            font-size: rem(14px);
+        }
     }
 }

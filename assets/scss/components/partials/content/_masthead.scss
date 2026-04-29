@@ -6,6 +6,15 @@
     z-index: 5;
     padding-block: rem(176px) rem(70px);
     min-height: rem(473px);
+    @include media('mobile') {
+        padding-block: rem(125px) rem(40px);
+        display: grid;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 
     &::before {
         content: '';
@@ -25,11 +34,17 @@
         flex-direction: column;
         gap: rem(25px);
         max-width: rem(928px);
+        @include media('mobile') {
+            flex: 1;
+        }
     }
 
     &__tags {
         display: flex;
         flex-wrap: wrap;
         gap: rem(13px);
+        @include media('mobile') {
+            margin-top: auto;
+        }
     }
 }

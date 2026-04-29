@@ -215,6 +215,7 @@
             @include media('mobile') {
                 font-size: rem(16px);
                 padding-block: rem(14px);
+                padding-left: rem(14px);
             }
 
             &::before {

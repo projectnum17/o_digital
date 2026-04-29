@@ -12,4 +12,9 @@
     background: var(--bg_labels);
     border: 1px solid var(--border_default);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        font-size: rem(12px);
+        padding: rem(6) rem(12px);
+        border-radius: rem(8px);
+    }
 }
