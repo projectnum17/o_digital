@@ -86,7 +86,7 @@
                 font: 500 #{rem(14px)} / 100% $ff;
                 color: var(--c_footer);
                 @include media('mobile') {
-                    font-size: rem(12px);
+                    font-size: rem(14px);
                 }
             }
 
@@ -100,10 +100,17 @@
         }
     }
 
+    &__hidden {
+        display: none;
+    }
+
     &__cta {
         display: flex;
         align-items: center;
         gap: rem(6px);
+        @include media('mobile') {
+            justify-content: space-between;
+        }
         p {
             margin: 0;
             font: 600 #{rem(18px)} / 120% $ff;
