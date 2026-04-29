@@ -10,6 +10,10 @@
     border-radius: rem(6px);
     border: 1px solid var(--border_default);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        gap: rem(12px) rem(2px);
+        padding: rem(15px) rem(12px);
+    }
 
     &__item {
         display: flex;

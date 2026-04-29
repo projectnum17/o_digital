@@ -7,17 +7,38 @@
     border-radius: rem(6px);
     border: 1px solid var(--border_default);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding: rem(15px) rem(0px);
+    }
 
     &__title {
         font: 500 #{rem(14px)} / 100% $ff;
         margin-bottom: rem(14px);
         color: var(--c_footer);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            padding-inline: rem(12px);
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         gap: rem(14px);
+        @include media('mobile') {
+            padding-inline: rem(12px);
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .speaker-info {
+                flex-shrink: 0;
+            }
+        }
     }
 }

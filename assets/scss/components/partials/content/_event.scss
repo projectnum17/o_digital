@@ -4,6 +4,13 @@
 
 .event {
     padding-block: rem(40px) rem(50px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
 
     .container {
         max-width: rem(1000px);
@@ -64,10 +71,19 @@
         gap: rem(12px);
         align-items: flex-start;
         justify-content: space-between;
+        @include media('desktop') {
+            flex-direction: column-reverse;
+        }
+        @include media('mobile') {
+            gap: rem(20px);
+        }
     }
 
     &__content {
         max-width: rem(636px);
+        @include media('desktop') {
+            max-width: 100%;
+        }
     }
 
     &__details {
@@ -75,6 +91,10 @@
         display: flex;
         flex-direction: column;
         gap: rem(30px);
+        @include media('mobile') {
+            margin-bottom: rme(20px);
+            gap: rem(20px);
+        }
 
         &-item {
             display: flex;
@@ -85,6 +105,10 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                flex-direction: column;
+                padding-block: rem(20px);
+            }
         }
 
         &-preview {
@@ -99,6 +123,14 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                max-width: 100%;
+                padding-inline: 0;
+                padding-block: rem(0px) rem(20px);
+                border-right: none;
+                border-bottom: 1px solid var(--border_default);
+                gap: rem(10px);
+            }
         }
 
         &-title {
@@ -108,6 +140,9 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                font-size: rem(18px);
+            }
         }
 
         &-info {
@@ -130,6 +165,9 @@
                 &:last-child {
                     font: 500 #{rem(18px)} / 100% $ff;
                     color: var(--txt_secondary);
+                    @include media('mobile') {
+                        font-size: rem(16px);
+                    }
                 }
             }
         }
@@ -142,6 +180,13 @@
             width: 100%;
             padding-inline: rem(17px);
             padding-bottom: rem(12px);
+            @include media('mobile') {
+                max-width: 100%;
+                padding-inline: 0;
+                padding-bottom: 0;
+                padding-top: rem(20px);
+                gap: rem(12px);
+            }
 
             p {
                 margin: 0;
@@ -189,6 +234,23 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(21px);
         margin-bottom: rem(30px);
+        @include media('mobile') {
+            display: flex;
+            gap: rem(12px);
+            margin-bottom: rem(20px);
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scroll-snap-type: x mandatory;
+            li {
+                flex-shrink: 0;
+                max-width: rem(250px);
+                scroll-snap-align: start;
+            }
+        }
     }
 
     &__digital {
@@ -197,11 +259,28 @@
         gap: rem(12px);
         margin-bottom: rem(30px);
 
+        @include media('mobile') {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: rem(20px);
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scroll-snap-type: x mandatory;
+        }
+
         .digital-box {
             max-width: rem(183px);
 
             img {
                 width: rem(90px);
+            }
+
+            @include media('mobile') {
+                flex-shrink: 0;
             }
         }
     }
@@ -209,6 +288,9 @@
     .sticky-block {
         max-width: rem(276px);
         width: 100%;
+        @include media('desktop') {
+            max-width: 100%;
+        }
     }
 
     &__session {
@@ -216,10 +298,37 @@
         display: flex;
         flex-direction: column;
         gap: rem(20px);
+        @include media('desktop') {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include media('mobile') {
+            display: flex;
+            flex-direction: column;
+            gap: rem(12px);
+        }
+
+        .countdown-box {
+            @include media('desktop') {
+                align-items: center;
+
+                &__clock {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
 
         .btn-primary {
             padding: rem(20px);
             margin-top: rem(15px);
+            @include media('desktop') {
+                grid-column: span 3;
+                margin-top: 0;
+            }
+            @include media('mobile') {
+                padding: rem(17px);
+            }
         }
     }
 }

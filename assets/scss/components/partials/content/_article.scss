@@ -8,6 +8,10 @@
         padding-block: rem(0px) rem(40px);
     }
 
+    *:last-child {
+        margin-bottom: 0;
+    }
+
     .video-box {
         aspect-ratio: 636 / 290;
         margin-bottom: rem(30px);
