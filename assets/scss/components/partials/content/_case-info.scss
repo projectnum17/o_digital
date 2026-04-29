@@ -145,6 +145,7 @@
                 font-size: rem(16px);
                 padding-block: rem(14px);
                 padding-left: rem(14px);
+                margin-bottom: rem(30px);
             }
 
             &::before {
@@ -222,6 +223,7 @@
         gap: rem(12px);
         margin-bottom: rem(39px);
         @include media('mobile') {
+            margin-bottom: rem(30px);
             overflow: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -241,5 +243,21 @@
         display: flex;
         gap: rem(23px);
         margin-bottom: rem(39px);
+        @include media('mobile') {
+            margin-bottom: rem(30px);
+            overflow: auto;
+            gap: rem(12px);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scroll-snap-type: x mandatory;
+            li {
+                flex-shrink: 0;
+                max-width: rem(300px);
+                scroll-snap-align: start;
+            }
+        }
     }
 }

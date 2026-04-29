@@ -4,9 +4,20 @@
 
 .customers {
     padding-block: rem(60px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
     &__filters {
         display: flex;
         gap: rem(11px);
+        @include media('mobile') {
+            flex-direction: column;
+            max-width: 50%;
+            width: 50%;
+            .filter-box {
+                width: 100%;
+            }
+        }
     }
 
     &__head {
@@ -15,26 +26,40 @@
         justify-content: space-between;
         gap: rem(24px);
         margin-bottom: rem(40px);
+        @include media('mobile') {
+            gap: rem(12px);
+            margin-bottom: rem(20px);
+        }
     }
 
     &__collect {
         display: flex;
         flex-direction: column;
         gap: rem(20px);
+        @include media('mobile') {
+            gap: rem(24px);
+        }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         gap: rem(20px);
+        @include media('mobile') {
+            gap: rem(12px);
+        }
     }
 
     &__info {
         display: flex;
+        flex-wrap: wrap;
         align-items: flex-end;
         justify-content: space-between;
         gap: rem(12px);
         padding-block: rem(40px) rem(20px);
+        @include media('mobile') {
+            padding-block: rem(12px);
+        }
 
         .section-description {
             color: var(--txt_primary);
@@ -46,18 +71,27 @@
         flex-direction: column;
         gap: rem(13px);
         max-width: rem(931px);
+        @include media('mobile') {
+            gap: rem(12px);
+        }
     }
 
     &__details {
         display: flex;
         flex-direction: column;
         gap: rem(16px);
+        @include media('mobile') {
+            gap: rem(12px);
+        }
     }
 
     &__naming {
         font: 500 #{rem(40px)} / 110% $ff;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         color: var(--txt_primary);
+        @include media('mobile') {
+            font-size: rem(24px);
+        }
     }
 
     &__logo {
@@ -66,13 +100,25 @@
         padding: rem(8px) rem(12px);
         background: #fff;
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            border-radius: rem(6px);
+            max-width: rem(110px);
+            padding: rem(6px) rem(12px);
+        }
     }
 
     &__results {
         overflow: visible;
+        width: 100%;
 
         &-slide {
             width: auto;
+        }
+    }
+
+    .result-box {
+        @include media('mobile') {
+            max-width: rem(330px);
         }
     }
 }

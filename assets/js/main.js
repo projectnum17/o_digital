@@ -102,6 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
         parent: '.js-customers-slider',
         slidesShown: 'auto',
         gap: 22,
+        breakpoints: {
+            0: {
+                spaceBetween: 12,
+            },
+
+            768: {
+                spaceBetween: 22,
+            },
+        },
     });
     updateGridTableUIState('.js-supplier-btn', 992, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
@@ -211,6 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'body:has(.supplier) section.page-preview .section-description',
         target: '.page-preview__info .page-preview__col:first-child',
         breakpoint: 991,
+    });
+    initPortalBlock({
+        selector:
+            '.person-preview .section-description',
+        target: '.person-preview .person-preview__col:first-child',
+        breakpoint: 767,
     });
     // initPortalBlock({
     //     selector:

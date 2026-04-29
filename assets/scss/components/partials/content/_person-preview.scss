@@ -6,6 +6,10 @@
     z-index: 5;
     min-height: rem(473px);
     padding-block: rem(176px) rem(70px);
+    @include media('mobile') {
+        padding-block: rem(125px) rem(40px);
+        min-height: rem(350px);
+    }
 
     &::before {
         content: '';
@@ -31,6 +35,12 @@
         order: 2;
     }
 
+    .section-description {
+        @include media('mobile') {
+            order: 3;
+        }
+    }
+
     &__position {
         font: 500 #{rem(30px)} / 110% $ff;
         order: 1;
@@ -43,6 +53,9 @@
         display: flex;
         align-items: center;
         gap: rem(14px);
+        @include media('mobile') {
+            order: 4;
+        }
 
         li {
             width: rem(42px);
@@ -84,10 +97,18 @@
             display: flex;
             flex-direction: column;
             gap: rem(17px);
+            @include media('mobile') {
+                max-width: 100%;
+                width: 100%;
+                gap: rem(12px);
+            }
         }
 
         &:last-child {
             max-width: rem(467px);
+            @include media('mobile') {
+                display: none;
+            }
         }
     }
 }
