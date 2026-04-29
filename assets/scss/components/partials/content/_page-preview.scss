@@ -9,6 +9,7 @@
     padding-block: rem(176px) rem(70px);
     @include media('mobile') {
         padding-block: rem(125px) rem(40px);
+        min-height: rem(350px);
     }
 
     &::before {
@@ -112,6 +113,10 @@
                 max-width: 100%;
                 flex-direction: column-reverse;
                 gap: 0;
+
+                *:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }

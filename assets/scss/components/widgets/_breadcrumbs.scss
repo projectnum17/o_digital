@@ -9,6 +9,13 @@ body:has(.page-preview) {
         }
     }
 }
+body:has(.masthead) {
+    .breadcrumbs {
+        @include media('mobile') {
+            margin-bottom: rem(43px);
+        }
+    }
+}
 
 .breadcrumbs {
     display: flex;

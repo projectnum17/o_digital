@@ -9,6 +9,7 @@
     @include media('mobile') {
         padding-block: rem(125px) rem(40px);
         display: grid;
+        min-height: rem(350px);
 
         .container {
             display: flex;

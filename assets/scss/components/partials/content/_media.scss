@@ -4,6 +4,9 @@
 
 .media {
     padding-block: rem(60px);
+    @include media('mobile') {
+        padding-block: rem(40px);
+    }
 
     &__head {
         display: flex;
@@ -44,6 +47,13 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(22px);
         margin-bottom: rem(100px);
+        @include media('desktop') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @include media('tablet') {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: rem(20px);
+        }
 
         &.is-list {
             display: flex;
@@ -51,16 +61,26 @@
             max-width: rem(942px);
             margin: 0 auto rem(100px);
             gap: rem(40px);
+            @include media('mobile') {
+                gap: rem(20px);
+            }
 
             .event-box {
                 background: transparent;
                 border-radius: 0;
                 padding: 0 0 rem(40px) 0;
                 border-bottom: 1px solid var(--border_default);
+                @include media('mobile') {
+                    flex-direction: column;
+                    padding: 0 0 rem(20px) 0;
+                }
 
                 &__description {
                     display: flex;
                     order: 3;
+                    @include media('mobile') {
+                        gap: rem(12px);
+                    }
                 }
 
                 &__date {
@@ -71,6 +91,9 @@
                     flex-direction: column;
                     display: flex;
                     gap: rem(22px);
+                    @include media('mobile') {
+                        gap: rem(12px);
+                    }
                 }
 
                 &__info {
@@ -89,6 +112,11 @@
                     height: rem(125px);
                     order: 1;
                     aspect-ratio: 138 / 125;
+
+                    @include media('mobile') {
+                        max-width: 100%;
+                        height: auto;
+                    }
                 }
 
                 &__label {
@@ -102,6 +130,9 @@
             padding: rem(16px);
             &__info {
                 max-width: rem(226px);
+                @include media('mobile') {
+                    max-width: 60%;
+                }
             }
 
             &__date {
@@ -116,6 +147,10 @@
                 width: 100%;
                 max-width: rem(177px);
                 aspect-ratio: 177 / 233;
+                @include media('mobile') {
+                    max-width: 40%;
+                    aspect-ratio: 115 / 149;
+                }
             }
         }
     }
