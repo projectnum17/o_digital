@@ -4,6 +4,9 @@
 
 .article {
     padding-block: rem(40px) rem(50px);
+    @include media('tablet') {
+        padding-block: rem(0px) rem(40px);
+    }
 
     .video-box {
         aspect-ratio: 636 / 290;
@@ -15,10 +18,19 @@
         display: flex;
         align-items: flex-start;
         gap: rem(12px);
+        @include media('tablet') {
+            max-width: 100%;
+            flex-direction: column;
+            padding: 0;
+        }
     }
 
     &__content {
         max-width: rem(636px);
+        @include media('tablet') {
+            max-width: 100%;
+            padding-inline: $container_pdd;
+        }
     }
 
     &__details {
@@ -28,6 +40,9 @@
         border-top: 1px solid var(--border_default);
         border-bottom: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
 
         &-item {
             display: flex;
@@ -36,6 +51,10 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                padding-block: rem(12px);
+                flex-direction: column;
+            }
 
             &:not(:last-child) {
                 border-bottom: 1px solid var(--border_default);
@@ -52,6 +71,13 @@
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
+            @include media('mobile') {
+                gap: rem(15px);
+                border-right: none;
+                padding-right: rem(0px);
+                padding-bottom: rem(12px);
+                border-bottom: 1px solid var(--border_default);
+            }
 
             & > * {
                 @include transitions(
@@ -75,6 +101,10 @@
             flex-direction: column;
             padding-inline: rem(17px) rem(13px);
             gap: rem(12px);
+            @include media('mobile') {
+                padding-inline: 0;
+                padding-block: rem(12px) 0;
+            }
             & > * {
                 @include transitions(
                     0.3s,
@@ -91,20 +121,32 @@
     &__table {
         margin-bottom: rem(30px);
         display: grid;
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         grid-template-columns: repeat(3, 1fr);
         border: 1px solid var(--border_default);
         @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('mobile') {
+            margin-bottom: rem(20px);
+        }
 
         &-cell {
             padding: rem(29px) rem(10px);
             font: 500 #{rem(14px)} / 120% $ff;
             border-right: 1px solid var(--border_default);
             border-bottom: 1px solid var(--border_default);
+            color: var(--c_grey_darken);
             @include transitions(
                 0.3s,
                 cubic-bezier(0.768, 0.304, 0.496, 0.884)
             );
-            color: var(--c_grey_darken);
+            @include media('mobile') {
+                padding: rem(20px) rem(10px);
+            }
 
             &:nth-child(3n) {
                 border-right: none;

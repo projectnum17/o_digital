@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     updateGridTableUIState('.js-supplier-btn', 992, 3, 9);
     updateGridTableUIState('.js-partner-box', 768, 2, 4);
-    updateGridTableUIState('.js-article-table', 768, 2, 3);
+    updateGridTableUIState('.js-article-table', 768, 3, 3);
     updateGridTableUIState('.js-vendor-box', 992, 2, 5);
     initSelect();
     initVideoPlayer();

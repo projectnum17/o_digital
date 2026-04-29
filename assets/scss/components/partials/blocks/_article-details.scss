@@ -4,8 +4,12 @@
 
 .article-details {
     padding-block: rem(12px);
+    overflow: hidden;
     background: var(--bg_divider);
     @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+    @include media('mobile') {
+        padding-block: rem(10px);
+    }
 
     .container {
         display: flex;
@@ -13,6 +17,17 @@
         justify-content: space-between;
         gap: rem(12px);
         max-width: rem(960px);
+        overflow: auto;
+        flex-shrink: 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            flex-shrink: 0;
+        }
     }
 
     &__item {
