@@ -39,11 +39,18 @@ html {
         padding-block: rem(50px);
     }
 
+    .container {
+        position: relative;
+    }
+
     &__top {
         display: flex;
-        justify-content: space-between;
+        gap: rem(120px);
         margin-bottom: rem(35px);
-        gap: rem(24px);
+        @include media('desktop') {
+            justify-content: space-between;
+            gap: rem(24px);
+        }
         @include media('tablet') {
             flex-direction: column;
         }
@@ -68,27 +75,34 @@ html {
     &__menu {
         display: flex;
         align-items: flex-start;
-        justify-content: space-between;
         max-width: rem(515px);
-        gap: rem(12px);
-        width: 100%;
+        gap: rem(140px);
+        @include media('desktop') {
+            gap: rem(12px);
+            width: 100%;
+            justify-content: space-between;
+            gap: rem(24px);
+        }
     }
 
     &__contacts {
+        position: relative;
+        margin-left: rem(55px);
         display: flex;
         flex-direction: column;
-        gap: rem(13px);
+        gap: rem(64px);
         max-width: rem(300px);
         width: 100%;
         @include media('tablet') {
             max-width: 100%;
+            margin-left: 0;
         }
     }
 
     &__totop {
-        transform: translateX(#{rem(10px)});
-        margin-bottom: rem(-15px);
-        align-self: flex-end;
+        right: $container_pdd;
+        bottom: rem(150px);
+        position: absolute;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -108,6 +122,9 @@ html {
         @include media('tablet') {
             transform: translate(0);
             margin-bottom: 0;
+        }
+        @include media('mobile') {
+            bottom: 35%;
         }
     }
 

@@ -2,6 +2,35 @@
 @use '../../../base/mixins' as *;
 @use '../../../base/media' as *;
 
+html {
+    &.light {
+        .areas {
+            &__pic {
+                img:first-child {
+                    opacity: 0;
+                }
+                img:last-child {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.dark {
+        .areas {
+            &__pic {
+                img:first-child {
+                    opacity: 1;
+                }
+                img:last-child {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+
 .areas {
     $picRatio: rem(500px);
     padding-block: rem(69px);
@@ -77,7 +106,8 @@
 
     &__pic {
         pointer-events: none;
-        max-width: $picRatio;
+        width: $picRatio;
+        aspect-ratio: 1;
         position: absolute;
         top: 50%;
         // left: 50%;
@@ -99,6 +129,11 @@
         }
         @include media('mobile') {
             max-width: rem(250px);
+        }
+
+        img {
+            position: absolute;
+            @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         }
     }
 

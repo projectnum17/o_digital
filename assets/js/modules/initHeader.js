@@ -31,23 +31,31 @@ export const initHeader = () => {
 
         triggers.forEach((trigger) => {
             const ddMenu = trigger.querySelector('.dd-menu');
+            let timeout;
 
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (!ddMenu) return;
+            if (!ddMenu) return;
 
-                const isActive = trigger.classList.contains('is-active');
-
+            const closeAll = () => {
                 triggers.forEach((el) => {
-                    const menu = el.querySelector('.dd-menu');
                     el.classList.remove('is-active');
-                    menu?.classList.remove('is-active');
+                    el.querySelector('.dd-menu')?.classList.remove('is-active');
                 });
+            };
 
-                if (!isActive) {
-                    trigger.classList.add('is-active');
-                    ddMenu.classList.add('is-active');
-                }
+            trigger.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+
+                closeAll();
+
+                trigger.classList.add('is-active');
+                ddMenu.classList.add('is-active');
+            });
+
+            trigger.addEventListener('mouseleave', () => {
+                timeout = setTimeout(() => {
+                    trigger.classList.remove('is-active');
+                    ddMenu.classList.remove('is-active');
+                }, 500);
             });
         });
     };
